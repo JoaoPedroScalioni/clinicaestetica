@@ -561,16 +561,19 @@ html {
   .carousel-slider {
     width: 100%; /* O carrossel ocupa 100% da largura */
     max-width: 100%;
-    position: relative; /* Necessário para os indicadores com position: absolute */
+    position: relative; /* Necessário para posicionar os elementos absolutos, como os indicadores */
+    overflow: hidden;   /* Impede que elementos excedam os limites do container */
   }
 
   .slider-track {
-    width: 100%; /* A track ocupa 100% da largura disponível */
+    width: 100%; /* A track ocupa toda a largura disponível */
   }
 
   .slider-track img {
-    width: 100%; /* As imagens ocupam 100% da largura do carrossel */
-    object-fit: cover; /* Garante que as imagens cubram toda a área */
+    width: 100%; /* As imagens se ajustam à largura do carrossel */
+    object-fit: cover;
+    display: block;   /* Remove o espaço extra decorrente do comportamento inline das imagens */
+    margin-right: 0;  /* Garante que não haja margem à direita interferindo */
   }
 
   .slider-nav {
@@ -578,21 +581,25 @@ html {
     padding: 10px;
   }
 
-  /* Centraliza os indicadores com position absolute */
+  /* Indicadores centralizados e sem tomar espaço extra */
   .slider-indicators {
     position: absolute;
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    width: 100%;
     display: flex;
+    justify-content: center; /* Centraliza os indicadores horizontalmente */
     gap: 8px;
+    margin: 0; /* Remove margens que possam afetar o posicionamento */
   }
 
   .slider-indicators .indicator {
-    width: 10px; /* Indicadores menores para mobile */
+    width: 10px;  /* Diminuindo o tamanho para mobile */
     height: 10px;
+    border-radius: 50%;
   }
 }
+
 
 
 
