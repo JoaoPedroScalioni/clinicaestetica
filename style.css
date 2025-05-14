@@ -554,47 +554,39 @@ html {
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   .carousel-wrapper {
-    flex-direction: column;  /* Organiza os itens do carrossel em coluna */
-    gap: 20px;
+    flex-direction: column;
+    gap: 20px; /* Ajuste o espaçamento entre os itens do carrossel */
   }
 
   .carousel-slider {
-    width: 100%; /* Faz o carrossel ocupar 100% da largura da tela */
-    max-width: 100%; /* Não permite que o carrossel ultrapasse a largura da tela */
-    padding: 0; /* Remove o preenchimento extra que pode ser desnecessário em telas pequenas */
+    width: 100%; /* Ajusta o carrossel para ocupar 100% da largura */
+    max-width: 100%;
+  }
+
+  .slider-track {
+    width: 100%; /* A track também deve ter 100% da largura disponível */
   }
 
   .slider-track img {
-    width: 100%; /* Garante que as imagens ocupem toda a largura do carrossel */
-    margin-right: 0; /* Remove a margem entre as imagens */
-    object-fit: cover; /* Garante que as imagens não distorçam */
+    width: 100%; /* As imagens agora ocupam 100% da largura do carrossel */
+    object-fit: cover; /* Para garantir que as imagens cubram toda a área */
   }
 
   .slider-nav {
-    font-size: 1.5rem; /* Reduz o tamanho dos botões de navegação */
-    padding: 10px; /* Ajusta o preenchimento dos botões */
-    top: 50%; /* Mantém o botão centralizado verticalmente */
-  }
-
-  .slider-nav.prev {
-    left: 5px; /* Ajusta a posição do botão de navegação à esquerda */
-  }
-
-  .slider-nav.next {
-    right: 5px; /* Ajusta a posição do botão de navegação à direita */
+    font-size: 1.5rem;
+    padding: 10px;
   }
 
   .slider-indicators {
-    position: relative; /* Ajusta a posição dos indicadores em telas pequenas */
-    bottom: 10px; /* Define a distância dos indicadores para a parte inferior */
+    position: relative;
+    bottom: 10px;
   }
 
   .slider-indicators .indicator {
-    width: 10px; /* Diminui o tamanho dos indicadores */
-    height: 10px; /* Diminui o tamanho dos indicadores */
+    width: 10px; /* Diminui o tamanho dos indicadores para ficar adequado no celular */
+    height: 10px;
   }
 }
-
 
 
 /* ========= Seção de Avaliações / Depoimentos (Reviews) ========= */
