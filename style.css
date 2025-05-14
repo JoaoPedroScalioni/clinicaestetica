@@ -555,21 +555,22 @@ html {
 @media (max-width: 768px) {
   .carousel-wrapper {
     flex-direction: column;
-    gap: 20px; /* Ajuste o espaçamento entre os itens do carrossel */
+    gap: 20px; /* Ajusta o espaçamento entre os itens do carrossel */
   }
 
   .carousel-slider {
-    width: 100%; /* Ajusta o carrossel para ocupar 100% da largura */
+    width: 100%; /* O carrossel ocupa 100% da largura */
     max-width: 100%;
+    position: relative; /* Necessário para os indicadores com position: absolute */
   }
 
   .slider-track {
-    width: 100%; /* A track também deve ter 100% da largura disponível */
+    width: 100%; /* A track ocupa 100% da largura disponível */
   }
 
   .slider-track img {
-    width: 100%; /* As imagens agora ocupam 100% da largura do carrossel */
-    object-fit: cover; /* Para garantir que as imagens cubram toda a área */
+    width: 100%; /* As imagens ocupam 100% da largura do carrossel */
+    object-fit: cover; /* Garante que as imagens cubram toda a área */
   }
 
   .slider-nav {
@@ -577,16 +578,22 @@ html {
     padding: 10px;
   }
 
+  /* Centraliza os indicadores com position absolute */
   .slider-indicators {
-    position: relative;
+    position: absolute;
     bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
   }
 
   .slider-indicators .indicator {
-    width: 10px; /* Diminui o tamanho dos indicadores para ficar adequado no celular */
+    width: 10px; /* Indicadores menores para mobile */
     height: 10px;
   }
 }
+
 
 
 /* ========= Seção de Avaliações / Depoimentos (Reviews) ========= */
