@@ -128,6 +128,31 @@ html {
   margin-right: 8px;
 }
 
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .banner {
+    height: 500px; /* Reduzimos a altura do banner em telas pequenas */
+  }
+
+  .banner-text {
+    bottom: 10%;
+    padding: 10px 15px;
+  }
+
+  .banner-text h2 {
+    font-size: 2.2em;
+  }
+
+  .banner-text p {
+    font-size: 1.2em;
+  }
+
+  .cta-btn {
+    font-size: 1em;
+    padding: 10px 25px;
+  }
+}
+
 /* ========= Seção DESCRIÇÃO ========= */
 .descricao {
   display: flex;
@@ -381,19 +406,22 @@ html {
 
 
 
-/* ===== Responsividade ===== */
+/* Responsividade */
 @media (max-width: 768px) {
-  .banner-text h2 {
-    font-size: 2em;
-  }
-
-  .descricao-container {
-    padding: 20px;
-  }
-
   .social-container {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+  }
+
+  .social-card {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .social-img {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -565,6 +593,30 @@ html {
   background: linear-gradient(to right, transparent, var(--light));
   z-index: 1;
   pointer-events: none;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    flex-direction: column;
+  }
+
+  .carousel-slider {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .slider-track img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-right: 0;
+  }
+
+  .slider-nav {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
 }
 
 
