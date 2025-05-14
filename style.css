@@ -131,7 +131,7 @@ html {
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   .banner {
-    height: 500px; /* Reduzimos a altura do banner em telas pequenas */
+    height: 450px; /* Menor altura em dispositivos móveis */
   }
 
   .banner-text {
@@ -152,6 +152,7 @@ html {
     padding: 10px 25px;
   }
 }
+
 
 /* ========= Seção DESCRIÇÃO ========= */
 .descricao {
@@ -267,14 +268,14 @@ html {
 
 
 
-/* REDES SOCIAIS */
+/* Redes Sociais */
 .redes-sociais {
   position: relative;
   padding: 50px 20px;
   color: var(--light);
   text-align: center;
   background: linear-gradient(135deg, #cdd88c 40%, #96e4a1 80%);
-  overflow: hidden; /* Garante que o pseudo-elemento não ultrapasse os limites */
+  overflow: hidden;
 }
 
 .redes-sociais::after {
@@ -282,7 +283,7 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;  /* Área ampliada para um movimento fluido */
+  width: 200%;
   height: 200%;
   background: repeating-linear-gradient(
     135deg,
@@ -296,54 +297,11 @@ html {
   animation: slidePattern 60s linear infinite;
 }
 
-/* Animação que desloca as linhas diagonalmente */
-@keyframes slidePattern {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(-50%, -50%);
-  }
-}
-
-/* Garante que o conteúdo interno sempre fique acima da camada animada */
-.redes-sociais > * {
-  position: relative;
-  z-index: 1;
-}
-
-
-
-/* Garante que o conteúdo fique acima do pseudo-elemento */
-.redes-sociais > * {
-  position: relative;
-  z-index: 2;
-}
-
-
-/* Animação que move suavemente as linhas donnant um toque dinâmico */
-@keyframes slideDiagonal {
-  from {
-    transform: translate(-25%, -25%);
-  }
-  to {
-    transform: translate(-20%, -20%);
-  }
-}
-
-/* Garante que o conteúdo dentro de .redes-sociais sempre fique acima */
-.redes-sociais > * {
-  position: relative;
-  z-index: 1;
-}
-
-
-
 .redes-sociais h2 {
   font-size: 2.2em;
   margin-bottom: 30px;
   position: relative;
-  z-index: 2; /* Garante que o título fique sobre o fundo */
+  z-index: 2;
 }
 
 .social-container {
@@ -352,7 +310,7 @@ html {
   gap: 30px;
   flex-wrap: wrap;
   position: relative;
-  z-index: 2; /* Garante que os ícones fiquem sobre o fundo */
+  z-index: 2;
 }
 
 .social-card {
@@ -369,7 +327,7 @@ html {
   position: relative;
   overflow: hidden;
   background-color: #333;
-  z-index: 3; /* Garante que os cards fiquem sobre o fundo */
+  z-index: 3;
 }
 
 .social-img {
@@ -392,7 +350,7 @@ html {
 }
 
 .social-card.instagram {
-  background: radial-gradient(circle, #fdf497, #fd5949, #285aeb); /* Gradiente no estilo Instagram */
+  background: radial-gradient(circle, #fdf497, #fd5949, #285aeb);
 }
 
 .social-card.whatsapp {
@@ -402,9 +360,6 @@ html {
 .social-card.gmail {
   background: #D44638;
 }
-
-
-
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -424,6 +379,7 @@ html {
     height: 60px;
   }
 }
+
 
 
 /* ========= Carrossel (Resultados) ========= */
@@ -598,26 +554,47 @@ html {
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   .carousel-wrapper {
-    flex-direction: column;
+    flex-direction: column;  /* Organiza os itens do carrossel em coluna */
+    gap: 20px;
   }
 
   .carousel-slider {
-    width: 100%;
-    max-width: 100%;
+    width: 100%; /* Faz o carrossel ocupar 100% da largura da tela */
+    max-width: 100%; /* Não permite que o carrossel ultrapasse a largura da tela */
+    padding: 0; /* Remove o preenchimento extra que pode ser desnecessário em telas pequenas */
   }
 
   .slider-track img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin-right: 0;
+    width: 100%; /* Garante que as imagens ocupem toda a largura do carrossel */
+    margin-right: 0; /* Remove a margem entre as imagens */
+    object-fit: cover; /* Garante que as imagens não distorçam */
   }
 
   .slider-nav {
-    font-size: 1.5rem;
-    padding: 10px;
+    font-size: 1.5rem; /* Reduz o tamanho dos botões de navegação */
+    padding: 10px; /* Ajusta o preenchimento dos botões */
+    top: 50%; /* Mantém o botão centralizado verticalmente */
+  }
+
+  .slider-nav.prev {
+    left: 5px; /* Ajusta a posição do botão de navegação à esquerda */
+  }
+
+  .slider-nav.next {
+    right: 5px; /* Ajusta a posição do botão de navegação à direita */
+  }
+
+  .slider-indicators {
+    position: relative; /* Ajusta a posição dos indicadores em telas pequenas */
+    bottom: 10px; /* Define a distância dos indicadores para a parte inferior */
+  }
+
+  .slider-indicators .indicator {
+    width: 10px; /* Diminui o tamanho dos indicadores */
+    height: 10px; /* Diminui o tamanho dos indicadores */
   }
 }
+
 
 
 /* ========= Seção de Avaliações / Depoimentos (Reviews) ========= */
