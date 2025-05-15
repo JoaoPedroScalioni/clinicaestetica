@@ -6,6 +6,8 @@
 }
 
 
+
+
 /* Variáveis de cores e fontes */
 :root {
   --primary: #6a855a; /* Verde mais escuro */
@@ -18,6 +20,8 @@
 }
 
 
+
+
 /* Ajuste nos botões */
 .cta-btn {
   background-color: var(--secondary); /* Dourado */
@@ -28,9 +32,11 @@
   transition: background-color 0.3s ease;
 }
 
+
 .cta-btn:hover {
   background-color: var(--accent); /* Verde claro */
 }
+
 
 /* Ajuste nos títulos */
 h2, h3 {
@@ -40,15 +46,23 @@ h2, h3 {
   text-align: center;
 }
 
+
 /* Ajuste no background da página */
 body {
   background-color: var(--light); /* Bege claro */
 }
 
+
 /* Cor de texto */
 p {
   color: var(--dark); /* Preto suave para texto */
 }
+
+
+
+
+
+
 
 
 
@@ -70,7 +84,7 @@ p {
       --dark: #333;
       --light: #fff;
     }
-    
+   
 /* ========= Banner ========= */
 .banner {
   position: relative;
@@ -80,12 +94,14 @@ p {
   z-index: 0; /* Garante que o banner fique abaixo das outras seções */
 }
 
+
 .banner img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
   transform: scale(1.05); /* Leve zoom na imagem para dar foco */
 }
+
 
 .banner-text {
   position: absolute;
@@ -100,6 +116,7 @@ p {
   z-index: 1; /* Garante que o texto fique acima da imagem */
 }
 
+
 .banner-text h2 {
   font-family: var(--font-heading);
   font-size: 2.8em;
@@ -107,91 +124,121 @@ p {
   margin: 0;
 }
 
-.banner-text .separator {
-  width: 70%;
-  height: 2px;
-  background: var(--secondary); /* Dourado */
-  margin: 15px auto;
-  border-radius: 5px;
-}
 
-.banner-text p {
-  font-size: 1.4em;
-  color: var(--dark); /* Texto escuro */
-  margin-bottom: 20px;
-}
-
-/* Botão de Chamada para Ação */
-.cta-btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background: var(--accent); /* Verde claro */
-  color: var(--light); /* Texto claro */
-  text-decoration: none;
-  border-radius: 25px;
-  font-size: 1.2em;
-  font-weight: 600;
+/* Caixa "Cuide da Sua Beleza!" */
+.cta-box {
+  position: absolute;
+  top: 75%; /* Posiciona a caixa parcialmente sobre o banner */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  background-color: #fff; /* Cor de fundo suave e neutra, definida como bege claro */
+  padding: 20px 30px; /* Reduzir o padding para diminuir o espaço interno */
+  border-radius: 20px; /* Cantos mais arredondados para suavizar */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1); /* Sombra mais suave e mais forte para destacar a caixa */
+  z-index: 9999; /* Garantir que a caixa sobreponha todos os elementos */
+  text-align: center;
+  width: 60%; /* Reduzir a largura da caixa (antes estava 80%) */
+  max-width: 600px; /* Limita o tamanho máximo da caixa */
   transition: all 0.3s ease;
+  --font-heading: 'Montserrat', sans-serif; /* Fonte moderna para títulos */
+  --font-body: 'Roboto', sans-serif; /* Fonte limpa para o corpo do texto */
 }
 
-.cta-btn:hover {
-  background: var(--secondary); /* Dourado */
-  transform: scale(1.05);
+.cta-box h3 {
+  font-size: 2.8em;
+  color: var(--primary); /* Cor do título usando o verde escuro */
+  margin: 0;
+  font-weight: 600;
+ 
+  letter-spacing: 2px; /* Um pouco de espaçamento entre letras */
 }
 
-.cta-btn i {
-  margin-right: 8px;
+.cta-box p {
+  font-size: 1.4em;
+  color: var(--dark); /* Texto escuro para contraste */
+  margin-top: 15px;
+  line-height: 1.6;
+  font-weight: 400; /* Deixar o texto mais leve */
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 30px;
+  font-size: 1.4em;
+  background-color: var(--secondary); /* Dourado */
+  color: var(--dark);
+  text-decoration: none;
+  border-radius: 35px; /* Bordas mais arredondadas */
+  font-weight: 600;
+  transition: all 0.3s ease; /* Animação suave */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque ao botão */
+}
+
+.cta-button:hover {
+  background-color: var(--accent); /* Verde claro */
+  transform: scale(1.05); /* Leve aumento no tamanho do botão */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+}
+
+.cta-button span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover span {
+  transform: translateY(-5px); /* Efeito de subir um pouco o texto ao passar o mouse */
 }
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-  .banner {
-    height: 500px; /* Reduz a altura do banner em dispositivos móveis */
+  /* Ajustes para a CTA Box */
+  .cta-box {
+    padding: 15px 20px;
+    top: 65%; /* Ajusta a posição para telas menores */
+    width: 80%; /* Aumenta a largura para telas pequenas */
+    max-width: 500px; /* Limita a largura máxima da caixa */
   }
 
-  .banner-text {
-    bottom: 15%; /* Ajuste a posição do texto para não cobrir demais a imagem */
-    padding: 15px 20px; /* Reduz o padding para dispositivos móveis */
+  .cta-box h3 {
+    font-size: 2.2em; /* Diminui o tamanho do título em telas pequenas */
   }
 
+  .cta-box p {
+    font-size: 1.2em; /* Ajusta o tamanho da fonte do parágrafo */
+  }
+
+  /* Ajusta o banner */
   .banner-text h2 {
-    font-size: 2.2em; /* Ajusta o tamanho do título */
+    font-size: 2em; /* Reduz o tamanho do texto do banner */
   }
 
-  .banner-text p {
-    font-size: 1.1em; /* Ajusta o tamanho do texto */
-  }
-
-  .cta-btn {
-    font-size: 1em; /* Ajuste no tamanho do botão */
-    padding: 10px 25px; /* Ajuste no tamanho do botão */
+  .banner {
+    height: 500px; /* Diminui a altura do banner em telas menores */
   }
 }
 
-/* Responsividade para telas muito pequenas */
+/* Responsividade para telas muito pequenas (por exemplo, smartphones) */
 @media (max-width: 480px) {
-  .banner {
-    height: 400px; /* Menor altura para telas muito pequenas */
+  /* Ajustes para a CTA Box */
+  .cta-box {
+    padding: 10px 15px;
+    top: 60%;
+    width: 90%; /* Aumenta a largura para dispositivos muito pequenos */
+    max-width: 400px; /* Limita o tamanho máximo da caixa */
   }
 
-  .banner-text {
-    bottom: 20%; /* Ajusta a posição do texto para que ele não fique muito baixo */
-    padding: 10px 15px; /* Reduz ainda mais o padding */
+  .cta-box h3 {
+    font-size: 1.8em; /* Título menor em telas muito pequenas */
   }
 
+  .cta-box p {
+    font-size: 1.1em; /* Tamanho de texto reduzido para celulares */
+  }
+
+  /* Ajusta o banner */
   .banner-text h2 {
-    font-size: 1.8em; /* Menor tamanho do título */
-  }
-
-  .banner-text p {
-    font-size: 1em; /* Menor tamanho do texto */
-  }
-
-  .cta-btn {
-    font-size: 0.9em; /* Menor tamanho do botão */
-    padding: 8px 20px; /* Menor padding do botão */
-  }
-}
+    font-size: 1.5em; /* Texto me*
 
 
 
@@ -203,23 +250,28 @@ p {
   align-items: center;
   padding: 50px 20px;
   background-color: var(--light); /* Bege claro */
+  overflow: visible; /* Garante que o overflow seja visível */
 }
 
 .descricao-container {
-  display: flex;
-  justify-content: space-between;
+  position: relative; /* Garante que o z-index da caixa funcione corretamente */
+  z-index: 1;
+  display: flex; /* Flexbox para alinhar imagem e texto lado a lado */
+  justify-content: space-between; /* Garantir que a imagem e o texto se distribuem ao longo da linha */
   max-width: 1200px;
   padding: 50px;
-  background: rgba(255, 255, 255, 0.8); /* Fundo suave */
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
   text-align: left;
-  border-left: 8px solid var(--secondary); /* Dourado */
+  border-left: 8px solid var(--secondary);
   transform: translateY(20px);
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
+  margin-top: 90px; /* Adiciona um espaço acima do container */
 }
 
+/* Animação fadeIn */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -251,16 +303,18 @@ p {
   color: var(--dark); /* Preto suave */
   line-height: 1.8;
   margin-bottom: 20px;
+  text-align: justify; /* Alinha o texto */
+  hyphens: auto; /* Quebra de palavras se necessário */
 }
 
 .descricao-imagem {
-  flex: 1;
-  margin-right: 40px;
+  flex: 1; /* A imagem ocupa metade do espaço */
+  margin-right: 40px; /* Espaço entre a imagem e o texto */
 }
 
 .descricao-imagem img {
   width: 100%;
-  max-width: 500px;
+  max-width: 500px; /* Limita o tamanho máximo da imagem */
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   object-fit: cover;
@@ -272,41 +326,18 @@ p {
 }
 
 .descricao-texto {
-  flex: 1.5;
+  flex: 1.5; /* O texto ocupa mais espaço */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.descricao-texto p {
-  margin-bottom: 20px;
-}
 
-/* ===== Responsividade ===== */
-@media (max-width: 768px) {
-  .descricao-container {
-    flex-direction: column;
-    padding: 30px;
-    text-align: center;
-  }
 
-  .descricao-imagem {
-    margin-right: 0;
-    margin-bottom: 30px;
-  }
 
-  .descricao-container h2 {
-    font-size: 2em;
-  }
 
-  .descricao-container p {
-    font-size: 1.1em;
-  }
 
-  .descricao-imagem img {
-    max-width: 100%;
-  }
-}
+
 
 
 
@@ -324,6 +355,7 @@ p {
   z-index: 1;
 }
 
+
 /* Título */
 .redes-sociais h2 {
   font-size: 2.5em;
@@ -335,6 +367,7 @@ p {
   letter-spacing: 2px;
 }
 
+
 /* Container das redes sociais */
 .social-container {
   display: flex;
@@ -344,6 +377,7 @@ p {
   position: relative;
   z-index: 2;
 }
+
 
 .social-card {
   display: flex;
@@ -362,12 +396,14 @@ p {
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
+
 /* Efeito de Glow (brilho) nos ícones das redes sociais */
 .social-card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   filter: brightness(1.3); /* Aumenta o brilho */
 }
+
 
 .social-img {
   width: 50px;
@@ -377,10 +413,12 @@ p {
   transition: filter 0.3s ease;
 }
 
+
 /* Efeito de glow nos ícones */
 .social-card:hover .social-img {
   filter: brightness(1.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Brilho intenso ao passar o mouse */
 }
+
 
 .social-card span {
   font-size: 1rem;
@@ -389,18 +427,22 @@ p {
   text-align: center;
 }
 
+
 /* Cores de fundo para as redes sociais */
 .social-card.instagram {
   background: radial-gradient(circle, #fdf497, #fd5949, #285aeb); /* Instagram */
 }
 
+
 .social-card.whatsapp {
   background: #0ee95e; /* WhatsApp */
 }
 
+
 .social-card.gmail {
   background: #D44638; /* Gmail */
 }
+
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -409,11 +451,13 @@ p {
     gap: 20px;
   }
 
+
   .social-card {
     width: 150px;
     height: 150px;
     margin: 0 auto;
   }
+
 
   .social-img {
     width: 60px;
@@ -424,8 +468,7 @@ p {
 
 
 
-/* ========= Carrossel (Resultados) ========= */
-/* ========= Carrossel (Resultados) ========= */
+
 /* ========= Carrossel (Galeria de Resultados) ========= */
 .carrossel {
   padding: 60px 20px;
@@ -434,6 +477,7 @@ p {
   justify-content: center;
   align-items: center;
 }
+
 
 .carousel-wrapper {
   display: flex;
@@ -445,6 +489,7 @@ p {
   flex-wrap: wrap;
   padding: 20px;
 }
+
 
 .carousel-description {
   flex: 1;
@@ -459,10 +504,12 @@ p {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+
 .carousel-description:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
 }
+
 
 .carousel-description-content h3 {
   font-family: var(--font-heading);
@@ -471,12 +518,14 @@ p {
   color: var(--accent); /* Verde claro */
 }
 
+
 .carousel-description-content p {
   font-size: 1.1rem;
   margin-bottom: 15px;
   line-height: 1.7;
   color: #e0e0e0;
 }
+
 
 .carousel-description-content ul {
   padding-left: 20px;
@@ -485,11 +534,13 @@ p {
   color: #e0e0e0;
 }
 
+
 .carousel-description-content li::before {
   content: "✓";
   margin-right: 8px;
   color: #a5f3fc;
 }
+
 
 /* ===== Estilo do Carrossel ===== */
 .carousel-slider {
@@ -504,15 +555,18 @@ p {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+
 .carousel-slider:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
 }
 
+
 .slider-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
+
 
 .slider-track img {
   width: 100%;
@@ -523,9 +577,11 @@ p {
   transition: transform 0.3s ease;
 }
 
+
 .slider-track img:hover {
   transform: scale(1.05);
 }
+
 
 .slider-nav {
   position: absolute;
@@ -542,18 +598,22 @@ p {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
+
 .slider-nav:hover {
   background: rgba(255, 255, 255, 1);
   transform: scale(1.2);
 }
 
+
 .slider-nav.prev {
   left: 10px;
 }
 
+
 .slider-nav.next {
   right: 10px;
 }
+
 
 .slider-indicators {
   position: absolute;
@@ -564,6 +624,7 @@ p {
   gap: 8px;
 }
 
+
 .slider-indicators .indicator {
   width: 12px;
   height: 12px;
@@ -573,15 +634,18 @@ p {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
+
 .slider-indicators .indicator.active {
   background: var(--accent); /* Verde claro */
   transform: scale(1.2);
 }
 
+
 .slider-indicators .indicator:hover {
   background: var(--accent); /* Verde claro */
   transform: scale(1.3);
 }
+
 
 .carousel-slider::after {
   content: '';
@@ -594,13 +658,16 @@ p {
   pointer-events: none;
 }
 
+
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
+  /* Ajuste na estrutura do carrossel */
   .carousel-wrapper {
     flex-direction: column;
     gap: 20px;
   }
 
+  /* Ajusta o carrossel para largura total */
   .carousel-slider {
     width: 100%;
     max-width: 100%;
@@ -608,6 +675,7 @@ p {
     overflow: hidden;
   }
 
+  /* Ajuste para o conteúdo das imagens do carrossel */
   .slider-track {
     width: 100%;
   }
@@ -616,14 +684,16 @@ p {
     width: 100%;
     object-fit: cover;
     display: block;
-    margin-right: 0;
+    margin-right: 0; /* Remove o espaço entre as imagens */
   }
 
+  /* Ajuste no tamanho dos botões de navegação */
   .slider-nav {
     font-size: 1.5rem;
     padding: 10px;
   }
 
+  /* Ajuste na posição dos indicadores */
   .slider-indicators {
     position: absolute;
     bottom: 10px;
@@ -635,12 +705,15 @@ p {
     margin: 0;
   }
 
+  /* Ajuste no tamanho dos indicadores */
   .slider-indicators .indicator {
     width: 10px;
     height: 10px;
     border-radius: 50%;
   }
 }
+
+
 
 
 
@@ -655,8 +728,10 @@ p {
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
 
+
   overflow: hidden;
 }
+
 
 /* Garante que o conteúdo interno fique acima da camada animada */
 .reviews-container > * {
@@ -664,11 +739,13 @@ p {
   z-index: 1;
 }
 
+
 .reviews-title {
   font-size: 1.8rem;
   margin-bottom: 40px;
   color: var(--dark); /* Texto escuro */
 }
+
 
 .review-cards-wrapper {
   display: flex;
@@ -676,6 +753,7 @@ p {
   align-items: center;
   gap: 24px;
 }
+
 
 .review-card {
   background: var(--light); /* Fundo claro */
@@ -690,6 +768,7 @@ p {
   position: relative;
 }
 
+
 .review-avatar {
   width: 40px;
   height: 40px;
@@ -698,10 +777,12 @@ p {
   object-fit: cover;
 }
 
+
 .review-content {
   flex: 1;
   text-align: left;
 }
+
 
 .review-header {
   display: flex;
@@ -711,16 +792,19 @@ p {
   margin-bottom: 8px;
 }
 
+
 .review-stars {
   color: #f8c12e; /* Amarelo para estrelas */
   font-size: 1rem;
   margin-bottom: 8px;
 }
 
+
 .review-text {
   font-size: 0.95rem;
   color: var(--dark); /* Texto escuro */
 }
+
 
 .review-google-icon {
   width: 24px;
@@ -730,6 +814,7 @@ p {
   right: 20px;
   bottom: 20px;
 }
+
 
 /* Botões do carrossel de reviews */
 .review-nav {
@@ -747,57 +832,65 @@ p {
   transition: transform 0.2s ease;
 }
 
+
 .review-nav:hover {
   transform: translateY(-50%) scale(1.1);
 }
 
+
 .review-nav.prev {
   left: 10px;
 }
+
 
 .review-nav.next {
   right: 10px;
 }
 
 
+
+
 /* ===== Estilo do Rodapé ===== */
 .footer {
   background: var(--primary); /* Verde escuro */
   color: var(--light); /* Texto claro */
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
+  box-sizing: border-box; /* Inclui o padding no cálculo do tamanho */
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
+  margin-bottom: 40px;
 }
 
 .footer-logo {
   flex: 1;
   text-align: left;
-  margin-bottom: 20px; /* Adiciona margem para separar o logo do restante */
+  margin-bottom: 20px; /* Margem entre logo e conteúdo */
 }
 
 .footer-logo .logo-img {
-  width: 250px; /* Ajuste no tamanho do logo */
+  width: 230px; /* Ajuste do tamanho do logo */
+  max-width: 100%;
 }
 
 .footer-info {
-  flex: 2;
+  flex: 3; /* Garante que a área de informações ocupe mais espaço */
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px; /* Ajuste para espaçamento mais equilibrado */
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se não couberem */
+  gap: 30px;
   margin-bottom: 20px;
 }
 
 .footer-info-item {
   max-width: 220px;
-  font-size: 0.95em; /* Ajuste para fontes mais suaves */
+  font-size: 1em; /* Fonte levemente maior */
+  text-align: left; /* Alinha o texto à esquerda */
 }
 
 .footer-info-item strong {
@@ -808,8 +901,8 @@ p {
 .footer-social {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
-  gap: 20px; /* Aumenta o espaçamento entre os ícones */
+  justify-content: center;
+  gap: 30px;
   align-items: center;
   padding-right: 20px;
   margin-bottom: 20px;
@@ -817,21 +910,21 @@ p {
 
 .footer-social .social-icon {
   color: var(--light); /* Ícones brancos */
-  font-size: 1.3em; /* Ajuste nos tamanhos para ícones intermediários */
+  font-size: 1.5em; /* Ícones de tamanho maior */
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social .social-icon:hover {
   color: var(--secondary); /* Dourado */
-  transform: scale(1.2); /* Efeito de aumento suave ao passar o mouse */
+  transform: scale(1.1); /* Efeito de aumento suave */
 }
 
 .footer-bottom {
   margin-top: 30px;
-  font-size: 1em; /* Ajuste na fonte para tornar mais legível */
-  border-top: 1px solid var(--light); /* Usando cor clara para o topo da borda */
-  padding-top: 15px;
+  font-size: 1.1em; /* Aumenta um pouco o tamanho da fonte */
+  border-top: 1px solid var(--light); /* Borda clara */
+  padding-top: 20px;
 }
 
 .footer-bottom p {
@@ -843,7 +936,7 @@ p {
   margin-top: 15px;
   color: var(--light);
   text-decoration: none;
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 
 .footer-bottom .back-to-top:hover {
@@ -862,12 +955,7 @@ p {
   .footer-info {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
-  }
-
-  .footer-social {
-    justify-content: center;
-    margin-top: 20px;
+    margin-bottom: 40px;
   }
 
   .footer-logo {
@@ -877,24 +965,28 @@ p {
   .footer-bottom {
     text-align: center;
   }
+
+  .footer-social {
+    justify-content: center;
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 480px) {
-  /* Ajustes para telas muito pequenas */
   .footer-logo .logo-img {
-    width: 200px; /* Reduz o tamanho do logo em telas pequenas */
+    width: 180px; /* Logo menor em telas pequenas */
   }
 
   .footer-info-item {
-    font-size: 0.85em; /* Ajuste na fonte para telas pequenas */
+    font-size: 0.9em; /* Ajuste de fonte para telas pequenas */
   }
 
   .footer-social .social-icon {
-    font-size: 1.2em; /* Ajuste de ícones para melhor visualização em dispositivos móveis */
+    font-size: 1.4em; /* Ícones maiores em telas pequenas */
   }
 
   .footer-bottom .back-to-top {
-    font-size: 1.2em; /* Ajuste de fonte para o link de voltar ao topo */
+    font-size: 1.3em; /* Ajuste da fonte do link de voltar ao topo */
   }
 }
 
@@ -913,6 +1005,7 @@ p {
   animation: fadeIn 1s ease-out;
 }
 
+
 .estatisticas-container {
   display: flex;
   justify-content: space-around;
@@ -922,6 +1015,7 @@ p {
   gap: 40px;
   margin-bottom: 30px;
 }
+
 
 .estatistica {
   flex: 1;
@@ -934,11 +1028,13 @@ p {
   animation: slideIn 0.8s ease-out forwards;
 }
 
+
 .estatistica i {
   font-size: 3em;
   color: var(--light); /* Texto claro para ícones */
   margin-bottom: 10px;
 }
+
 
 .estatistica h3 {
   font-size: 3.5em;
@@ -949,6 +1045,7 @@ p {
   animation: fadeInNumber 1.5s ease-out forwards;
 }
 
+
 .estatistica p {
   font-size: 1.1em;
   color: var(--dark); /* Texto escuro */
@@ -956,17 +1053,21 @@ p {
   animation: fadeInText 1.5s ease-out forwards;
 }
 
+
 .estatistica:nth-child(1) {
   animation-delay: 0.3s;
 }
+
 
 .estatistica:nth-child(2) {
   animation-delay: 0.5s;
 }
 
+
 .estatistica:nth-child(3) {
   animation-delay: 0.7s;
 }
+
 
 /* Animações */
 @keyframes fadeIn {
@@ -980,6 +1081,7 @@ p {
   }
 }
 
+
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -991,6 +1093,7 @@ p {
   }
 }
 
+
 @keyframes fadeInNumber {
   0% {
     opacity: 0;
@@ -999,6 +1102,7 @@ p {
     opacity: 1;
   }
 }
+
 
 @keyframes fadeInText {
   0% {
@@ -1009,39 +1113,30 @@ p {
   }
 }
 
+
 /* Responsividade */
 @media (max-width: 768px) {
   .estatisticas-container {
     flex-direction: column;
   }
 
+
   .estatistica {
     margin-bottom: 30px;
   }
+
 
   .estatistica i {
     font-size: 2.5em;
   }
 
+
   .estatistica h3 {
     font-size: 2em;
   }
+
 
   .estatistica p {
     font-size: 1em;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
