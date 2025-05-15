@@ -192,54 +192,19 @@ p {
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-  /* Ajustes para a CTA Box */
   .cta-box {
-    padding: 15px 20px;
-    top: 65%; /* Ajusta a posição para telas menores */
-    width: 80%; /* Aumenta a largura para telas pequenas */
-    max-width: 500px; /* Limita a largura máxima da caixa */
+    padding: 20px 30px;
+    top: 65%; /* Ajuste da posição para telas menores */
   }
 
   .cta-box h3 {
-    font-size: 2.2em; /* Diminui o tamanho do título em telas pequenas */
+    font-size: 2em;
   }
 
   .cta-box p {
-    font-size: 1.2em; /* Ajusta o tamanho da fonte do parágrafo */
-  }
-
-  /* Ajusta o banner */
-  .banner-text h2 {
-    font-size: 2em; /* Reduz o tamanho do texto do banner */
-  }
-
-  .banner {
-    height: 500px; /* Diminui a altura do banner em telas menores */
+    font-size: 1.2em;
   }
 }
-
-/* Responsividade para telas muito pequenas (por exemplo, smartphones) */
-@media (max-width: 480px) {
-  /* Ajustes para a CTA Box */
-  .cta-box {
-    padding: 10px 15px;
-    top: 60%;
-    width: 90%; /* Aumenta a largura para dispositivos muito pequenos */
-    max-width: 400px; /* Limita o tamanho máximo da caixa */
-  }
-
-  .cta-box h3 {
-    font-size: 1.8em; /* Título menor em telas muito pequenas */
-  }
-
-  .cta-box p {
-    font-size: 1.1em; /* Tamanho de texto reduzido para celulares */
-  }
-
-  /* Ajusta o banner */
-  .banner-text h2 {
-    font-size: 1.5em; /* Texto me*
-
 
 
 
@@ -661,13 +626,12 @@ p {
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-  /* Ajuste na estrutura do carrossel */
   .carousel-wrapper {
     flex-direction: column;
     gap: 20px;
   }
 
-  /* Ajusta o carrossel para largura total */
+
   .carousel-slider {
     width: 100%;
     max-width: 100%;
@@ -675,25 +639,26 @@ p {
     overflow: hidden;
   }
 
-  /* Ajuste para o conteúdo das imagens do carrossel */
+
   .slider-track {
     width: 100%;
   }
+
 
   .slider-track img {
     width: 100%;
     object-fit: cover;
     display: block;
-    margin-right: 0; /* Remove o espaço entre as imagens */
+    margin-right: 0;
   }
 
-  /* Ajuste no tamanho dos botões de navegação */
+
   .slider-nav {
     font-size: 1.5rem;
     padding: 10px;
   }
 
-  /* Ajuste na posição dos indicadores */
+
   .slider-indicators {
     position: absolute;
     bottom: 10px;
@@ -705,13 +670,17 @@ p {
     margin: 0;
   }
 
-  /* Ajuste no tamanho dos indicadores */
+
   .slider-indicators .indicator {
     width: 10px;
     height: 10px;
     border-radius: 50%;
   }
 }
+
+
+
+
 
 
 
