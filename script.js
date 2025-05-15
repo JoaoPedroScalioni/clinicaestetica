@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let userInteracted = false;
     let interactionTimeout;
 
+
     // Cria os indicadores
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('div');
@@ -26,11 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const indicators = indicatorsContainer.querySelectorAll('.indicator');
 
+
     const updateIndicators = () => {
       indicators.forEach((dot, idx) => {
         dot.classList.toggle('active', idx === index);
       });
     };
+
 
     const updateSlider = () => {
       // Pega a margem direita definida via CSS
@@ -40,16 +43,18 @@ document.addEventListener('DOMContentLoaded', function () {
       slider.style.transform = `translateX(-${index * slideWidth}px)`;
       updateIndicators();
     };
-    
+   
     const showNextSlide = () => {
       index = (index + 1) % totalSlides;
       updateSlider();
     };
 
+
     const showPrevSlide = () => {
       index = (index - 1 + totalSlides) % totalSlides;
       updateSlider();
     };
+
 
     const startInterval = () => {
       slideInterval = setInterval(() => {
@@ -58,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }, 5000);
     };
+
 
     const delayAutoplayAfterInteraction = () => {
       userInteracted = true;
@@ -69,27 +75,33 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 6000);
     };
 
+
     prevBtn.addEventListener('click', () => {
       showPrevSlide();
       delayAutoplayAfterInteraction();
     });
+
 
     nextBtn.addEventListener('click', () => {
       showNextSlide();
       delayAutoplayAfterInteraction();
     });
 
+
     const resizeObserver = new ResizeObserver(() => updateSlider());
     resizeObserver.observe(slider);
+
 
     carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
     carousel.addEventListener('mouseleave', () => {
       if (!userInteracted) startInterval();
     });
 
+
     updateSlider();
     startInterval();
   });
+
 
   // === Carrossel de Depoimentos ===
   document.querySelectorAll('[data-review-carousel]').forEach(carousel => {
@@ -103,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let userInteracted = false;
     let interactionTimeout;
 
+
     const updateReviewSlider = () => {
       // Pega a margem direita definida via CSS para a review-card
       const cardStyle = getComputedStyle(reviewCards[0]);
@@ -111,15 +124,18 @@ document.addEventListener('DOMContentLoaded', function () {
       slider.style.transform = `translateX(-${index * slideWidth}px)`;
     };
 
+
     const showNextReview = () => {
       index = (index + 1) % totalReviews;
       updateReviewSlider();
     };
 
+
     const showPrevReview = () => {
       index = (index - 1 + totalReviews) % totalReviews;
       updateReviewSlider();
     };
+
 
     const startReviewInterval = () => {
       slideInterval = setInterval(() => {
@@ -128,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }, 6000);
     };
+
 
     const delayReviewAutoplay = () => {
       userInteracted = true;
@@ -139,15 +156,18 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 7000);
     };
 
+
     nextBtn.addEventListener('click', () => {
       showNextReview();
       delayReviewAutoplay();
     });
 
+
     prevBtn.addEventListener('click', () => {
       showPrevReview();
       delayReviewAutoplay();
     });
+
 
     window.addEventListener('resize', updateReviewSlider);
     carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
@@ -155,10 +175,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!userInteracted) startReviewInterval();
     });
 
+
     updateReviewSlider();
     startReviewInterval();
   });
 });
+
 
 // Adicionando animação ao cabeçalho fixo quando o usuário rolar a página
 document.addEventListener('scroll', function () {
@@ -170,6 +192,7 @@ document.addEventListener('scroll', function () {
   }
 });
 
+
 // Adicionando animação ao botão de voltar ao topo
 const backToTopBtn = document.querySelector('.back-to-top');
 window.addEventListener('scroll', function () {
@@ -180,9 +203,11 @@ window.addEventListener('scroll', function () {
   }
 });
 
+
 // Adicionando animação ao cabeçalho fixo
 document.addEventListener("DOMContentLoaded", () => {
   const estatisticas = document.querySelectorAll('.estatistica');
+
 
   // Opções de configuração para o IntersectionObserver
   const options = {
@@ -190,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rootMargin: '0px',
     threshold: 0.5 // Dispara quando 50% do elemento estiver visível
   };
+
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -200,6 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, options);
+
 
   // Começa a observar os itens
   estatisticas.forEach(estatistica => {
