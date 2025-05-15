@@ -83,12 +83,12 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.05);
+  transform: scale(1.0);
 }
 
 .banner-text {
   position: absolute;
-  bottom: 20%;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -289,36 +289,25 @@ p {
   padding: 50px 20px;
   color: var(--light); /* Texto claro */
   text-align: center;
-  background: linear-gradient(50deg, var(--secondary) 40%, var(--accent) 60%); /* Dourado e verde claro */
+  background: linear-gradient(135deg, #6a855a, #C6A964); /* Gradiente suave de verde */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
+  border-radius: 15px; /* Bordas arredondadas */
   overflow: hidden;
+  z-index: 1;
 }
 
-.redes-sociais::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: repeating-linear-gradient(
-    135deg,
-    transparent 0,
-    transparent 10px,
-    rgba(209, 231, 212, 0.4) 10px,
-    rgba(209, 231, 212, 0.4) 20px
-  );
-  pointer-events: none;
-  z-index: 0;
-  animation: slidePattern 60s linear infinite;
-}
-
+/* Título */
 .redes-sociais h2 {
-  font-size: 2.2em;
+  font-size: 2.5em;
   margin-bottom: 30px;
   position: relative;
   z-index: 2;
+  color: var(--light);
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
+/* Container das redes sociais */
 .social-container {
   display: flex;
   justify-content: center;
@@ -337,12 +326,19 @@ p {
   height: 120px;
   border-radius: 50%;
   text-decoration: none;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
   background-color: var(--primary); /* Verde escuro */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
   z-index: 3;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+/* Efeito de Glow (brilho) nos ícones das redes sociais */
+.social-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.3); /* Aumenta o brilho */
 }
 
 .social-img {
@@ -350,6 +346,12 @@ p {
   height: 50px;
   object-fit: contain;
   margin-bottom: 8px;
+  transition: filter 0.3s ease;
+}
+
+/* Efeito de glow nos ícones */
+.social-card:hover .social-img {
+  filter: brightness(1.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Brilho intenso ao passar o mouse */
 }
 
 .social-card span {
@@ -359,11 +361,7 @@ p {
   text-align: center;
 }
 
-.social-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
+/* Cores de fundo para as redes sociais */
 .social-card.instagram {
   background: radial-gradient(circle, #fdf497, #fd5949, #285aeb); /* Instagram */
 }
@@ -397,6 +395,9 @@ p {
 
 
 
+
+/* ========= Carrossel (Resultados) ========= */
+/* ========= Carrossel (Resultados) ========= */
 /* ========= Carrossel (Galeria de Resultados) ========= */
 .carrossel {
   padding: 60px 20px;
@@ -498,27 +499,24 @@ p {
   transform: scale(1.05);
 }
 
-/* Setas de Navegação */
 .slider-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0); /* Fundo suave para as setas */
+  background: rgba(255, 255, 255, 0.9);
   border: none;
   font-size: 2rem;
-  padding: 12px; /* Reduzindo o padding para tornar a seta menor */
+  padding: 15px;
   cursor: pointer;
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.7; /* Opacidade reduzida para não atrapalhar as imagens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .slider-nav:hover {
-  background: rgba(255, 255, 255, 0.9); /* Aumenta a opacidade quando o mouse passa */
-  transform: scale(1.15); /* Aumento sutil nas setas */
-  opacity: 1; /* Opacidade total no hover */
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.2);
 }
 
 .slider-nav.prev {
@@ -618,43 +616,18 @@ p {
 
 
 
+
+
+
 /* ========= Seção de Avaliações / Depoimentos (Reviews) ========= */
 .reviews-container {
   position: relative;
   padding: 60px 20px;
-  background: linear-gradient(50deg, var(--secondary) 40%, var(--accent) 60%); /* Dourado e verde claro */
+  background: linear-gradient(135deg, #6a855a, #C6A964); /* Gradiente suave de verde */
   text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
+
   overflow: hidden;
-}
-
-/* Camada extra com linhas diagonais animadas */
-.reviews-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: repeating-linear-gradient(
-    135deg,
-    transparent 0,
-    transparent 10px,
-    rgba(209, 231, 212, 0.4) 10px,
-    rgba(209, 231, 212, 0.4) 20px
-  );
-  pointer-events: none;
-  z-index: 0;
-  animation: slidePattern 60s linear infinite;
-}
-
-/* Animação para deslocar as linhas diagonalmente */
-@keyframes slidePattern {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(-50%, -50%);
-  }
 }
 
 /* Garante que o conteúdo interno fique acima da camada animada */
@@ -778,12 +751,11 @@ p {
 .footer-logo {
   flex: 1;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Adiciona margem para separar o logo do restante */
 }
 
 .footer-logo .logo-img {
-  width: 200px; /* Reduzido o tamanho da logo para 200px */
-  max-width: 100%; /* Garante que a logo nunca ultrapasse a largura máxima */
+  width: 250px; /* Ajuste no tamanho do logo */
 }
 
 .footer-info {
@@ -809,7 +781,7 @@ p {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 20px; /* Aumenta o espaçamento entre os ícones */
   align-items: center;
   padding-right: 20px;
   margin-bottom: 20px;
@@ -882,7 +854,7 @@ p {
 @media (max-width: 480px) {
   /* Ajustes para telas muito pequenas */
   .footer-logo .logo-img {
-    width: 160px; /* Reduzido para 160px em telas pequenas */
+    width: 200px; /* Reduz o tamanho do logo em telas pequenas */
   }
 
   .footer-info-item {
@@ -899,10 +871,16 @@ p {
 }
 
 
+
+
+
+
+
+
 /* Estilo da Seção de Estatísticas */
 .estatisticas {
   padding: 60px 20px;
-  background-color: var(--light); /* Bege claro */
+  background-color: var(--light); /* Beige claro (ou cor clara do seu site) */
   text-align: center;
   animation: fadeIn 1s ease-out;
 }
@@ -919,7 +897,7 @@ p {
 
 .estatistica {
   flex: 1;
-  background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Gradiente com verde escuro e dourado */
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Verde e dourado */
   border-radius: 15px;
   padding: 30px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -930,14 +908,14 @@ p {
 
 .estatistica i {
   font-size: 3em;
-  color: var(--accent); /* Cor de destaque */
+  color: var(--light); /* Texto claro para ícones */
   margin-bottom: 10px;
 }
 
 .estatistica h3 {
   font-size: 3.5em;
   font-weight: bold;
-  color: var(--dark); /* Texto escuro */
+  color: var(--dark); /* Cor escura para o título */
   margin-bottom: 5px;
   opacity: 0;
   animation: fadeInNumber 1.5s ease-out forwards;
@@ -945,7 +923,7 @@ p {
 
 .estatistica p {
   font-size: 1.1em;
-  color: #555;
+  color: var(--dark); /* Texto escuro */
   opacity: 0;
   animation: fadeInText 1.5s ease-out forwards;
 }
@@ -1014,15 +992,15 @@ p {
   }
 
   .estatistica i {
-    font-size: 2.5em; /* Ícones menores em dispositivos móveis */
+    font-size: 2.5em;
   }
 
   .estatistica h3 {
-    font-size: 2em; /* Ajuste no título para telas menores */
+    font-size: 2em;
   }
 
   .estatistica p {
-    font-size: 1em; /* Ajuste na descrição */
+    font-size: 1em;
   }
 }
 
