@@ -92,13 +92,13 @@ p {
   left: 50%;
   transform: translateX(-50%); /* Centraliza horizontalmente */
   background-color: #fff; /* Cor de fundo suave e neutra, definida como bege claro */
-  padding: 20px 30px; /* Reduzir o padding para diminuir o espaço interno */
+  padding: 15px 20px; /* Reduzir o padding para diminuir o espaço interno */
   border-radius: 20px; /* Cantos mais arredondados para suavizar */
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1); /* Sombra mais suave e mais forte para destacar a caixa */
   z-index: 9999; /* Garantir que a caixa sobreponha todos os elementos */
   text-align: center;
-  width: 60%; /* Reduzir a largura da caixa (antes estava 80%) */
-  max-width: 600px; /* Limita o tamanho máximo da caixa */
+  width: 40%; /* Reduzir a largura da caixa (antes estava 80%) */
+  max-width: 700px; /* Limita o tamanho máximo da caixa */
   transition: all 0.3s ease;
 }
 
@@ -373,7 +373,7 @@ p {
   transform: translateY(20px);
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
-  margin-top: 90px; /* Adiciona um espaço acima do container */
+  margin-top: 120px; /* Adiciona um espaço acima do container */
 }
 
 /* Animação fadeIn */
@@ -895,120 +895,144 @@ p {
   pointer-events: none;
 }
 
-/* ========= Responsividade ========= */
-
-/* Para telas grandes (monitores e desktops acima de 1200px) */
-@media (min-width: 1200px) {
-  .carousel-wrapper {
-    gap: 60px;
-    max-width: 1400px;
-  }
-
-  .carousel-description {
-    padding: 50px 40px;
-  }
-
-  .carousel-description h3 {
-    font-size: 2.5rem;
-  }
-
-  .carousel-description p {
-    font-size: 1.3rem;
-  }
-
-  .carousel-slider {
-    width: 1000px;
-  }
-
-  .slider-track img {
-    max-width: 500px;
-  }
-}
-
-/* Para notebooks (telas entre 1024px e 1200px) */
-@media (max-width: 1200px) and (min-width: 1024px) {
-  .carousel-wrapper {
-    gap: 40px;
-  }
-
-  .carousel-description {
-    padding: 40px 30px;
-  }
-
-  .carousel-description h3 {
-    font-size: 2.2rem;
-  }
-
-  .carousel-description p {
-    font-size: 1.2rem;
-  }
-
-  .carousel-slider {
-    width: 900px;
-  }
-
-  .slider-track img {
-    max-width: 450px;
-  }
-}
-
-/* Para tablets (telas entre 600px e 1024px) */
+/* Responsividade para dispositivos móveis */
 @media (max-width: 1024px) {
-  .carousel-wrapper {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .carousel-description {
-    width: 100%;
-    padding: 30px 20px;
-  }
-
-  .carousel-description h3 {
-    font-size: 2rem;
-  }
-
-  .carousel-description p {
-    font-size: 1.1rem;
-  }
-
-  .carousel-slider {
-    width: 100%;
-    padding: 0 10px;
-  }
-
-  .slider-track img {
-    max-width: 400px;
-  }
-}
-
-/* Para dispositivos móveis (telas abaixo de 600px) */
-@media (max-width: 600px) {
   .carousel-wrapper {
     flex-direction: column;
     gap: 20px;
   }
 
-  .carousel-description {
+  .carousel-slider {
     width: 100%;
-    padding: 20px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
   }
 
-  .carousel-description h3 {
-    font-size: 1.8rem;
+  .slider-track {
+    width: 100%;
   }
 
-  .carousel-description p {
-    font-size: 1rem;
+  .slider-track img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    margin-right: 0;
+  }
+
+  .slider-nav {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .slider-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+  }
+
+  .slider-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Seção Descrição */
+  .carousel-description {
+    padding: 20px 15px;
+    min-width: 250px; /* Ajuste para telas menores */
+  }
+
+  .carousel-description-content h3 {
+    font-size: 1.8rem; /* Tamanho reduzido */
+  }
+
+  .carousel-description-content p {
+    font-size: 1rem; /* Ajuste de fonte */
+  }
+
+  .carousel-wrapper {
+    flex-direction: column;
+    gap: 15px;
   }
 
   .carousel-slider {
     width: 100%;
-    padding: 0 10px;
+    max-width: 100%;
+    position: relative;
   }
 
   .slider-track img {
-    max-width: 350px;
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .slider-nav {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .slider-indicators {
+    bottom: 5px;
+  }
+
+  .slider-indicators .indicator {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-description {
+    padding: 15px 10px;
+    min-width: 200px;
+  }
+
+  .carousel-description-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .carousel-description-content p {
+    font-size: 0.9rem;
+  }
+
+  .carousel-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .carousel-slider {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .slider-track img {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider-nav {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
+
+  .slider-indicators {
+    bottom: 5px;
+    gap: 6px;
+  }
+
+  .slider-indicators .indicator {
+    width: 6px;
+    height: 6px;
   }
 }
 
