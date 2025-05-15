@@ -6,53 +6,48 @@
 }
 
 
+/* Variáveis de cores e fontes */
 :root {
-  --primary: linear-gradient(45deg, #111311, #427a45); /* Verde e Dourado */
-  --secondary: #C6A964;
-  --accent: #2E7D32;
-  --light: #e2ebe3;
-  --dark: #222222;
+  --primary: #6a855a; /* Verde mais escuro */
+  --secondary: #e1c699; /* Dourado */
+  --accent: #C6A964; /* Verde mais claro */
+  --light: #f0e4ca; /* Bege claro */
+  --dark: #222222; /* Preto suave */
   --font-heading: 'Montserrat', sans-serif; /* Fonte moderna para títulos */
-  --font-body: 'Roboto', sans-serif; /* Fonte limpa e legível para o corpo do texto */
-  --shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --font-body: 'Roboto', sans-serif; /* Fonte limpa para o corpo do texto */
 }
 
 
-/* Estilo do corpo */
-body {
-  font-family: var(--font-body);
+/* Ajuste nos botões */
+.cta-btn {
+  background-color: var(--secondary); /* Dourado */
   color: var(--dark);
-  line-height: 1.6;
-  font-size: 1rem;
-  background: linear-gradient(135deg, #C6A964 0%, #2E7D32 100%);
-  min-height: 100vh;
-  transition: background 0.3s ease;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
+.cta-btn:hover {
+  background-color: var(--accent); /* Verde claro */
+}
 
-/* Títulos */
+/* Ajuste nos títulos */
 h2, h3 {
   font-family: var(--font-heading);
-  color: var(--accent);
+  color: var(--primary); /* Verde mais escuro */
   font-size: 2.5em;
   text-align: center;
-  font-weight: 700;
 }
 
-
-h2 {
-  margin-bottom: 20px;
+/* Ajuste no background da página */
+body {
+  background-color: var(--light); /* Bege claro */
 }
 
-
-h3 {
-  font-size: 2em;
-}
-
-
-/* Scroll suave */
-html {
-  scroll-behavior: smooth;
+/* Cor de texto */
+p {
+  color: var(--dark); /* Preto suave para texto */
 }
 
 
@@ -60,7 +55,23 @@ html {
 
 
 
-/* ========= Banner ========= */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banner Responsivo</title>
+  <style>
+    /* Variáveis para cores e fontes */
+    :root {
+      --font-heading: 'Arial', sans-serif;
+      --accent: #FF5733;
+      --secondary: #C70039;
+      --dark: #333;
+      --light: #fff;
+    }
+    
+    /* ========= Banner ========= */
 .banner {
   position: relative;
   width: 100%;
@@ -81,7 +92,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.7); /* Fundo suave */
   padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -90,28 +101,30 @@ html {
 .banner-text h2 {
   font-family: var(--font-heading);
   font-size: 2.8em;
-  color: var(--accent);
+  color: var(--primary); /* Verde mais escuro */
+  margin: 0;
 }
 
 .banner-text .separator {
   width: 70%;
   height: 2px;
-  background: var(--secondary);
+  background: var(--secondary); /* Dourado */
   margin: 15px auto;
   border-radius: 5px;
 }
 
 .banner-text p {
   font-size: 1.4em;
-  color: var(--dark);
+  color: var(--dark); /* Texto escuro */
   margin-bottom: 20px;
 }
 
+/* Botão de Chamada para Ação */
 .cta-btn {
   display: inline-block;
   padding: 12px 30px;
-  background: var(--accent);
-  color: var(--light);
+  background: var(--accent); /* Verde claro */
+  color: var(--light); /* Texto claro */
   text-decoration: none;
   border-radius: 25px;
   font-size: 1.2em;
@@ -120,7 +133,7 @@ html {
 }
 
 .cta-btn:hover {
-  background: var(--secondary);
+  background: var(--secondary); /* Dourado */
   transform: scale(1.05);
 }
 
@@ -140,18 +153,19 @@ html {
   }
 
   .banner-text h2 {
-    font-size: 2.2em;
+    font-size: 2.2em; /* Ajuste no tamanho do título */
   }
 
   .banner-text p {
-    font-size: 1.2em;
+    font-size: 1.2em; /* Ajuste no tamanho do texto */
   }
 
   .cta-btn {
-    font-size: 1em;
-    padding: 10px 25px;
+    font-size: 1em; /* Ajuste no tamanho do botão */
+    padding: 10px 25px; /* Ajuste no tamanho do padding do botão */
   }
 }
+
 
 
 /* ========= Seção DESCRIÇÃO ========= */
@@ -160,7 +174,7 @@ html {
   justify-content: center;
   align-items: center;
   padding: 50px 20px;
-  background-color: #e2ebe3;
+  background-color: var(--light); /* Bege claro */
 }
 
 .descricao-container {
@@ -168,11 +182,11 @@ html {
   justify-content: space-between;
   max-width: 1200px;
   padding: 50px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.8); /* Fundo suave */
   border-radius: 15px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
   text-align: left;
-  border-left: 8px solid var(--secondary);
+  border-left: 8px solid var(--secondary); /* Dourado */
   transform: translateY(20px);
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
@@ -191,7 +205,7 @@ html {
 
 .descricao-container h2 {
   font-size: 2.5em;
-  color: var(--accent);
+  color: var(--primary); /* Verde mais escuro */
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -199,14 +213,14 @@ html {
 .separator {
   width: 60px;
   height: 3px;
-  background: var(--secondary);
+  background: var(--secondary); /* Dourado */
   margin: 15px 0;
   border-radius: 5px;
 }
 
 .descricao-container p {
   font-size: 1.25em;
-  color: #555;
+  color: var(--dark); /* Preto suave */
   line-height: 1.8;
   margin-bottom: 20px;
 }
@@ -268,13 +282,14 @@ html {
 
 
 
+
 /* Redes Sociais */
 .redes-sociais {
   position: relative;
   padding: 50px 20px;
-  color: var(--light);
+  color: var(--light); /* Texto claro */
   text-align: center;
-  background: linear-gradient(135deg, #cdd88c 40%, #96e4a1 80%);
+  background: linear-gradient(50deg, var(--secondary) 40%, var(--accent) 60%); /* Dourado e verde claro */
   overflow: hidden;
 }
 
@@ -326,7 +341,7 @@ html {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--primary); /* Verde escuro */
   z-index: 3;
 }
 
@@ -340,7 +355,7 @@ html {
 .social-card span {
   font-size: 1rem;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--light); /* Texto claro */
   text-align: center;
 }
 
@@ -350,15 +365,15 @@ html {
 }
 
 .social-card.instagram {
-  background: radial-gradient(circle, #fdf497, #fd5949, #285aeb);
+  background: radial-gradient(circle, #fdf497, #fd5949, #285aeb); /* Instagram */
 }
 
 .social-card.whatsapp {
-  background: #0ee95e;
+  background: #0ee95e; /* WhatsApp */
 }
 
 .social-card.gmail {
-  background: #D44638;
+  background: #D44638; /* Gmail */
 }
 
 /* Responsividade */
@@ -382,11 +397,10 @@ html {
 
 
 
-/* ========= Carrossel (Resultados) ========= */
-/* ========= Carrossel (Resultados) ========= */
+/* ========= Carrossel (Galeria de Resultados) ========= */
 .carrossel {
   padding: 60px 20px;
-  background: var(--light);
+  background: var(--light); /* Cor clara de fundo */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -405,8 +419,8 @@ html {
 
 .carousel-description {
   flex: 1;
-  background: var(--primary);
-  color: var(--light);
+  background: var(--primary); /* Verde escuro */
+  color: var(--light); /* Texto claro */
   padding: 40px 30px;
   border-radius: 24px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -425,7 +439,7 @@ html {
   font-family: var(--font-heading);
   font-size: 2.2rem;
   margin-bottom: 20px;
-  color: var(--accent);
+  color: var(--accent); /* Verde claro */
 }
 
 .carousel-description-content p {
@@ -455,7 +469,7 @@ html {
   overflow: hidden;
   border-radius: 24px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  background: var(--light);
+  background: var(--light); /* Fundo claro */
   width: 900px;
   max-width: 100%;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -484,24 +498,27 @@ html {
   transform: scale(1.05);
 }
 
+/* Setas de Navegação */
 .slider-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0); /* Fundo suave para as setas */
   border: none;
   font-size: 2rem;
-  padding: 15px;
+  padding: 12px; /* Reduzindo o padding para tornar a seta menor */
   cursor: pointer;
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.7; /* Opacidade reduzida para não atrapalhar as imagens */
 }
 
 .slider-nav:hover {
-  background: rgba(255, 255, 255, 1);
-  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.9); /* Aumenta a opacidade quando o mouse passa */
+  transform: scale(1.15); /* Aumento sutil nas setas */
+  opacity: 1; /* Opacidade total no hover */
 }
 
 .slider-nav.prev {
@@ -531,12 +548,12 @@ html {
 }
 
 .slider-indicators .indicator.active {
-  background: var(--accent);
+  background: var(--accent); /* Verde claro */
   transform: scale(1.2);
 }
 
 .slider-indicators .indicator:hover {
-  background: var(--accent);
+  background: var(--accent); /* Verde claro */
   transform: scale(1.3);
 }
 
@@ -546,7 +563,7 @@ html {
   right: 0;
   width: 50px;
   height: 100%;
-  background: linear-gradient(to right, transparent, var(--light));
+  background: linear-gradient(to right, transparent, var(--light)); /* Cor clara */
   z-index: 1;
   pointer-events: none;
 }
@@ -555,25 +572,25 @@ html {
 @media (max-width: 768px) {
   .carousel-wrapper {
     flex-direction: column;
-    gap: 20px; /* Ajusta o espaçamento entre os itens do carrossel */
+    gap: 20px;
   }
 
   .carousel-slider {
-    width: 100%; /* O carrossel ocupa 100% da largura */
+    width: 100%;
     max-width: 100%;
-    position: relative; /* Necessário para posicionar os elementos absolutos, como os indicadores */
-    overflow: hidden;   /* Impede que elementos excedam os limites do container */
+    position: relative;
+    overflow: hidden;
   }
 
   .slider-track {
-    width: 100%; /* A track ocupa toda a largura disponível */
+    width: 100%;
   }
 
   .slider-track img {
-    width: 100%; /* As imagens se ajustam à largura do carrossel */
+    width: 100%;
     object-fit: cover;
-    display: block;   /* Remove o espaço extra decorrente do comportamento inline das imagens */
-    margin-right: 0;  /* Garante que não haja margem à direita interferindo */
+    display: block;
+    margin-right: 0;
   }
 
   .slider-nav {
@@ -581,20 +598,19 @@ html {
     padding: 10px;
   }
 
-  /* Indicadores centralizados e sem tomar espaço extra */
   .slider-indicators {
     position: absolute;
     bottom: 10px;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: center; /* Centraliza os indicadores horizontalmente */
+    justify-content: center;
     gap: 8px;
-    margin: 0; /* Remove margens que possam afetar o posicionamento */
+    margin: 0;
   }
 
   .slider-indicators .indicator {
-    width: 10px;  /* Diminuindo o tamanho para mobile */
+    width: 10px;
     height: 10px;
     border-radius: 50%;
   }
@@ -602,14 +618,13 @@ html {
 
 
 
-
 /* ========= Seção de Avaliações / Depoimentos (Reviews) ========= */
 .reviews-container {
   position: relative;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #cdd88c 40%, #96e4a1 80%);
+  background: linear-gradient(50deg, var(--secondary) 40%, var(--accent) 60%); /* Dourado e verde claro */
   text-align: center;
-  overflow: hidden; /* Impede que o pseudo-elemento ultrapasse os limites */
+  overflow: hidden;
 }
 
 /* Camada extra com linhas diagonais animadas */
@@ -618,7 +633,7 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;  /* Expandindo a área para possibilitar um movimento fluido */
+  width: 200%;
   height: 200%;
   background: repeating-linear-gradient(
     135deg,
@@ -627,7 +642,7 @@ html {
     rgba(209, 231, 212, 0.4) 10px,
     rgba(209, 231, 212, 0.4) 20px
   );
-  pointer-events: none; /* Não impede a interação com o conteúdo */
+  pointer-events: none;
   z-index: 0;
   animation: slidePattern 60s linear infinite;
 }
@@ -648,11 +663,10 @@ html {
   z-index: 1;
 }
 
-
 .reviews-title {
   font-size: 1.8rem;
   margin-bottom: 40px;
-  color: #333;
+  color: var(--dark); /* Texto escuro */
 }
 
 .review-cards-wrapper {
@@ -663,9 +677,9 @@ html {
 }
 
 .review-card {
-  background: #fff;
+  background: var(--light); /* Fundo claro */
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -692,19 +706,19 @@ html {
   display: flex;
   justify-content: space-between;
   font-size: 0.95rem;
-  color: #444;
+  color: var(--dark); /* Texto escuro */
   margin-bottom: 8px;
 }
 
 .review-stars {
-  color: #f8c12e;
+  color: #f8c12e; /* Amarelo para estrelas */
   font-size: 1rem;
   margin-bottom: 8px;
 }
 
 .review-text {
   font-size: 0.95rem;
-  color: #333;
+  color: var(--dark); /* Texto escuro */
 }
 
 .review-google-icon {
@@ -715,7 +729,6 @@ html {
   right: 20px;
   bottom: 20px;
 }
-
 
 /* Botões do carrossel de reviews */
 .review-nav {
@@ -745,73 +758,80 @@ html {
   right: 10px;
 }
 
-/* ===== Estilo do Rodapé ===== */
+
 /* ===== Estilo do Rodapé ===== */
 .footer {
-  background: #202020;
-  color: #ffffff;
-  padding: 30px 20px;
+  background: var(--primary); /* Verde escuro */
+  color: var(--light); /* Texto claro */
+  padding: 40px 20px;
   text-align: center;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .footer-logo {
   flex: 1;
   text-align: left;
+  margin-bottom: 20px;
 }
 
 .footer-logo .logo-img {
-  width: 150px;
+  width: 200px; /* Reduzido o tamanho da logo para 200px */
+  max-width: 100%; /* Garante que a logo nunca ultrapasse a largura máxima */
 }
 
 .footer-info {
   flex: 2;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px; /* Ajuste para espaçamento mais equilibrado */
+  margin-bottom: 20px;
 }
 
 .footer-info-item {
-  max-width: 250px;
-  font-size: 0.9em;
+  max-width: 220px;
+  font-size: 0.95em; /* Ajuste para fontes mais suaves */
 }
 
 .footer-info-item strong {
   font-weight: bold;
+  color: var(--secondary); /* Destaca as palavras-chave */
 }
 
 .footer-social {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  gap: 15px; /* Ajuste para diminuir o espaço entre os ícones */
+  gap: 20px;
   align-items: center;
   padding-right: 20px;
+  margin-bottom: 20px;
 }
 
 .footer-social .social-icon {
-  color: #ffffff;
-  font-size: 1.5em; /* Ícones pequenos */
+  color: var(--light); /* Ícones brancos */
+  font-size: 1.3em; /* Ajuste nos tamanhos para ícones intermediários */
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social .social-icon:hover {
-  color: #C6A964;
-  transform: scale(1.1); /* Efeito de aumento suave ao passar o mouse */
+  color: var(--secondary); /* Dourado */
+  transform: scale(1.2); /* Efeito de aumento suave ao passar o mouse */
 }
 
 .footer-bottom {
   margin-top: 30px;
-  font-size: 0.9em;
-  border-top: 1px solid #444;
-  padding-top: 10px;
+  font-size: 1em; /* Ajuste na fonte para tornar mais legível */
+  border-top: 1px solid var(--light); /* Usando cor clara para o topo da borda */
+  padding-top: 15px;
 }
 
 .footer-bottom p {
@@ -820,14 +840,14 @@ html {
 
 .footer-bottom .back-to-top {
   display: inline-block;
-  margin-top: 10px;
-  color: #ffffff;
+  margin-top: 15px;
+  color: var(--light);
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .footer-bottom .back-to-top:hover {
-  color: #C6A964;
+  color: var(--secondary); /* Dourado */
   transform: scale(1.1);
 }
 
@@ -842,7 +862,7 @@ html {
   .footer-info {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .footer-social {
@@ -850,22 +870,39 @@ html {
     margin-top: 20px;
   }
 
+  .footer-logo {
+    text-align: center;
+  }
+
   .footer-bottom {
     text-align: center;
   }
 }
 
+@media (max-width: 480px) {
+  /* Ajustes para telas muito pequenas */
+  .footer-logo .logo-img {
+    width: 160px; /* Reduzido para 160px em telas pequenas */
+  }
 
+  .footer-info-item {
+    font-size: 0.85em; /* Ajuste na fonte para telas pequenas */
+  }
 
+  .footer-social .social-icon {
+    font-size: 1.2em; /* Ajuste de ícones para melhor visualização em dispositivos móveis */
+  }
 
-
-
+  .footer-bottom .back-to-top {
+    font-size: 1.2em; /* Ajuste de fonte para o link de voltar ao topo */
+  }
+}
 
 
 /* Estilo da Seção de Estatísticas */
 .estatisticas {
   padding: 60px 20px;
-  background-color: #e2ebe3;
+  background-color: var(--light); /* Bege claro */
   text-align: center;
   animation: fadeIn 1s ease-out;
 }
@@ -882,7 +919,7 @@ html {
 
 .estatistica {
   flex: 1;
-  background: linear-gradient(135deg, #e2ebd9, #d4db74);
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Gradiente com verde escuro e dourado */
   border-radius: 15px;
   padding: 30px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -900,7 +937,7 @@ html {
 .estatistica h3 {
   font-size: 3.5em;
   font-weight: bold;
-  color: #222;
+  color: var(--dark); /* Texto escuro */
   margin-bottom: 5px;
   opacity: 0;
   animation: fadeInNumber 1.5s ease-out forwards;
@@ -977,17 +1014,18 @@ html {
   }
 
   .estatistica i {
-    font-size: 2.5em;
+    font-size: 2.5em; /* Ícones menores em dispositivos móveis */
   }
 
   .estatistica h3 {
-    font-size: 2em;
+    font-size: 2em; /* Ajuste no título para telas menores */
   }
 
   .estatistica p {
-    font-size: 1em;
+    font-size: 1em; /* Ajuste na descrição */
   }
 }
+
 
 
 
