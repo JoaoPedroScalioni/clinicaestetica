@@ -147,90 +147,113 @@ p {
   transform: translateY(-5px); /* Efeito de subir um pouco o texto ao passar o mouse */
 }
 
-/* Responsividade para dispositivos móveis */
+/* ========= Responsividade ========= */
+
+/* Para telas grandes (desktops e monitores) */
+@media (min-width: 1200px) {
+  .banner {
+    height: 800px; /* Aumentar a altura do banner para telas grandes */
+  }
+
+  .cta-box {
+    width: 50%; /* Tornar a caixa mais estreita em telas grandes */
+    top: 60%; /* Ajustar a posição da caixa */
+  }
+
+  .cta-box h3 {
+    font-size: 3em; /* Aumentar o tamanho do título */
+  }
+
+  .cta-box p {
+    font-size: 1.6em; /* Aumentar o tamanho do texto */
+  }
+
+  .cta-button {
+    font-size: 1.5em; /* Aumentar o tamanho do botão */
+    padding: 18px 35px; /* Aumentar o padding do botão */
+  }
+}
+
+/* Para notebooks (telas com largura entre 1024px e 1200px) */
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .banner {
+    height: 650px; /* Reduzir altura do banner para telas menores que monitores grandes */
+  }
+
+  .cta-box {
+    width: 55%; /* Ajustar a largura da caixa */
+    top: 58%; /* Ajustar a posição da caixa */
+  }
+
+  .cta-box h3 {
+    font-size: 2.8em; /* Ajustar o tamanho do título */
+  }
+
+  .cta-box p {
+    font-size: 1.4em; /* Ajustar o tamanho do texto */
+  }
+
+  .cta-button {
+    font-size: 1.4em; /* Ajustar o tamanho do botão */
+    padding: 15px 30px; /* Ajustar o padding */
+  }
+}
+
+/* Para tablets (dispositivos com largura entre 600px e 1024px) */
 @media (max-width: 1024px) {
   .banner {
-    height: 600px; /* Ajuste a altura do banner para telas médias */
-  }
-
-  .banner-text h2 {
-    font-size: 2.2em; /* Reduz o tamanho do título para telas médias */
+    height: 500px; /* Reduzir altura para tablets */
   }
 
   .cta-box {
-    width: 80%; /* Aumenta a largura da caixa para telas médias */
-    top: 65%; /* Ajuste da posição */
+    width: 80%; /* Aumentar a largura da caixa para tablets */
+    top: 50%; /* Ajustar a posição da caixa */
   }
 
   .cta-box h3 {
-    font-size: 2.2em;
+    font-size: 2.5em; /* Ajustar o tamanho do título */
   }
 
   .cta-box p {
-    font-size: 1.3em;
+    font-size: 1.2em; /* Ajustar o tamanho do texto */
   }
 
   .cta-button {
-    font-size: 1.3em;
-    padding: 12px 25px;
+    font-size: 1.2em; /* Ajustar o tamanho do botão */
+    padding: 12px 25px; /* Ajustar o padding do botão */
   }
 }
 
-@media (max-width: 768px) {
+/* Para dispositivos móveis (dispositivos com largura até 600px) */
+@media (max-width: 600px) {
   .banner {
-    height: 500px; /* Ajuste o banner para telas menores */
+    height: 300px; /* Diminuir altura do banner */
   }
 
   .banner-text h2 {
-    font-size: 1.8em; /* Ajusta o título para uma melhor visualização em dispositivos menores */
+    font-size: 2em; /* Reduzir o tamanho da fonte do título */
   }
 
   .cta-box {
-    width: 85%; /* Caixa ocupa mais espaço */
-    top: 70%; /* Ajuste da posição para telas menores */
+    width: 90%; /* Aumentar a largura da caixa */
+    top: 40%; /* Ajustar a posição da caixa */
+    padding: 15px 20px; /* Diminuir o padding para telas pequenas */
   }
 
   .cta-box h3 {
-    font-size: 2em;
+    font-size: 2em; /* Ajustar o tamanho do título */
   }
 
   .cta-box p {
-    font-size: 1.2em;
+    font-size: 1em; /* Ajustar o tamanho do texto */
   }
 
   .cta-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
+    font-size: 1.2em; /* Ajustar o tamanho do botão */
+    padding: 10px 20px; /* Ajustar o padding para telas pequenas */
   }
 }
 
-@media (max-width: 480px) {
-  .banner {
-    height: 400px; /* Reduz a altura para telas muito pequenas */
-  }
-
-  .banner-text h2 {
-    font-size: 1.6em; /* Título menor em telas muito pequenas */
-  }
-
-  .cta-box {
-    width: 90%; /* Caixa mais ampla */
-    top: 75%; /* Ajuste mais abaixo na tela */
-  }
-
-  .cta-box h3 {
-    font-size: 1.8em;
-  }
-
-  .cta-box p {
-    font-size: 1.1em;
-  }
-
-  .cta-button {
-    font-size: 1.1em;
-    padding: 10px 15px;
-  }
-}
 
 
 
@@ -323,6 +346,188 @@ p {
   flex-direction: column;
   justify-content: center;
 }
+
+
+/* ========= Seção DESCRIÇÃO ========= */
+.descricao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: var(--light); /* Bege claro */
+  overflow: visible; /* Garante que o overflow seja visível */
+}
+
+.descricao-container {
+  position: relative; /* Garante que o z-index da caixa funcione corretamente */
+  z-index: 1;
+  display: flex; /* Flexbox para alinhar imagem e texto lado a lado */
+  justify-content: space-between; /* Garantir que a imagem e o texto se distribuem ao longo da linha */
+  max-width: 1200px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  border-left: 8px solid var(--secondary);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  margin-top: 90px; /* Adiciona um espaço acima do container */
+}
+
+/* Animação fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.descricao-container h2 {
+  font-size: 2.5em;
+  color: var(--primary); /* Verde mais escuro */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.separator {
+  width: 60px;
+  height: 3px;
+  background: var(--secondary); /* Dourado */
+  margin: 15px 0;
+  border-radius: 5px;
+}
+
+.descricao-container p {
+  font-size: 1.25em;
+  color: var(--dark); /* Preto suave */
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify; /* Alinha o texto */
+  hyphens: auto; /* Quebra de palavras se necessário */
+}
+
+.descricao-imagem {
+  flex: 1; /* A imagem ocupa metade do espaço */
+  margin-right: 40px; /* Espaço entre a imagem e o texto */
+}
+
+.descricao-imagem img {
+  width: 100%;
+  max-width: 500px; /* Limita o tamanho máximo da imagem */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.descricao-imagem img:hover {
+  transform: scale(1.05);
+}
+
+.descricao-texto {
+  flex: 1.5; /* O texto ocupa mais espaço */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ========= Responsividade ========= */
+
+/* Para telas grandes (desktops e monitores) */
+@media (min-width: 1200px) {
+  .descricao-container {
+    padding: 70px;
+    max-width: 1400px; /* Maior largura para telas grandes */
+  }
+
+  .descricao-container h2 {
+    font-size: 3em; /* Aumenta o tamanho do título para telas maiores */
+  }
+
+  .descricao-container p {
+    font-size: 1.4em; /* Aumenta o tamanho do texto */
+  }
+
+  .descricao-imagem img {
+    max-width: 600px; /* Aumenta o tamanho máximo da imagem */
+  }
+}
+
+/* Para notebooks (telas com largura entre 1024px e 1200px) */
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .descricao-container {
+    padding: 60px;
+  }
+
+  .descricao-container h2 {
+    font-size: 2.8em; /* Ajusta o tamanho do título para telas médias */
+  }
+
+  .descricao-container p {
+    font-size: 1.3em; /* Ajusta o tamanho do texto */
+  }
+
+  .descricao-imagem img {
+    max-width: 550px; /* Ajusta o tamanho da imagem */
+  }
+}
+
+/* Para tablets (telas com largura entre 600px e 1024px) */
+@media (max-width: 1024px) {
+  .descricao {
+    flex-direction: column; /* Muda para layout de coluna */
+    padding: 40px 20px;
+  }
+
+  .descricao-container {
+    flex-direction: column; /* Organiza o texto e a imagem em coluna */
+    padding: 30px;
+  }
+
+  .descricao-container h2 {
+    font-size: 2.2em; /* Ajusta o tamanho do título */
+  }
+
+  .descricao-container p {
+    font-size: 1.2em; /* Ajusta o tamanho do texto */
+  }
+
+  .descricao-imagem {
+    margin-right: 0; /* Remove o espaço à direita da imagem */
+    margin-bottom: 20px; /* Adiciona margem inferior */
+  }
+
+  .descricao-imagem img {
+    max-width: 100%; /* Aumenta o tamanho da imagem */
+  }
+}
+
+/* Para dispositivos móveis (telas abaixo de 600px) */
+@media (max-width: 600px) {
+  .descricao-container {
+    padding: 20px;
+  }
+
+  .descricao-container h2 {
+    font-size: 2em; /* Ajusta o tamanho do título */
+  }
+
+  .descricao-container p {
+    font-size: 1.1em; /* Ajusta o tamanho do texto */
+  }
+
+  .descricao-imagem img {
+    max-width: 100%; /* Aumenta o tamanho da imagem */
+    border-radius: 8px; /* Diminui o arredondamento da borda para telas pequenas */
+  }
+}
+
 
 
 /* ========= Redes Sociais ========= */
@@ -690,144 +895,120 @@ p {
   pointer-events: none;
 }
 
-/* Responsividade para dispositivos móveis */
+/* ========= Responsividade ========= */
+
+/* Para telas grandes (monitores e desktops acima de 1200px) */
+@media (min-width: 1200px) {
+  .carousel-wrapper {
+    gap: 60px;
+    max-width: 1400px;
+  }
+
+  .carousel-description {
+    padding: 50px 40px;
+  }
+
+  .carousel-description h3 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-description p {
+    font-size: 1.3rem;
+  }
+
+  .carousel-slider {
+    width: 1000px;
+  }
+
+  .slider-track img {
+    max-width: 500px;
+  }
+}
+
+/* Para notebooks (telas entre 1024px e 1200px) */
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .carousel-wrapper {
+    gap: 40px;
+  }
+
+  .carousel-description {
+    padding: 40px 30px;
+  }
+
+  .carousel-description h3 {
+    font-size: 2.2rem;
+  }
+
+  .carousel-description p {
+    font-size: 1.2rem;
+  }
+
+  .carousel-slider {
+    width: 900px;
+  }
+
+  .slider-track img {
+    max-width: 450px;
+  }
+}
+
+/* Para tablets (telas entre 600px e 1024px) */
 @media (max-width: 1024px) {
+  .carousel-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .carousel-description {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .carousel-description h3 {
+    font-size: 2rem;
+  }
+
+  .carousel-description p {
+    font-size: 1.1rem;
+  }
+
+  .carousel-slider {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .slider-track img {
+    max-width: 400px;
+  }
+}
+
+/* Para dispositivos móveis (telas abaixo de 600px) */
+@media (max-width: 600px) {
   .carousel-wrapper {
     flex-direction: column;
     gap: 20px;
   }
 
-  .carousel-slider {
-    width: 100%;
-    max-width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .slider-track {
-    width: 100%;
-  }
-
-  .slider-track img {
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    margin-right: 0;
-  }
-
-  .slider-nav {
-    font-size: 1.5rem;
-    padding: 10px;
-  }
-
-  .slider-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 0;
-  }
-
-  .slider-indicators .indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Seção Descrição */
   .carousel-description {
-    padding: 20px 15px;
-    min-width: 250px; /* Ajuste para telas menores */
+    width: 100%;
+    padding: 20px;
   }
 
-  .carousel-description-content h3 {
-    font-size: 1.8rem; /* Tamanho reduzido */
+  .carousel-description h3 {
+    font-size: 1.8rem;
   }
 
-  .carousel-description-content p {
-    font-size: 1rem; /* Ajuste de fonte */
-  }
-
-  .carousel-wrapper {
-    flex-direction: column;
-    gap: 15px;
+  .carousel-description p {
+    font-size: 1rem;
   }
 
   .carousel-slider {
     width: 100%;
-    max-width: 100%;
-    position: relative;
+    padding: 0 10px;
   }
 
   .slider-track img {
-    width: 100%;
-    height: auto;
-    margin-right: 0;
-  }
-
-  .slider-nav {
-    font-size: 1.5rem;
-    padding: 10px;
-  }
-
-  .slider-indicators {
-    bottom: 5px;
-  }
-
-  .slider-indicators .indicator {
-    width: 8px;
-    height: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-description {
-    padding: 15px 10px;
-    min-width: 200px;
-  }
-
-  .carousel-description-content h3 {
-    font-size: 1.6rem;
-  }
-
-  .carousel-description-content p {
-    font-size: 0.9rem;
-  }
-
-  .carousel-wrapper {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .carousel-slider {
-    width: 100%;
-    max-width: 100%;
-    position: relative;
-  }
-
-  .slider-track img {
-    width: 100%;
-    height: auto;
-  }
-
-  .slider-nav {
-    font-size: 1.2rem;
-    padding: 8px;
-  }
-
-  .slider-indicators {
-    bottom: 5px;
-    gap: 6px;
-  }
-
-  .slider-indicators .indicator {
-    width: 6px;
-    height: 6px;
+    max-width: 350px;
   }
 }
 
