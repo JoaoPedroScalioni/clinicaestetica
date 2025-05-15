@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
       updateIndicators();
     };
     
-
     const showNextSlide = () => {
       index = (index + 1) % totalSlides;
       updateSlider();
@@ -82,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const resizeObserver = new ResizeObserver(() => updateSlider());
     resizeObserver.observe(slider);
-        carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+
+    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
     carousel.addEventListener('mouseleave', () => {
       if (!userInteracted) startInterval();
     });
@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const slideWidth = reviewCards[0].offsetWidth + marginRight;
       slider.style.transform = `translateX(-${index * slideWidth}px)`;
     };
-    
 
     const showNextReview = () => {
       index = (index + 1) % totalReviews;
@@ -170,24 +169,18 @@ document.addEventListener('scroll', function () {
     header.classList.remove('scrolled');  // Remove a classe quando o topo da página é alcançado
   }
 });
+
 // Adicionando animação ao botão de voltar ao topo
 const backToTopBtn = document.querySelector('.back-to-top');
-
 window.addEventListener('scroll', function () {
   if (window.scrollY > 300) {  // Quando o usuário rola 300px para baixo
     backToTopBtn.classList.add('visible');  // Adiciona a classe que torna o botão visível
   } else {
     backToTopBtn.classList.remove('visible');  // Remove a classe quando o topo da página é alcançado
   }
-}
+});
 
-
-
-
-);
-
-
-
+// Adicionando animação ao cabeçalho fixo
 document.addEventListener("DOMContentLoaded", () => {
   const estatisticas = document.querySelectorAll('.estatistica');
 
