@@ -71,31 +71,33 @@ p {
       --light: #fff;
     }
     
-    /* ========= Banner ========= */
+/* ========= Banner ========= */
 .banner {
   position: relative;
   width: 100%;
-  height: 750px;
+  height: 750px; /* Altura maior para telas grandes */
   overflow: hidden;
+  z-index: 0; /* Garante que o banner fique abaixo das outras seções */
 }
 
 .banner img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(1.0);
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
+  transform: scale(1.05); /* Leve zoom na imagem para dar foco */
 }
 
 .banner-text {
   position: absolute;
-  bottom: 5%;
+  top: 50%; /* Centraliza verticalmente o texto */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%); /* Ajusta para o centro perfeito */
   text-align: center;
-  background: rgba(255, 255, 255, 0.7); /* Fundo suave */
+  background: rgba(255, 255, 255, 0.7); /* Fundo suave para contraste com a imagem */
   padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Garante que o texto fique acima da imagem */
 }
 
 .banner-text h2 {
@@ -144,27 +146,53 @@ p {
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   .banner {
-    height: 450px; /* Menor altura em dispositivos móveis */
+    height: 500px; /* Reduz a altura do banner em dispositivos móveis */
   }
 
   .banner-text {
-    bottom: 10%;
-    padding: 10px 15px;
+    bottom: 15%; /* Ajuste a posição do texto para não cobrir demais a imagem */
+    padding: 15px 20px; /* Reduz o padding para dispositivos móveis */
   }
 
   .banner-text h2 {
-    font-size: 2.2em; /* Ajuste no tamanho do título */
+    font-size: 2.2em; /* Ajusta o tamanho do título */
   }
 
   .banner-text p {
-    font-size: 1.2em; /* Ajuste no tamanho do texto */
+    font-size: 1.1em; /* Ajusta o tamanho do texto */
   }
 
   .cta-btn {
     font-size: 1em; /* Ajuste no tamanho do botão */
-    padding: 10px 25px; /* Ajuste no tamanho do padding do botão */
+    padding: 10px 25px; /* Ajuste no tamanho do botão */
   }
 }
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .banner {
+    height: 400px; /* Menor altura para telas muito pequenas */
+  }
+
+  .banner-text {
+    bottom: 20%; /* Ajusta a posição do texto para que ele não fique muito baixo */
+    padding: 10px 15px; /* Reduz ainda mais o padding */
+  }
+
+  .banner-text h2 {
+    font-size: 1.8em; /* Menor tamanho do título */
+  }
+
+  .banner-text p {
+    font-size: 1em; /* Menor tamanho do texto */
+  }
+
+  .cta-btn {
+    font-size: 0.9em; /* Menor tamanho do botão */
+    padding: 8px 20px; /* Menor padding do botão */
+  }
+}
+
 
 
 
