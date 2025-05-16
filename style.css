@@ -52,7 +52,7 @@ p {
 .banner {
   position: relative;
   width: 100%;
-  height: 600px; /* Altura ajustada para melhor responsividade */
+  height: 500px; /* Altura ajustada para melhor responsividade */
   overflow: hidden;
   z-index: 0;
 }
@@ -86,21 +86,20 @@ p {
 
 /* ========= Caixa "Cuide da Sua Beleza!" ========= */
 .cta-box {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   background-color: #fff;
-  padding: 10px 15px;
+  padding: 20px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
+  z-index: 1;
   text-align: center;
   width: 50%;
   max-width: 800px;
-  transition: all 0.3s ease;
-  top: 50%; /* Centraliza entre o banner e a descrição */
+  margin: 0 auto 30px; /* Centraliza a caixa e adiciona espaço abaixo dela */
+  top: -140px; /* Coloca a caixa ligeiramente acima do container */
 }
 
+/* Ajustes no texto da caixa */
 .cta-box h3 {
   font-size: 2.8em;
   color: var(--primary);
@@ -148,50 +147,11 @@ p {
 
 /* ========= Responsividade ========= */
 
-/* Para telas maiores que 1440px (desktop ultra grande) */
-@media (min-width: 1440px) {
+/* Para telas maiores que 1024px (notebooks e desktops grandes) */
+@media (min-width: 1024px) {
   .cta-box {
-    top: 50%; /* Centraliza a caixa entre o banner e a seção descrição */
-  }
-
-  .cta-box h3 {
-    font-size: 3em;
-  }
-
-  .cta-box p {
-    font-size: 1.6em;
-  }
-
-  .cta-button {
-    font-size: 1.5em;
-    padding: 18px 35px;
-  }
-}
-
-/* Para telas grandes (desktops e monitores) */
-@media (min-width: 1200px) and (max-width: 1439px) {
-  .cta-box {
-    top: 50%; /* Centraliza a caixa entre o banner e a seção descrição */
-  }
-
-  .cta-box h3 {
-    font-size: 3em;
-  }
-
-  .cta-box p {
-    font-size: 1.6em;
-  }
-
-  .cta-button {
-    font-size: 1.5em;
-    padding: 18px 35px;
-  }
-}
-
-/* Para notebooks (telas com largura entre 1024px e 1200px) */
-@media (max-width: 1200px) and (min-width: 1024px) {
-  .cta-box {
-    top: 52%; /* Ajustado para ficar mais centralizado em 1024x768 */
+    width: 50%; /* Deixa a caixa com 50% de largura */
+    margin-bottom: 40px; /* Espaço abaixo da caixa */
   }
 
   .cta-box h3 {
@@ -208,32 +168,11 @@ p {
   }
 }
 
-/* Para telas de 1024x768 */
-@media (max-width: 1024px) and (min-width: 768px) {
-  .cta-box {
-    top: 52%; /* Ajusta a posição para centralizar melhor em 1024x768 */
-  }
-}
-
-/* Para telas de 1440x900 */
-@media (max-width: 1440px) and (min-width: 900px) {
-  .cta-box {
-    top: 52%; /* Ajusta para centralizar a caixa entre o banner e a descrição */
-  }
-}
-
-/* Para telas 2560x1440 */
-@media (min-width: 2560px) {
-  .cta-box {
-    top: 48%; /* Ajuste para subir um pouco a caixa em 2560x1440 */
-  }
-}
-
-/* Para tablets (dispositivos com largura entre 600px e 1024px) */
+/* Para telas entre 600px e 1024px (tablets e telas médias) */
 @media (max-width: 1024px) {
   .cta-box {
-    top: 60%; /* Ajusta a posição da caixa */
-    width: 80%;
+    width: 80%; /* Deixa a caixa com 80% de largura */
+    margin-bottom: 30px; /* Ajusta o espaço abaixo da caixa */
   }
 
   .cta-box h3 {
@@ -250,20 +189,11 @@ p {
   }
 }
 
-/* Para dispositivos móveis (dispositivos com largura até 600px) */
+/* Para dispositivos móveis (menos de 600px) */
 @media (max-width: 600px) {
-  .banner {
-    height: 300px;
-  }
-
-  .banner-text h2 {
-    font-size: 1.8em;
-  }
-
   .cta-box {
-    width: 90%;
-    top: 40%;
-    padding: 15px 20px;
+    width: 90%; /* Deixa a caixa com 90% de largura */
+    margin-bottom: 20px; /* Ajusta o espaço abaixo da caixa */
   }
 
   .cta-box h3 {
@@ -280,9 +210,6 @@ p {
   }
 }
 
-
-
-
 /* ========= Seção DESCRIÇÃO ========= */
 .descricao {
   display: flex;
@@ -290,14 +217,15 @@ p {
   align-items: center;
   padding: 50px 20px;
   background-color: var(--light); /* Bege claro */
-  overflow: visible; /* Garante que o overflow seja visível */
+  overflow: visible;
+  flex-direction: column; /* Garante que a caixa e o container fiquem empilhados verticalmente */
 }
 
 .descricao-container {
-  position: relative; /* Garante que o z-index da caixa funcione corretamente */
+  position: relative;
   z-index: 1;
-  display: flex; /* Flexbox para alinhar imagem e texto lado a lado */
-  justify-content: space-between; /* Garantir que a imagem e o texto se distribuem ao longo da linha */
+  display: flex;
+  justify-content: space-between;
   max-width: 1200px;
   padding: 50px;
   background: rgba(255, 255, 255, 0.8);
@@ -308,10 +236,9 @@ p {
   transform: translateY(20px);
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
-  margin-top: 130px; /* Adiciona um espaço acima do container */
+  margin-top: -100px;
 }
 
-/* Animação fadeIn */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -325,7 +252,7 @@ p {
 
 .descricao-container h2 {
   font-size: 2.5em;
-  color: var(--primary); /* Verde mais escuro */
+  color: var(--primary);
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -343,18 +270,18 @@ p {
   color: var(--dark); /* Preto suave */
   line-height: 1.8;
   margin-bottom: 20px;
-  text-align: justify; /* Alinha o texto */
-  hyphens: auto; /* Quebra de palavras se necessário */
+  text-align: justify;
+  hyphens: auto;
 }
 
 .descricao-imagem {
-  flex: 1; /* A imagem ocupa metade do espaço */
-  margin-right: 40px; /* Espaço entre a imagem e o texto */
+  flex: 1;
+  margin-right: 40px;
 }
 
 .descricao-imagem img {
   width: 100%;
-  max-width: 500px; /* Limita o tamanho máximo da imagem */
+  max-width: 500px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   object-fit: cover;
@@ -366,192 +293,12 @@ p {
 }
 
 .descricao-texto {
-  flex: 1.5; /* O texto ocupa mais espaço */
+  flex: 1.5;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-
-/* ========= Seção DESCRIÇÃO ========= */
-.descricao {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
-  background-color: var(--light); /* Bege claro */
-  overflow: visible; /* Garante que o overflow seja visível */
-}
-
-.descricao-container {
-  position: relative; /* Garante que o z-index da caixa funcione corretamente */
-  z-index: 1;
-  display: flex; /* Flexbox para alinhar imagem e texto lado a lado */
-  justify-content: space-between; /* Garantir que a imagem e o texto se distribuem ao longo da linha */
-  max-width: 1200px;
-  padding: 50px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  border-left: 8px solid var(--secondary);
-  transform: translateY(20px);
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-  margin-top: 160px; /* Adiciona um espaço acima do container */
-}
-
-/* Animação fadeIn */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.descricao-container h2 {
-  font-size: 2.5em;
-  color: var(--primary); /* Verde mais escuro */
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.separator {
-  width: 60px;
-  height: 3px;
-  background: var(--secondary); /* Dourado */
-  margin: 15px 0;
-  border-radius: 5px;
-}
-
-.descricao-container p {
-  font-size: 1.25em;
-  color: var(--dark); /* Preto suave */
-  line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: justify; /* Alinha o texto */
-  hyphens: auto; /* Quebra de palavras se necessário */
-}
-
-.descricao-imagem {
-  flex: 1; /* A imagem ocupa metade do espaço */
-  margin-right: 40px; /* Espaço entre a imagem e o texto */
-}
-
-.descricao-imagem img {
-  width: 100%;
-  max-width: 500px; /* Limita o tamanho máximo da imagem */
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.descricao-imagem img:hover {
-  transform: scale(1.05);
-}
-
-.descricao-texto {
-  flex: 1.5; /* O texto ocupa mais espaço */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* ========= Responsividade ========= */
-
-/* Para telas grandes (desktops e monitores) */
-@media (min-width: 1200px) {
-  .descricao-container {
-    padding: 70px;
-    max-width: 1400px; /* Maior largura para telas grandes */
-  }
-
-  .descricao-container h2 {
-    font-size: 3em; /* Aumenta o tamanho do título para telas maiores */
-  }
-
-  .descricao-container p {
-    font-size: 1.4em; /* Aumenta o tamanho do texto */
-  }
-
-  .descricao-imagem img {
-    max-width: 600px; /* Aumenta o tamanho máximo da imagem */
-  }
-}
-
-/* Para notebooks (telas com largura entre 1024px e 1200px) */
-@media (max-width: 1200px) and (min-width: 1024px) {
-  .descricao-container {
-    padding: 60px;
-  }
-
-  .descricao-container h2 {
-    font-size: 2.8em; /* Ajusta o tamanho do título para telas médias */
-  }
-
-  .descricao-container p {
-    font-size: 1.3em; /* Ajusta o tamanho do texto */
-  }
-
-  .descricao-imagem img {
-    max-width: 550px; /* Ajusta o tamanho da imagem */
-  }
-}
-
-/* Para tablets (telas com largura entre 600px e 1024px) */
-@media (max-width: 1024px) {
-  .descricao {
-    flex-direction: column; /* Muda para layout de coluna */
-    padding: 40px 20px;
-  }
-
-  .descricao-container {
-    flex-direction: column; /* Organiza o texto e a imagem em coluna */
-    padding: 30px;
-  }
-
-  .descricao-container h2 {
-    font-size: 2.2em; /* Ajusta o tamanho do título */
-  }
-
-  .descricao-container p {
-    font-size: 1.2em; /* Ajusta o tamanho do texto */
-  }
-
-  .descricao-imagem {
-    margin-right: 0; /* Remove o espaço à direita da imagem */
-    margin-bottom: 20px; /* Adiciona margem inferior */
-  }
-
-  .descricao-imagem img {
-    max-width: 100%; /* Aumenta o tamanho da imagem */
-  }
-}
-
-/* Para dispositivos móveis (telas abaixo de 600px) */
-@media (max-width: 600px) {
-  .descricao-container {
-    padding: 20px;
-  }
-
-  .descricao-container h2 {
-    font-size: 2em; /* Ajusta o tamanho do título */
-  }
-
-  .descricao-container p {
-    font-size: 1.1em; /* Ajusta o tamanho do texto */
-  }
-
-  .descricao-imagem img {
-    max-width: 100%; /* Aumenta o tamanho da imagem */
-    border-radius: 8px; /* Diminui o arredondamento da borda para telas pequenas */
-  }
-}
 
 
 
@@ -881,33 +628,38 @@ p {
   right: 10px;
 }
 
+/* ===== Estilo dos Indicadores do Carrossel (bolinhas) ===== */
 .slider-indicators {
   position: absolute;
   bottom: 10px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-1%); /* Centraliza horizontalmente */
   display: flex;
   gap: 8px;
+  justify-content: center; /* Garante que as bolinhas fiquem centralizadas */
+  z-index: 2;
+  width: 100%; /* Garante que a área de indicadores ocupe 100% da largura */
 }
 
 .slider-indicators .indicator {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3); /* Cor inicial das bolinhas */
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .slider-indicators .indicator.active {
-  background: var(--accent); /* Verde claro */
+  background: var(--accent); /* Verde claro quando ativo */
   transform: scale(1.2);
 }
 
 .slider-indicators .indicator:hover {
-  background: var(--accent); /* Verde claro */
+  background: var(--accent); /* Verde claro ao passar o mouse */
   transform: scale(1.3);
 }
+
 
 .carousel-slider::after {
   content: '';
@@ -965,7 +717,6 @@ p {
   .slider-indicators .indicator {
     width: 10px;
     height: 10px;
-    border-radius: 50%;
   }
 }
 
@@ -1119,6 +870,7 @@ p {
     border-radius: 50%;
   }
 }
+
 
 
 
