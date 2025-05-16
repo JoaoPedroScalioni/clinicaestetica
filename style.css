@@ -48,74 +48,73 @@ p {
   color: var(--dark); /* Preto suave para texto */
 }
 
-
 /* ========= Banner ========= */
 .banner {
   position: relative;
   width: 100%;
-  height: 750px; /* Altura maior para telas grandes */
+  height: 600px; /* Altura ajustada para melhor responsividade */
   overflow: hidden;
-  z-index: 0; /* Garante que o banner fique abaixo das outras seções */
+  z-index: 0;
 }
 
 .banner img {
   width: 100%;
-  height: 90%;
-  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
-  transform: scale(1.05); /* Leve zoom na imagem para dar foco */
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
 }
 
 .banner-text {
   position: absolute;
-  top: 50%; /* Centraliza verticalmente o texto */
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%); /* Ajusta para o centro perfeito */
+  transform: translateX(-50%) translateY(-50%);
   text-align: center;
-  background: rgba(255, 255, 255, 0.7); /* Fundo suave para contraste com a imagem */
+  background: rgba(255, 255, 255, 0.7);
   padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1; /* Garante que o texto fique acima da imagem */
+  z-index: 1;
 }
 
 .banner-text h2 {
   font-family: var(--font-heading);
   font-size: 2.8em;
-  color: var(--primary); /* Verde mais escuro */
+  color: var(--primary);
   margin: 0;
 }
 
-/* Caixa "Cuide da Sua Beleza!" */
+/* ========= Caixa "Cuide da Sua Beleza!" ========= */
 .cta-box {
   position: absolute;
-  top: 60%; /* Posiciona a caixa parcialmente sobre o banner */
   left: 50%;
-  transform: translateX(-50%); /* Centraliza horizontalmente */
-  background-color: #fff; /* Cor de fundo suave e neutra, definida como bege claro */
-  padding: 15px 20px; /* Reduzir o padding para diminuir o espaço interno */
-  border-radius: 20px; /* Cantos mais arredondados para suavizar */
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1); /* Sombra mais suave e mais forte para destacar a caixa */
-  z-index: 9999; /* Garantir que a caixa sobreponha todos os elementos */
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
   text-align: center;
-  width: 40%; /* Reduzir a largura da caixa (antes estava 80%) */
-  max-width: 700px; /* Limita o tamanho máximo da caixa */
+  width: 70%;
+  max-width: 700px;
   transition: all 0.3s ease;
+  top: 50%; /* Centraliza entre o banner e a descrição */
 }
 
 .cta-box h3 {
   font-size: 2.8em;
-  color: var(--primary); /* Cor do título usando o verde escuro */
+  color: var(--primary);
   margin: 0;
   font-weight: 600;
-  letter-spacing: 2px; /* Um pouco de espaçamento entre letras */
+  letter-spacing: 2px;
 }
 
 .cta-box p {
   font-size: 1.4em;
-  color: var(--dark); /* Texto escuro para contraste */
+  color: var(--dark);
   margin-top: 15px;
   line-height: 1.6;
-  font-weight: 400; /* Deixar o texto mais leve */
+  font-weight: 400;
 }
 
 .cta-button {
@@ -123,19 +122,19 @@ p {
   margin-top: 25px;
   padding: 15px 30px;
   font-size: 1.4em;
-  background-color: var(--secondary); /* Dourado */
+  background-color: var(--secondary);
   color: var(--dark);
   text-decoration: none;
-  border-radius: 35px; /* Bordas mais arredondadas */
+  border-radius: 35px;
   font-weight: 600;
-  transition: all 0.3s ease; /* Animação suave */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque ao botão */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button:hover {
-  background-color: var(--accent); /* Verde claro */
-  transform: scale(1.05); /* Leve aumento no tamanho do botão */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+  background-color: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button span {
@@ -144,116 +143,142 @@ p {
 }
 
 .cta-button:hover span {
-  transform: translateY(-5px); /* Efeito de subir um pouco o texto ao passar o mouse */
+  transform: translateY(-5px);
 }
 
 /* ========= Responsividade ========= */
 
-/* Para telas grandes (desktops e monitores) */
-@media (min-width: 1200px) {
-  .banner {
-    height: 800px; /* Aumentar a altura do banner para telas grandes */
-  }
-
+/* Para telas maiores que 1440px (desktop ultra grande) */
+@media (min-width: 1440px) {
   .cta-box {
-    width: 50%; /* Tornar a caixa mais estreita em telas grandes */
-    top: 60%; /* Ajustar a posição da caixa */
+    top: 50%; /* Centraliza a caixa entre o banner e a seção descrição */
   }
 
   .cta-box h3 {
-    font-size: 3em; /* Aumentar o tamanho do título */
+    font-size: 3em;
   }
 
   .cta-box p {
-    font-size: 1.6em; /* Aumentar o tamanho do texto */
+    font-size: 1.6em;
   }
 
   .cta-button {
-    font-size: 1.5em; /* Aumentar o tamanho do botão */
-    padding: 18px 35px; /* Aumentar o padding do botão */
+    font-size: 1.5em;
+    padding: 18px 35px;
+  }
+}
+
+/* Para telas grandes (desktops e monitores) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .cta-box {
+    top: 50%; /* Centraliza a caixa entre o banner e a seção descrição */
+  }
+
+  .cta-box h3 {
+    font-size: 3em;
+  }
+
+  .cta-box p {
+    font-size: 1.6em;
+  }
+
+  .cta-button {
+    font-size: 1.5em;
+    padding: 18px 35px;
   }
 }
 
 /* Para notebooks (telas com largura entre 1024px e 1200px) */
 @media (max-width: 1200px) and (min-width: 1024px) {
-  .banner {
-    height: 650px; /* Reduzir altura do banner para telas menores que monitores grandes */
-  }
-
   .cta-box {
-    width: 55%; /* Ajustar a largura da caixa */
-    top: 58%; /* Ajustar a posição da caixa */
+    top: 52%; /* Ajustado para ficar mais centralizado em 1024x768 */
   }
 
   .cta-box h3 {
-    font-size: 2.8em; /* Ajustar o tamanho do título */
+    font-size: 2.8em;
   }
 
   .cta-box p {
-    font-size: 1.4em; /* Ajustar o tamanho do texto */
+    font-size: 1.4em;
   }
 
   .cta-button {
-    font-size: 1.4em; /* Ajustar o tamanho do botão */
-    padding: 15px 30px; /* Ajustar o padding */
+    font-size: 1.4em;
+    padding: 15px 30px;
+  }
+}
+
+/* Para telas de 1024x768 */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .cta-box {
+    top: 52%; /* Ajusta a posição para centralizar melhor em 1024x768 */
+  }
+}
+
+/* Para telas de 1440x900 */
+@media (max-width: 1440px) and (min-width: 900px) {
+  .cta-box {
+    top: 52%; /* Ajusta para centralizar a caixa entre o banner e a descrição */
+  }
+}
+
+/* Para telas 2560x1440 */
+@media (min-width: 2560px) {
+  .cta-box {
+    top: 48%; /* Ajuste para subir um pouco a caixa em 2560x1440 */
   }
 }
 
 /* Para tablets (dispositivos com largura entre 600px e 1024px) */
 @media (max-width: 1024px) {
-  .banner {
-    height: 500px; /* Reduzir altura para tablets */
-  }
-
   .cta-box {
-    width: 80%; /* Aumentar a largura da caixa para tablets */
-    top: 50%; /* Ajustar a posição da caixa */
+    top: 60%; /* Ajusta a posição da caixa */
+    width: 80%;
   }
 
   .cta-box h3 {
-    font-size: 2.5em; /* Ajustar o tamanho do título */
+    font-size: 2.5em;
   }
 
   .cta-box p {
-    font-size: 1.2em; /* Ajustar o tamanho do texto */
+    font-size: 1.2em;
   }
 
   .cta-button {
-    font-size: 1.2em; /* Ajustar o tamanho do botão */
-    padding: 12px 25px; /* Ajustar o padding do botão */
+    font-size: 1.2em;
+    padding: 12px 25px;
   }
 }
 
 /* Para dispositivos móveis (dispositivos com largura até 600px) */
 @media (max-width: 600px) {
   .banner {
-    height: 300px; /* Diminuir altura do banner */
+    height: 300px;
   }
 
   .banner-text h2 {
-    font-size: 2em; /* Reduzir o tamanho da fonte do título */
+    font-size: 1.8em;
   }
 
   .cta-box {
-    width: 90%; /* Aumentar a largura da caixa */
-    top: 40%; /* Ajustar a posição da caixa */
-    padding: 15px 20px; /* Diminuir o padding para telas pequenas */
+    width: 90%;
+    top: 40%;
+    padding: 15px 20px;
   }
 
   .cta-box h3 {
-    font-size: 2em; /* Ajustar o tamanho do título */
+    font-size: 2em;
   }
 
   .cta-box p {
-    font-size: 1em; /* Ajustar o tamanho do texto */
+    font-size: 1em;
   }
 
   .cta-button {
-    font-size: 1.2em; /* Ajustar o tamanho do botão */
-    padding: 10px 20px; /* Ajustar o padding para telas pequenas */
+    font-size: 1.2em;
+    padding: 10px 20px;
   }
 }
-
 
 
 
@@ -283,7 +308,7 @@ p {
   transform: translateY(20px);
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
-  margin-top: 90px; /* Adiciona um espaço acima do container */
+  margin-top: 130px; /* Adiciona um espaço acima do container */
 }
 
 /* Animação fadeIn */
@@ -373,7 +398,7 @@ p {
   transform: translateY(20px);
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
-  margin-top: 120px; /* Adiciona um espaço acima do container */
+  margin-top: 160px; /* Adiciona um espaço acima do container */
 }
 
 /* Animação fadeIn */
