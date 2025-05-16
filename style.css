@@ -911,6 +911,7 @@ p {
 
   .slider-track {
     width: 100%;
+    display: flex;
   }
 
   .slider-track img {
@@ -969,6 +970,12 @@ p {
     position: relative;
   }
 
+  .slider-track {
+    width: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Garantir transição suave */
+  }
+
   .slider-track img {
     width: 100%;
     height: auto;
@@ -1015,6 +1022,12 @@ p {
     position: relative;
   }
 
+  .slider-track {
+    width: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Garantir transição suave */
+  }
+
   .slider-track img {
     width: 100%;
     height: auto;
@@ -1035,6 +1048,53 @@ p {
     height: 6px;
   }
 }
+
+/* Para telas grandes (desktops e monitores) */
+@media (min-width: 1025px) {
+  .carousel-wrapper {
+    gap: 40px;
+    justify-content: center;
+    max-width: 1300px;
+  }
+
+  .carousel-slider {
+    width: 90%; /* Ajustar a largura do carrossel */
+    max-width: 100%;
+  }
+
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slider-track img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-right: 0;
+  }
+
+  .slider-nav {
+    font-size: 2rem;
+    padding: 15px;
+  }
+
+  .slider-indicators {
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .slider-indicators .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+}
+
 
 
 /* ========= Seção de Avaliações / Depoimentos (Reviews) ========= */
