@@ -90,13 +90,13 @@ p {
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
-  padding: 15px 20px;
+  padding: 10px 15px;
   border-radius: 20px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
   z-index: 9999;
   text-align: center;
-  width: 70%;
-  max-width: 700px;
+  width: 50%;
+  max-width: 800px;
   transition: all 0.3s ease;
   top: 50%; /* Centraliza entre o banner e a descrição */
 }
