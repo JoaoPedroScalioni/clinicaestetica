@@ -4,17 +4,17 @@
   margin: 0;
   padding: 0;
 }
-
 /* Variáveis de cores e fontes */
 :root {
-  --primary: #6a855a; /* Verde mais escuro */
+  --primary: #bf962f; /* Verde mais escuro */
   --secondary: #e1c699; /* Dourado */
   --accent: #C6A964; /* Verde mais claro */
   --light: #f0e4ca; /* Bege claro */
   --dark: #222222; /* Preto suave */
-  --font-heading: 'Montserrat', sans-serif; /* Fonte moderna para títulos */
-  --font-body: 'Roboto', sans-serif; /* Fonte limpa para o corpo do texto */
+  --font-heading: 'Merriweather', serif; /* Fonte serifada elegante para títulos */
+  --font-body: 'Roboto', sans-serif; /* Fonte moderna e legível para o corpo do texto */
 }
+
 
 /* Ajuste nos botões */
 .cta-btn {
@@ -33,7 +33,9 @@
 /* Ajuste nos títulos */
 h2, h3 {
   font-family: var(--font-heading);
-  color: var(--primary); /* Verde mais escuro */
+  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente nos títulos */
+  -webkit-background-clip: text; /* Para garantir o efeito de gradiente no texto */
+  -webkit-text-fill-color: transparent; /* Faz o preenchimento do texto transparente */
   font-size: 2.5em;
   text-align: center;
 }
@@ -119,19 +121,25 @@ p {
 .cta-button {
   display: inline-block;
   margin-top: 25px;
-  padding: 15px 30px;
-  font-size: 1.4em;
-  background-color: var(--secondary);
-  color: var(--dark);
+  padding: 12px 30px; /* Menor para um visual mais leve */
+  font-size: 1.2em; /* Tamanho mais próximo ao da foto */
+  background-color: #f9f7ee; /* Cor de fundo mais suave */
+  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente no fundo */
+  color: transparent; /* Torna o texto transparente para aplicar o gradiente */
+  background-clip: text; /* Aplica o gradiente ao texto */
   text-decoration: none;
-  border-radius: 35px;
+  border-radius: 10px; /* Arredondado, mas não exagerado */
   font-weight: 600;
+  text-align: center;
+  border: 1px solid #D4AF37; /* Borda dourada fina */
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+
 .cta-button:hover {
-  background-color: var(--accent);
+  background-color: #D4AF37; /* Fundo dourado ao passar o mouse */
+  color: white; /* Texto branco quando o mouse passar */
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
@@ -144,6 +152,7 @@ p {
 .cta-button:hover span {
   transform: translateY(-5px);
 }
+
 
 /* ========= Responsividade ========= */
 
@@ -221,82 +230,116 @@ p {
   flex-direction: column; /* Garante que a caixa e o container fiquem empilhados verticalmente */
 }
 
-.descricao-container {
-  position: relative;
-  z-index: 1;
+
+.sobre-doutor {
   display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
   padding: 50px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  border-left: 8px solid var(--secondary);
-  transform: translateY(20px);
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-  margin-top: -100px;
+  background-color: var(--light); /* Cor de fundo clara */
+  gap: 40px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+.sobre-foto {
+  flex: 1;
+  position: relative;
+  width: 300px; /* Tamanho fixo para a foto quadrada */
+  height: 300px; /* Garantindo que a altura seja igual à largura */
+  overflow: hidden; /* Garante que a imagem não ultrapasse os limites quadrados */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adiciona sombra sutil */
+  border-radius: 10px; /* Bordas ligeiramente arredondadas para suavizar */
 }
 
-.descricao-container h2 {
+
+.sobre-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço sem distorção */
+}
+
+
+.sobre-texto {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.sobre-texto h2 {
   font-size: 2.5em;
   color: var(--primary);
+  margin-bottom: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
-.separator {
-  width: 60px;
-  height: 3px;
-  background: var(--secondary); /* Dourado */
-  margin: 15px 0;
-  border-radius: 5px;
+
+.sobre-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 20px;
 }
 
-.descricao-container p {
-  font-size: 1.25em;
-  color: var(--dark); /* Preto suave */
-  line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: justify;
-  hyphens: auto;
-}
 
-.descricao-imagem {
+.info-item {
+  text-align: center;
   flex: 1;
-  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.descricao-imagem img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
+
+.info-item i {
+  font-size: 3em; /* Aumenta o tamanho do ícone */
+  color: var(--primary); /* Cor primária para os ícones */
+  margin-bottom: 10px; /* Espaço entre o ícone e o título */
+}
+
+
+.info-item h3 {
+  font-size: 1.5em;
+  color: var(--primary); /* Cor primária para os títulos */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+.info-item p {
+  font-size: 1.2em;
+  color: var(--dark); /* Preto suave */
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+
+.sobre-doutor img {
   transition: transform 0.3s ease;
 }
 
-.descricao-imagem img:hover {
-  transform: scale(1.05);
+
+.sobre-doutor img:hover {
+  transform: scale(1.05); /* Leve zoom ao passar o mouse */
 }
 
-.descricao-texto {
-  flex: 1.5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+@media (max-width: 768px) {
+  .sobre-doutor {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .sobre-info {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .sobre-foto {
+    width: 200px; /* Ajuste para telas menores */
+    height: 200px;
+    margin-bottom: 20px;
+  }
 }
 
 
@@ -308,12 +351,11 @@ p {
   padding: 50px 20px;
   color: var(--light); /* Texto claro */
   text-align: center;
-  background: linear-gradient(135deg, #6a855a, #C6A964); /* Gradiente suave de verde */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
-  border-radius: 15px; /* Bordas arredondadas */
-  overflow: hidden;
+  background: none; /* Removido o fundo da seção */
+  box-shadow: none; /* Removido qualquer sombra */
   z-index: 1;
 }
+
 
 /* Título */
 .redes-sociais h2 {
@@ -321,37 +363,46 @@ p {
   margin-bottom: 30px;
   position: relative;
   z-index: 2;
-  color: var(--light);
+  color: #6a855a; /* Cor verde do WhatsApp */
   font-weight: bold;
   letter-spacing: 2px;
 }
+
 
 /* Container das redes sociais */
 .social-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 30px; /* Espaço maior entre os ícones */
   flex-wrap: wrap;
   position: relative;
   z-index: 2;
+  margin-top: 20px; /* Ajuste para alinhar corretamente */
 }
 
+
+/* Estilo do botão das redes sociais */
 .social-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  padding: 15px 25px; /* Ajuste do tamanho do botão */
+  border-radius: 50px; /* Bordas arredondadas */
   text-decoration: none;
-  background-color: var(--primary); /* Verde escuro */
+  background-color: #25D366; /* Cor similar ao botão do WhatsApp */
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem; /* Aumento do texto */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 3;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  width: 200px; /* Uniformizando o tamanho de todos os botões */
+  height: 60px; /* Uniformizando a altura */
+  text-align: center; /* Centraliza o texto dentro do botão */
 }
+
 
 /* Efeito de Glow (brilho) nos ícones das redes sociais */
 .social-card:hover {
@@ -360,34 +411,33 @@ p {
   filter: brightness(1.3); /* Aumenta o brilho */
 }
 
+
+/* Estilo da imagem do ícone */
 .social-img {
-  width: 50px;
-  height: 50px;
+  width: 30px; /* Aumento do tamanho do ícone */
+  height: 30px; /* Aumento do tamanho do ícone */
   object-fit: contain;
-  margin-bottom: 8px;
+  margin-right: 10px; /* Espaço entre o ícone e o texto */
   transition: filter 0.3s ease;
 }
+
 
 /* Efeito de glow nos ícones */
 .social-card:hover .social-img {
   filter: brightness(1.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Brilho intenso ao passar o mouse */
 }
 
-.social-card span {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--light); /* Texto claro */
-  text-align: center;
-}
 
 /* Cores de fundo para as redes sociais */
 .social-card.instagram {
-  background: radial-gradient(circle, #fdf497, #fd5949, #285aeb); /* Instagram */
+  background: #E4405F; /* Instagram */
 }
 
+
 .social-card.whatsapp {
-  background: #0ee95e; /* WhatsApp */
+  background: #25D366; /* WhatsApp */
 }
+
 
 .social-card.gmail {
   background: #D44638; /* Gmail */
@@ -395,104 +445,73 @@ p {
 
 
 /* ===== Responsividade ===== */
+
+/* Para telas grandes (laptops e desktops) */
 @media (max-width: 1024px) {
-  /* Seção Descrição */
-  .descricao-container {
-    flex-direction: column; /* Organiza imagem e texto em coluna */
-    padding: 30px;
-  }
-
-  .descricao-imagem {
-    margin-right: 0;
-    margin-bottom: 30px; /* Espaço entre a imagem e o texto */
-  }
-
-  .descricao-container h2 {
-    font-size: 2.2em; /* Reduz o tamanho do título */
-  }
-
-  .descricao-container p {
-    font-size: 1.15em; /* Ajuste da fonte */
-  }
-
-  /* Redes Sociais */
   .social-card {
-    width: 150px;
-    height: 150px;
+    padding: 15px 25px;
   }
 
   .social-img {
-    width: 60px;
-    height: 60px;
+    width: 35px;
+    height: 35px;
   }
 }
 
+/* Para telas médias (tablets e dispositivos menores) */
 @media (max-width: 768px) {
-  /* Seção Descrição */
-  .descricao-container {
-    padding: 20px;
-  }
-
-  .descricao-imagem {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .descricao-container h2 {
-    font-size: 2em;
-  }
-
-  .descricao-container p {
-    font-size: 1.1em;
-  }
-
-  /* Redes Sociais */
   .social-container {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    gap: 20px; /* Diminui o espaço entre os ícones */
+    justify-content: center; /* Garante que os ícones fiquem centralizados */
+    align-items: center; /* Centraliza os itens no eixo transversal */
   }
 
   .social-card {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
+    padding: 12px 22px; /* Ajusta o padding para não ficar exagerado */
+    width: 180px; /* Ajusta a largura para caber bem em telas menores */
+    height: 55px; /* Ajusta a altura */
   }
 
   .social-img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
 }
 
+/* Para telas muito pequenas (dispositivos móveis) */
 @media (max-width: 480px) {
-  /* Seção Descrição */
-  .descricao-container {
-    padding: 15px;
+  .social-container {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    gap: 15px; /* Diminui o espaço entre os ícones */
+    justify-content: center; /* Centraliza os ícones */
+    align-items: center; /* Garante que fiquem alinhados */
   }
 
-  .descricao-container h2 {
-    font-size: 1.6em;
-  }
-
-  .descricao-container p {
-    font-size: 1em;
-  }
-
-  /* Redes Sociais */
   .social-card {
-    width: 130px;
-    height: 130px;
+    padding: 10px 20px; /* Ajusta o padding para um botão menor */
+    width: 160px; /* Ajusta a largura para melhor caber em telas menores */
+    height: 50px; /* Ajusta a altura do botão */
   }
 
   .social-img {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
 
   .social-card span {
-    font-size: 0.9em; /* Reduz o tamanho do texto */
+    font-size: 1rem; /* Ajuste do tamanho do texto para telas pequenas */
   }
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -501,87 +520,95 @@ p {
 
 /* ========= Carrossel (Galeria de Resultados) ========= */
 .carrossel {
-  padding: 60px 20px;
-  background: var(--light); /* Cor clara de fundo */
+  padding: 80px 20px;
+  background: var(--light);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Ajuste da largura do wrapper do carrossel */
 .carousel-wrapper {
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  gap: 40px;
-  max-width: 1300px;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1000px; /* Reduzido o tamanho máximo para o carrossel */
   margin: auto;
   flex-wrap: wrap;
   padding: 20px;
 }
 
+/* Descrição com ajuste de largura */
 .carousel-description {
   flex: 1;
-  background: var(--primary); /* Verde escuro */
-  color: var(--light); /* Texto claro */
-  padding: 40px 30px;
-  border-radius: 24px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
   display: flex;
-  align-items: center;
-  min-width: 300px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 230px;
+  background: none;
+  color: var(--dark);
+  margin: 0;
+  max-width: 400px; /* Limitar a largura da descrição */
+  box-sizing: border-box;
+  text-align: left;
 }
 
-.carousel-description:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  transform: translateY(-5px);
-}
-
+/* Título da descrição */
 .carousel-description-content h3 {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   margin-bottom: 20px;
-  color: var(--accent); /* Verde claro */
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.3;
 }
 
+/* Texto da descrição */
 .carousel-description-content p {
   font-size: 1.1rem;
   margin-bottom: 15px;
   line-height: 1.7;
-  color: #e0e0e0;
+  color: var(--dark);
+  font-weight: 400;
 }
 
+/* Itens da lista na descrição */
 .carousel-description-content ul {
   padding-left: 20px;
   font-size: 1rem;
-  list-style: none;
-  color: #e0e0e0;
+  list-style: disc;
+  color: var(--dark);
+  margin: 0;
 }
 
-.carousel-description-content li::before {
-  content: "✓";
-  margin-right: 8px;
-  color: #a5f3fc;
+.carousel-description-content li {
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
-/* ===== Estilo do Carrossel ===== */
+/* Ajuste do carrossel (imagem e slider) */
 .carousel-slider {
   flex: 1.5;
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  background: var(--light); /* Fundo claro */
-  width: 900px;
-  max-width: 100%;
+  background: var(--light);
+  width: 100%;
+  max-width: 600px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
 }
 
+/* Carrossel com imagem menor ao passar o mouse */
 .carousel-slider:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
 }
 
+/* Tornar as imagens quadradas */
 .slider-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -589,10 +616,9 @@ p {
 
 .slider-track img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  margin-right: 20px;
-  border-radius: 16px;
+  margin-right: 15px;
   transition: transform 0.3s ease;
 }
 
@@ -600,76 +626,66 @@ p {
   transform: scale(1.05);
 }
 
+/* Ajuste da navegação (setas) sem fundo */
 .slider-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
+  background: none;
   border: none;
   font-size: 2rem;
-  padding: 15px;
+  padding: 12px;
   cursor: pointer;
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+  color: var(--primary);
 }
 
 .slider-nav:hover {
-  background: rgba(255, 255, 255, 1);
   transform: scale(1.2);
 }
 
+/* Navegação para a seta anterior */
 .slider-nav.prev {
   left: 10px;
 }
 
+/* Navegação para a seta seguinte */
 .slider-nav.next {
   right: 10px;
 }
 
-/* ===== Estilo dos Indicadores do Carrossel (bolinhas) ===== */
+/* Indicadores do Carrossel */
 .slider-indicators {
   position: absolute;
   bottom: 10px;
   left: 50%;
-  transform: translateX(-1%); /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajuste para centralizar os indicadores */
   display: flex;
-  gap: 8px;
-  justify-content: center; /* Garante que as bolinhas fiquem centralizadas */
+  gap: 12px;
   z-index: 2;
-  width: 100%; /* Garante que a área de indicadores ocupe 100% da largura */
+  width: auto; /* Retirando a largura de 100% para garantir o alinhamento */
 }
 
 .slider-indicators .indicator {
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3); /* Cor inicial das bolinhas */
+  background: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .slider-indicators .indicator.active {
-  background: var(--accent); /* Verde claro quando ativo */
+  background: var(--accent);
   transform: scale(1.2);
 }
 
 .slider-indicators .indicator:hover {
-  background: var(--accent); /* Verde claro ao passar o mouse */
+  background: var(--accent);
   transform: scale(1.3);
-}
-
-
-.carousel-slider::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 50px;
-  height: 100%;
-  background: linear-gradient(to right, transparent, var(--light)); /* Cor clara */
-  z-index: 1;
-  pointer-events: none;
 }
 
 /* Responsividade para dispositivos móveis */
@@ -682,8 +698,6 @@ p {
   .carousel-slider {
     width: 100%;
     max-width: 100%;
-    position: relative;
-    overflow: hidden;
   }
 
   .slider-track {
@@ -699,40 +713,40 @@ p {
   }
 
   .slider-nav {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding: 10px;
   }
 
   .slider-indicators {
     position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%); /* Garantindo que os indicadores fiquem centralizados */
+    width: auto; /* Ajuste para a largura automática */
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     margin: 0;
   }
 
   .slider-indicators .indicator {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
   }
 }
 
 @media (max-width: 768px) {
-  /* Seção Descrição */
   .carousel-description {
     padding: 20px 15px;
-    min-width: 250px; /* Ajuste para telas menores */
+    min-width: 230px;
   }
 
   .carousel-description-content h3 {
-    font-size: 1.8rem; /* Tamanho reduzido */
+    font-size: 1.6rem;
   }
 
   .carousel-description-content p {
-    font-size: 1rem; /* Ajuste de fonte */
+    font-size: 1rem;
   }
 
   .carousel-wrapper {
@@ -743,13 +757,12 @@ p {
   .carousel-slider {
     width: 100%;
     max-width: 100%;
-    position: relative;
   }
 
   .slider-track {
     width: 100%;
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Garantir transição suave */
+    transition: transform 0.5s ease-in-out;
   }
 
   .slider-track img {
@@ -768,8 +781,8 @@ p {
   }
 
   .slider-indicators .indicator {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
 }
 
@@ -780,7 +793,7 @@ p {
   }
 
   .carousel-description-content h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .carousel-description-content p {
@@ -795,13 +808,12 @@ p {
   .carousel-slider {
     width: 100%;
     max-width: 100%;
-    position: relative;
   }
 
   .slider-track {
     width: 100%;
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Garantir transição suave */
+    transition: transform 0.5s ease-in-out;
   }
 
   .slider-track img {
@@ -825,51 +837,7 @@ p {
   }
 }
 
-/* Para telas grandes (desktops e monitores) */
-@media (min-width: 1025px) {
-  .carousel-wrapper {
-    gap: 40px;
-    justify-content: center;
-    max-width: 1300px;
-  }
 
-  .carousel-slider {
-    width: 90%; /* Ajustar a largura do carrossel */
-    max-width: 100%;
-  }
-
-  .slider-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .slider-track img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin-right: 0;
-  }
-
-  .slider-nav {
-    font-size: 2rem;
-    padding: 15px;
-  }
-
-  .slider-indicators {
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .slider-indicators .indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-}
 
 
 
@@ -878,11 +846,17 @@ p {
 .reviews-container {
   position: relative;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #6a855a, #C6A964); /* Gradiente suave de verde */
+  background-color: var(--light);
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
-  overflow: hidden;
+  overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
+  width: 100%; /* Garantir que o fundo ocupe toda a largura da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ajusta o conteúdo para ficar alinhado no topo */
+  box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
+  margin: 0; /* Remove margens extras */
 }
+
 
 /* Garante que o conteúdo interno fique acima da camada animada */
 .reviews-container > * {
@@ -890,11 +864,13 @@ p {
   z-index: 1;
 }
 
+
 .reviews-title {
   font-size: 1.8rem;
   margin-bottom: 40px;
   color: var(--dark); /* Texto escuro */
 }
+
 
 .review-cards-wrapper {
   display: flex;
@@ -902,6 +878,7 @@ p {
   align-items: center;
   gap: 24px;
 }
+
 
 .review-card {
   background: var(--light); /* Fundo claro */
@@ -914,7 +891,9 @@ p {
   max-width: 700px;
   width: 100%;
   position: relative;
+  box-sizing: border-box; /* Para garantir que o padding não cause overflow */
 }
+
 
 .review-avatar {
   width: 40px;
@@ -924,10 +903,12 @@ p {
   object-fit: cover;
 }
 
+
 .review-content {
   flex: 1;
   text-align: left;
 }
+
 
 .review-header {
   display: flex;
@@ -937,16 +918,19 @@ p {
   margin-bottom: 8px;
 }
 
+
 .review-stars {
   color: #f8c12e; /* Amarelo para estrelas */
   font-size: 1rem;
   margin-bottom: 8px;
 }
 
+
 .review-text {
   font-size: 0.95rem;
   color: var(--dark); /* Texto escuro */
 }
+
 
 .review-google-icon {
   width: 24px;
@@ -956,6 +940,7 @@ p {
   right: 20px;
   bottom: 20px;
 }
+
 
 /* Botões do carrossel de reviews */
 .review-nav {
@@ -973,17 +958,23 @@ p {
   transition: transform 0.2s ease;
 }
 
+
 .review-nav:hover {
   transform: translateY(-50%) scale(1.1);
 }
+
 
 .review-nav.prev {
   left: 10px;
 }
 
+
 .review-nav.next {
   right: 10px;
 }
+
+
+
 
 /* ===== Responsividade para a Seção de Reviews ===== */
 @media (max-width: 768px) {
@@ -991,10 +982,12 @@ p {
     font-size: 1.5rem; /* Tamanho reduzido */
   }
 
+
   .review-cards-wrapper {
     flex-direction: column;
     gap: 20px;
   }
+
 
   .review-card {
     padding: 15px;
@@ -1003,25 +996,31 @@ p {
     align-items: center;
   }
 
+
   .review-avatar {
     margin-bottom: 10px; /* Ajuste no espaçamento da imagem do avatar */
   }
+
 
   .review-content {
     text-align: center;
   }
 
+
   .review-header {
     font-size: 0.85rem; /* Redução do tamanho da fonte no cabeçalho */
   }
+
 
   .review-stars {
     font-size: 0.9rem; /* Reduz o tamanho das estrelas */
   }
 
+
   .review-text {
     font-size: 0.85rem; /* Ajuste do texto para telas menores */
   }
+
 
   .review-google-icon {
     right: 10px;
@@ -1031,32 +1030,39 @@ p {
   }
 }
 
+
 @media (max-width: 480px) {
   .reviews-title {
     font-size: 1.3rem; /* Fontes menores em dispositivos pequenos */
   }
+
 
   .review-card {
     padding: 10px;
     max-width: 100%;
   }
 
+
   .review-avatar {
     width: 35px;
     height: 35px;
   }
 
+
   .review-content {
     font-size: 0.8rem; /* Ajuste de fonte */
   }
+
 
   .review-header {
     font-size: 0.75rem;
   }
 
+
   .review-stars {
     font-size: 0.8rem;
   }
+
 
   .review-google-icon {
     right: 8px;
@@ -1071,37 +1077,44 @@ p {
 .footer {
   background: var(--primary); /* Verde escuro */
   color: var(--light); /* Texto claro */
-  padding: 50px 20px;
+  padding: 40px 20px; /* Ajustando o padding para otimizar o espaço */
   text-align: center;
   box-sizing: border-box; /* Inclui o padding no cálculo do tamanho */
+  width: 100%; /* Garantir que o rodapé ocupe 100% da largura */
+ min-height: 100px; /* Ajuste a altura mínima conforme necessário */
 }
+
 
 .footer-content {
   display: flex;
   justify-content: space-between; /* Garante que os itens fiquem igualmente distribuídos */
-  gap: 40px;
+  gap: 20px;
   flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   align-items: center; /* Alinha os itens verticalmente ao centro */
 }
+
 
 .footer-logo {
   flex: 1;
   text-align: left;
 }
 
+
 .footer-logo .logo-img {
   width: 230px; /* Ajuste do tamanho do logo */
   max-width: 100%;
 }
 
+
 .footer-info {
   flex: 3; /* Garante que a área de informações ocupe mais espaço */
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 15px;
   flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se não couberem */
 }
+
 
 .footer-info-item {
   max-width: 220px;
@@ -1109,19 +1122,22 @@ p {
   text-align: left; /* Alinha o texto à esquerda */
 }
 
+
 .footer-info-item strong {
   font-weight: bold;
   color: var(--secondary); /* Destaca as palavras-chave */
 }
 
+
 .footer-social {
   flex: 1;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px; /* Ajuste no gap para otimizar o espaço entre os ícones */
   align-items: center;
   padding-right: 20px;
 }
+
 
 .footer-social .social-icon {
   color: var(--light); /* Ícones brancos */
@@ -1130,34 +1146,40 @@ p {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
+
 .footer-social .social-icon:hover {
   color: var(--secondary); /* Dourado */
   transform: scale(1.1); /* Efeito de aumento suave */
 }
 
+
 .footer-bottom {
-  margin-top: 30px;
+  margin-top: 10px; /* Ajuste do espaço entre a parte inferior do rodapé */
   font-size: 1.1em; /* Aumenta um pouco o tamanho da fonte */
   border-top: 1px solid var(--light); /* Borda clara */
   padding-top: 20px;
 }
 
+
 .footer-bottom p {
   margin: 0;
 }
 
+
 .footer-bottom .back-to-top {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 10px;
   color: var(--light);
   text-decoration: none;
   font-size: 1.4em;
 }
 
+
 .footer-bottom .back-to-top:hover {
   color: var(--secondary); /* Dourado */
   transform: scale(1.1);
 }
+
 
 /* ===== Responsividade ===== */
 @media (max-width: 900px) {
@@ -1167,38 +1189,46 @@ p {
     text-align: center;
   }
 
+
   .footer-info {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
+
 
   .footer-logo {
     text-align: center;
   }
 
+
   .footer-bottom {
     text-align: center;
   }
 
+
   .footer-social {
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }
+
 
 @media (max-width: 480px) {
   .footer-logo .logo-img {
     width: 180px; /* Logo menor em telas pequenas */
   }
 
+
   .footer-info-item {
     font-size: 0.9em; /* Ajuste de fonte para telas pequenas */
   }
 
+
   .footer-social .social-icon {
     font-size: 1.4em; /* Ícones maiores em telas pequenas */
   }
+
 
   .footer-bottom .back-to-top {
     font-size: 1.3em; /* Ajuste da fonte do link de voltar ao topo */
@@ -1210,69 +1240,64 @@ p {
 
 
 
-/* Estilo da Seção de Estatísticas */
+
+
+
+
+
+
+
+
+/* ========= Estatísticas sem fundo ========= */
 .estatisticas {
   padding: 60px 20px;
-  background-color: var(--light); /* Beige claro (ou cor clara do seu site) */
+  background-color: none; /* Removido o fundo */
   text-align: center;
   animation: fadeIn 1s ease-out;
 }
 
-.estatisticas-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
-  margin-bottom: 30px;
-  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
-}
 
+/* Estatísticas livres sem fundo */
 .estatistica {
-  flex: 1;
-  background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Verde e dourado */
+  display: inline-block; /* Faz com que as estatísticas fiquem ao lado umas das outras */
+  width: 33%; /* Definindo largura para as estatísticas */
+  background: none; /* Removendo o fundo */
   border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 80px; /* Aumentei o padding para espaçamento interno */
+  box-shadow: none; /* Removido a sombra */
   transform: translateY(50px);
   opacity: 0;
   animation: slideIn 0.8s ease-out forwards;
+  margin: 20px 0; /* Adicionando margem para espaçamento */
+  transition: all 0.3s ease; /* Transição suave */
+  text-align: center;
 }
 
+
 .estatistica i {
-  font-size: 3em;
-  color: var(--light); /* Texto claro para ícones */
+  font-size: 3.5em;
+  color: var(--primary); /* Cor do ícone (pode ser alterada para a cor desejada) */
   margin-bottom: 10px;
 }
+
 
 .estatistica h3 {
   font-size: 3.5em;
   font-weight: bold;
   color: var(--dark); /* Cor escura para o título */
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   opacity: 0;
   animation: fadeInNumber 1.5s ease-out forwards;
 }
 
+
 .estatistica p {
   font-size: 1.1em;
-  color: var(--dark); /* Texto escuro */
+  color: var(--dark); /* Cor do texto */
   opacity: 0;
   animation: fadeInText 1.5s ease-out forwards;
 }
 
-.estatistica:nth-child(1) {
-  animation-delay: 0.3s;
-}
-
-.estatistica:nth-child(2) {
-  animation-delay: 0.5s;
-}
-
-.estatistica:nth-child(3) {
-  animation-delay: 0.7s;
-}
 
 /* Animações */
 @keyframes fadeIn {
@@ -1286,6 +1311,7 @@ p {
   }
 }
 
+
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -1297,6 +1323,7 @@ p {
   }
 }
 
+
 @keyframes fadeInNumber {
   0% {
     opacity: 0;
@@ -1305,6 +1332,7 @@ p {
     opacity: 1;
   }
 }
+
 
 @keyframes fadeInText {
   0% {
@@ -1315,75 +1343,75 @@ p {
   }
 }
 
+
 /* Responsividade */
 @media (max-width: 1024px) {
-  .estatisticas-container {
-    flex-direction: column;
-    gap: 30px; /* Reduz o espaçamento entre os itens */
+  .estatistica {
+    width: 45%; /* Ajustando a largura para duas colunas em tablets */
+    margin-bottom: 30px;
+    padding: 25px; /* Ajuste no padding */
   }
 
+
+  .estatistica i {
+    font-size: 3em; /* Ajuste no tamanho do ícone */
+  }
+
+
+  .estatistica h3 {
+    font-size: 2.8em; /* Ajuste no tamanho do título */
+  }
+
+
+  .estatistica p {
+    font-size: 1.1em; /* Ajuste no tamanho do parágrafo */
+  }
+}
+
+
+@media (max-width: 768px) {
   .estatistica {
-    margin-bottom: 30px;
+    width: 80%; /* Ajuste na largura para telas menores */
+    margin-bottom: 20px;
     padding: 20px; /* Ajuste no padding */
   }
 
+
   .estatistica i {
-    font-size: 2.8em; /* Redução do tamanho do ícone */
+    font-size: 2.8em; /* Ajuste no tamanho do ícone */
   }
+
 
   .estatistica h3 {
-    font-size: 2.5em; /* Tamanho do título reduzido */
+    font-size: 2.3em; /* Ajuste no tamanho do título */
   }
 
+
   .estatistica p {
-    font-size: 1em; /* Ajuste no tamanho do parágrafo */
+    font-size: 1.1em; /* Ajuste no tamanho do texto */
   }
 }
 
-@media (max-width: 768px) {
-  .estatisticas-container {
-    flex-direction: column;
-    gap: 20px; /* Ajuste o espaço entre os itens */
-  }
-
-  .estatistica {
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-
-  .estatistica i {
-    font-size: 2.5em;
-  }
-
-  .estatistica h3 {
-    font-size: 2em;
-  }
-
-  .estatistica p {
-    font-size: 0.9em;
-  }
-}
 
 @media (max-width: 480px) {
-  .estatisticas-container {
-    flex-direction: column;
-    gap: 15px;
+  .estatistica {
+    width: 100%; /* Itens ocupando 100% da largura */
+    margin-bottom: 20px;
+    padding: 15px;
   }
 
-  .estatistica {
-    padding: 10px;
-    margin-bottom: 15px;
-  }
 
   .estatistica i {
-    font-size: 2em;
+    font-size: 2.5em; /* Ajuste no tamanho do ícone */
   }
+
 
   .estatistica h3 {
-    font-size: 1.8em;
+    font-size: 2em; /* Ajuste no tamanho do título */
   }
 
+
   .estatistica p {
-    font-size: 0.85em;
+    font-size: 1em; /* Ajuste no tamanho do texto */
   }
 }
