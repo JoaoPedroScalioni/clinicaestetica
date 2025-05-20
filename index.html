@@ -191,62 +191,65 @@
 
 
 
-<section class="localizacoes">
-  <h2>Nossos Locais de Atendimento</h2>
-  <div class="localizacoes-container">
-    <!-- Cartões de Localizações -->
-    <div class="localizacoes-list">
-      <div class="localizacao-card" onclick="exibirDetalhes('labcenter')">
-        <h3>Labcenter</h3>
-        <p>Rua Domingos Vieira de Lima, 380 - Centro, Santana da Vargem - MG</p>
-        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
-      </div>
+<!-- Seção de Localizações -->
+  <section class="localizacoes">
+    <h2>Nossos Locais de Atendimento</h2>
+    <div class="localizacoes-container">
+      <div class="localizacoes-list">
+        <div class="localizacao-card" onclick="exibirDetalhes('labcenter')">
+          <h3>Labcenter</h3>
+          <p>Rua Domingos Vieira de Lima, 380 - Centro, Santana da Vargem - MG</p>
+          <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+        </div>
 
-      <div class="localizacao-card" onclick="exibirDetalhes('gislaine')">
-        <h3>Gislaine Pedroso</h3>
-        <p>Coqueiral - MG</p>
-        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
-      </div>
+        <div class="localizacao-card" onclick="exibirDetalhes('gislaine')">
+          <h3>Gislaine Pedroso</h3>
+          <p>Coqueiral - MG</p>
+          <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+        </div>
 
-      <div class="localizacao-card" onclick="exibirDetalhes('denise')">
-        <h3>Denise Fróes Estética</h3>
-        <p>Rua Barbosa Lima 441 B, Centro, Lavras - MG</p>
-        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
-      </div>
+        <div class="localizacao-card" onclick="exibirDetalhes('denise')">
+          <h3>Denise Fróes Estética</h3>
+          <p>Rua Barbosa Lima 441 B, Centro, Lavras - MG</p>
+          <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+        </div>
 
-      <div class="localizacao-card" onclick="exibirDetalhes('bouganville')">
-        <h3>Núcleo de Saúde Bouganville</h3>
-        <p>Avenida Sérgio Biagi Bueno, 900 - Jardim Bouganville, Varginha - MG</p>
-        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
-      </div>
+        <div class="localizacao-card" onclick="exibirDetalhes('bouganville')">
+          <h3>Núcleo de Saúde Bouganville</h3>
+          <p>Avenida Sérgio Biagi Bueno, 900 - Jardim Bouganville, Varginha - MG</p>
+          <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+        </div>
 
-      <div class="localizacao-card" onclick="exibirDetalhes('bemestar')">
-        <h3>Clínica Bem Estar</h3>
-        <p>R. Barão da Boa Esperança, 511 - Catumbi, Três Pontas - MG</p>
-        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
-      </div>
+        <div class="localizacao-card" onclick="exibirDetalhes('bemestar')">
+          <h3>Clínica Bem Estar</h3>
+          <p>R. Barão da Boa Esperança, 511 - Catumbi, Três Pontas - MG</p>
+          <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+        </div>
 
-      <div class="localizacao-card" onclick="exibirDetalhes('essentia')">
-        <h3>Essentia</h3>
-        <p>Avenida Monsenhor Luiz de Gonzaga, prédio 3 - sala 7, Nepomuceno - MG</p>
-        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+        <div class="localizacao-card" onclick="exibirDetalhes('essentia')">
+          <h3>Essentia</h3>
+          <p>Avenida Monsenhor Luiz de Gonzaga, prédio 3 - sala 7, Nepomuceno - MG</p>
+          <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal para Detalhes -->
-  <div id="detalhes-modal" class="detalhes-modal">
-    <div class="detalhes-modal-content">
-      <span class="fechar" onclick="fecharModal()">×</span>
-      <h3 id="modal-titulo"></h3>
-      <p id="modal-endereco"></p>
-      <p id="modal-telefone"></p>
-      <p id="modal-horario"></p>
-      <!-- Botão de Agendamento com WhatsApp -->
-      <a id="whatsapp-link" href="#" class="cta-btn" target="_blank">Agende Sua Consulta</a>
+    <!-- Modal para Detalhes -->
+    <div id="detalhes-modal" class="detalhes-modal">
+      <div class="detalhes-modal-content">
+        <span class="fechar" onclick="fecharModal()">×</span>
+        <h3 id="modal-titulo"></h3>
+        <p id="modal-endereco"></p>
+        <p id="modal-CEP"></p>
+        <!-- Botão de Agendamento com WhatsApp -->
+        <a id="whatsapp-link" href="#" class="cta-btn" target="_blank">Agende Sua Consulta</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <script src="script.js"></script> <!-- Link para o arquivo JS -->
+</body>
+</html>
 
 
 
@@ -294,34 +297,28 @@
   </div>
 </section>
 
-
-<!-- RODAPE -->
 <footer class="footer">
   <div class="footer-content">
+    <!-- Logo -->
     <div class="footer-logo">
       <img src="logo.png" alt="Logo" class="logo-img">
     </div>
 
-
+    <!-- Links Rápidos -->
     <div class="footer-info">
       <div class="footer-info-item">
-        <strong>Local de atendimento:</strong>
-        <p>Rua Misseno de Pádue, 427 Centro, Lavras - MG</p>
-        <p>CEP 37200-142</p>
-      </div>
-      <div class="footer-info-item">
-        <strong>Local de atendimento:</strong>
-        <p>Tv. Governador Valadares, 45 Centro, Perdões - MG</p>
-        <p>CEP 37260-000</p>
-      </div>
-      <div class="footer-info-item">
-        <strong>Local de atendimento:</strong>
-        <p>Segunda a Quinta-feira das 06:00 às 18:00.</p>
-        <p>Sexas-feiras das 06:00 às 17:00. Horário diferenciado durante feriados.</p>
+        <strong>Links Rápidos:</strong>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#redes-sociais">Redes Sociais</a></li>
+          <li><a href="#galeria">Galeria de Resultados</a></li>
+          <li><a href="#localizacoes">Localizações</a></li>
+          <li><a href="#avaliacoes">Avaliações dos Clientes</a></li>
+        </ul>
       </div>
     </div>
 
-
+    <!-- Ícones de Redes Sociais no meio -->
     <div class="footer-social">
       <a href="https://www.instagram.com/dr.filipevaneli/" class="social-icon" target="_blank" aria-label="Instagram">
         <i class="fab fa-instagram"></i>
@@ -333,23 +330,30 @@
         <i class="fas fa-envelope"></i>
       </a>
     </div>
+
+    <!-- Informações de Contato (Email e Telefone) -->
+    <div class="footer-info">
+      <div class="footer-info-item">
+        <strong class="footer-title">Contato:</strong>
+        <p>Email: <a href="mailto:seuemail@gmail.com">seuemail@gmail.com</a></p>
+        <p>Telefone: <a href="tel:+5535123456789">(35) 1234-5678</a></p>
+      </div>
+    </div>
   </div>
 
-
+  <!-- Rodapé Inferior -->
   <div class="footer-bottom">
     <p>&copy; 2025 Souza, Siqueira, Vidal Vilela & Zanateli. Todos os direitos reservados.</p>
   </div>
 </footer>
 
-
 <!-- Link para o Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
 <!-- Estilos do Rodapé -->
 <link rel="stylesheet" href="style.css">
-</body>
-</html>
+
+
 
 
 
