@@ -9,7 +9,7 @@
   --primary: #bf962f; /* Verde mais escuro */
   --secondary: #e1c699; /* Dourado */
   --accent: #C6A964; /* Verde mais claro */
-  --light: #f0e4ca; /* Bege claro */
+  --light: #f4e1c1; /* Bege claro */
   --dark: #222222; /* Preto suave */
   --font-heading: 'Merriweather', serif; /* Fonte serifada elegante para títulos */
   --font-body: 'Roboto', sans-serif; /* Fonte moderna e legível para o corpo do texto */
@@ -1075,7 +1075,7 @@ p {
 
 /* ===== Estilo do Rodapé ===== */
 .footer {
-  background: var(--primary); /* Verde escuro */
+  background: linear-gradient(to right, #e8c815, #bf962f);; /* Verde escuro */
   color: var(--light); /* Texto claro */
   padding: 40px 20px; /* Ajustando o padding para otimizar o espaço */
   text-align: center;
