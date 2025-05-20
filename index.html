@@ -187,6 +187,70 @@
     </div>
   </div>
 </section>
+
+
+
+
+<section class="localizacoes">
+  <h2>Nossos Locais de Atendimento</h2>
+  <div class="localizacoes-container">
+    <!-- Cartões de Localizações -->
+    <div class="localizacoes-list">
+      <div class="localizacao-card" onclick="exibirDetalhes('labcenter')">
+        <h3>Labcenter</h3>
+        <p>Rua Domingos Vieira de Lima, 380 - Centro, Santana da Vargem - MG</p>
+        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+      </div>
+
+      <div class="localizacao-card" onclick="exibirDetalhes('gislaine')">
+        <h3>Gislaine Pedroso</h3>
+        <p>Coqueiral - MG</p>
+        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+      </div>
+
+      <div class="localizacao-card" onclick="exibirDetalhes('denise')">
+        <h3>Denise Fróes Estética</h3>
+        <p>Rua Barbosa Lima 441 B, Centro, Lavras - MG</p>
+        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+      </div>
+
+      <div class="localizacao-card" onclick="exibirDetalhes('bouganville')">
+        <h3>Núcleo de Saúde Bouganville</h3>
+        <p>Avenida Sérgio Biagi Bueno, 900 - Jardim Bouganville, Varginha - MG</p>
+        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+      </div>
+
+      <div class="localizacao-card" onclick="exibirDetalhes('bemestar')">
+        <h3>Clínica Bem Estar</h3>
+        <p>R. Barão da Boa Esperança, 511 - Catumbi, Três Pontas - MG</p>
+        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+      </div>
+
+      <div class="localizacao-card" onclick="exibirDetalhes('essentia')">
+        <h3>Essentia</h3>
+        <p>Avenida Monsenhor Luiz de Gonzaga, prédio 3 - sala 7, Nepomuceno - MG</p>
+        <a href="javascript:void(0);" class="cta-btn">Veja Mais</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Detalhes -->
+  <div id="detalhes-modal" class="detalhes-modal">
+    <div class="detalhes-modal-content">
+      <span class="fechar" onclick="fecharModal()">×</span>
+      <h3 id="modal-titulo"></h3>
+      <p id="modal-endereco"></p>
+      <p id="modal-telefone"></p>
+      <p id="modal-horario"></p>
+      <!-- Botão de Agendamento com WhatsApp -->
+      <a id="whatsapp-link" href="#" class="cta-btn" target="_blank">Agende Sua Consulta</a>
+    </div>
+  </div>
+</section>
+
+
+
+
    
    <!-- Seção de Avaliações/Depoimentos – Estilo SVZ -->
 <section class="reviews-container">
