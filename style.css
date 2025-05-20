@@ -1,1646 +1,276 @@
-/* ========= Reset & Variáveis Globais ========= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-/* Variáveis de cores e fontes */
-:root {
-  --primary: #bf962f; /* Verde mais escuro */
-  --secondary: #e1c699; /* Dourado */
-  --accent: #C6A964; /* Verde mais claro */
-  --light: #f0e4ca; /* Bege claro */
-  --dark: #222222; /* Preto suave */
-  --font-heading: 'Merriweather', serif; /* Fonte serifada elegante para títulos */
-  --font-body: 'Roboto', sans-serif; /* Fonte moderna e legível para o corpo do texto */
-}
-
-
-/* Ajuste nos botões */
-.cta-btn {
-  background-color: var(--secondary); /* Dourado */
-  color: var(--dark);
-  border-radius: 25px;
-  padding: 12px 30px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.cta-btn:hover {
-  background-color: var(--accent); /* Verde claro */
-}
-
-/* Ajuste nos títulos */
-h2, h3 {
-  font-family: var(--font-heading);
-  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente nos títulos */
-  -webkit-background-clip: text; /* Para garantir o efeito de gradiente no texto */
-  -webkit-text-fill-color: transparent; /* Faz o preenchimento do texto transparente */
-  font-size: 2.5em;
-  text-align: center;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2); /* Sombramento leve */
-}
-
-
-/* Ajuste no background da página */
-body {
-  background: linear-gradient(to right, #f0e4ca, #f7c78c);
-
-}
-
-/* Cor de texto */
-p {
-  color: var(--dark); /* Preto suave para texto */
-}
-
-/* ========= Banner ========= */
-.banner {
-  position: relative;
-  width: 100%;
-  height: 500px; /* Altura ajustada para melhor responsividade */
-  overflow: hidden;
-  z-index: 0;
-}
-
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.05);
-}
-
-.banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  text-align: center;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.banner-text h2 {
-  font-family: var(--font-heading);
-  font-size: 2.8em;
-  color: var(--primary);
-  margin: 0;
-}
-
-/* ========= Caixa "Cuide da Sua Beleza!" ========= */
-.cta-box {
-  position: relative;
-  background-color: #fff;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-  text-align: center;
-  width: 50%;
-  max-width: 800px;
-  margin: 0 auto 30px; /* Centraliza a caixa e adiciona espaço abaixo dela */
-  top: -140px; /* Coloca a caixa ligeiramente acima do container */
-}
-
-/* Ajustes no texto da caixa */
-.cta-box h3 {
-  font-size: 2.8em;
-  color: var(--primary);
-  margin: 0;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-
-.cta-box p {
-  font-size: 1.4em;
-  color: var(--dark);
-  margin-top: 15px;
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px; /* Menor para um visual mais leve */
-  font-size: 1.2em; /* Tamanho mais próximo ao da foto */
-  background-color: #f9f7ee; /* Cor de fundo mais suave */
-  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente no fundo */
-  color: transparent; /* Torna o texto transparente para aplicar o gradiente */
-  background-clip: text; /* Aplica o gradiente ao texto */
-  text-decoration: none;
-  border-radius: 10px; /* Arredondado, mas não exagerado */
-  font-weight: 600;
-  text-align: center;
-  border: 1px solid #D4AF37; /* Borda dourada fina */
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-
-.cta-button:hover {
-  background-color: #D4AF37; /* Fundo dourado ao passar o mouse */
-  color: white; /* Texto branco quando o mouse passar */
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.cta-button span {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.cta-button:hover span {
-  transform: translateY(-5px);
-}
-
-
-/* ========= Responsividade ========= */
-
-/* Para telas maiores que 1024px (notebooks e desktops grandes) */
-@media (min-width: 1024px) {
-  .cta-box {
-    width: 50%; /* Deixa a caixa com 50% de largura */
-    margin-bottom: 40px; /* Espaço abaixo da caixa */
-  }
-
-  .cta-box h3 {
-    font-size: 2.8em;
-  }
-
-  .cta-box p {
-    font-size: 1.4em;
-  }
-
-  .cta-button {
-    font-size: 1.4em;
-    padding: 15px 30px;
-  }
-}
-
-/* Para telas entre 600px e 1024px (tablets e telas médias) */
-@media (max-width: 1024px) {
-  .cta-box {
-    width: 80%; /* Deixa a caixa com 80% de largura */
-    margin-bottom: 30px; /* Ajusta o espaço abaixo da caixa */
-  }
-
-  .cta-box h3 {
-    font-size: 2.5em;
-  }
-
-  .cta-box p {
-    font-size: 1.2em;
-  }
-
-  .cta-button {
-    font-size: 1.2em;
-    padding: 12px 25px;
-  }
-}
-
-/* Para dispositivos móveis (menos de 600px) */
-@media (max-width: 600px) {
-  .cta-box {
-    width: 90%; /* Deixa a caixa com 90% de largura */
-    margin-bottom: 20px; /* Ajusta o espaço abaixo da caixa */
-  }
-
-  .cta-box h3 {
-    font-size: 2em;
-  }
-
-  .cta-box p {
-    font-size: 1em;
-  }
-
-  .cta-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-  }
-}
-
-/* ========= Seção DESCRIÇÃO ========= */
-.descricao {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
-  background: linear-gradient(to right, #f0e4ca, #f7c78c);
-
-  overflow: visible;
-  flex-direction: column; /* Garante que a caixa e o container fiquem empilhados verticalmente */
-}
-
-
-.sobre-doutor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 50px;
-  background: linear-gradient(to right, #f0e4ca, #f7c78c);
- /* Cor de fundo clara */
-  gap: 40px;
-}
-
-
-.sobre-foto {
-  flex: 1;
-  position: relative;
-  width: 300px; /* Tamanho fixo para a foto quadrada */
-  height: 300px; /* Garantindo que a altura seja igual à largura */
-  overflow: hidden; /* Garante que a imagem não ultrapasse os limites quadrados */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adiciona sombra sutil */
-  border-radius: 10px; /* Bordas ligeiramente arredondadas para suavizar */
-}
-
-
-.sobre-foto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Garante que a imagem cubra todo o espaço sem distorção */
-}
-
-
-.sobre-texto {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-}
-
-
-.sobre-texto h2 {
-  font-size: 2.5em;
-  color: var(--primary);
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-
-.sobre-info {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-
-.info-item {
-  text-align: center;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.info-item i {
-  font-size: 3em; /* Aumenta o tamanho do ícone */
-  color: var(--primary); /* Cor primária para os ícones */
-  margin-bottom: 10px; /* Espaço entre o ícone e o título */
-}
-
-
-.info-item h3 {
-  font-size: 1.5em;
-  color: var(--primary); /* Cor primária para os títulos */
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-
-.info-item p {
-  font-size: 1.2em;
-  color: var(--dark); /* Preto suave */
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-
-.sobre-doutor img {
-  transition: transform 0.3s ease;
-}
-
-
-.sobre-doutor img:hover {
-  transform: scale(1.05); /* Leve zoom ao passar o mouse */
-}
-
-
-@media (max-width: 768px) {
-  .sobre-doutor {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-  .sobre-info {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-  .sobre-foto {
-    width: 200px; /* Ajuste para telas menores */
-    height: 200px;
-    margin-bottom: 20px;
-  }
-}
-
-
-
-
-/* ========= Redes Sociais ========= */
-.redes-sociais {
-  position: relative;
-  padding: 50px 20px;
-  color: var(--light); /* Texto claro */
-  text-align: center;
-  background: none; /* Removido o fundo da seção */
-  box-shadow: none; /* Removido qualquer sombra */
-  z-index: 1;
-}
-
-
-/* Título */
-.redes-sociais h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  position: relative;
-  z-index: 2;
-  color: #6a855a; /* Cor verde do WhatsApp */
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-
-/* Container das redes sociais */
-.social-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px; /* Espaço maior entre os ícones */
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
-  margin-top: 20px; /* Ajuste para alinhar corretamente */
-}
-
-
-/* Estilo do botão das redes sociais */
-.social-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 25px; /* Ajuste do tamanho do botão */
-  border-radius: 50px; /* Bordas arredondadas */
-  text-decoration: none;
-  background-color: #25D366; /* Cor similar ao botão do WhatsApp */
-  color: white;
-  font-weight: bold;
-  font-size: 1.1rem; /* Aumento do texto */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 3;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  width: 200px; /* Uniformizando o tamanho de todos os botões */
-  height: 60px; /* Uniformizando a altura */
-  text-align: center; /* Centraliza o texto dentro do botão */
-}
-
-
-/* Efeito de Glow (brilho) nos ícones das redes sociais */
-.social-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  filter: brightness(1.3); /* Aumenta o brilho */
-}
-
-
-/* Estilo da imagem do ícone */
-.social-img {
-  width: 30px; /* Aumento do tamanho do ícone */
-  height: 30px; /* Aumento do tamanho do ícone */
-  object-fit: contain;
-  margin-right: 10px; /* Espaço entre o ícone e o texto */
-  transition: filter 0.3s ease;
-}
-
-
-/* Efeito de glow nos ícones */
-.social-card:hover .social-img {
-  filter: brightness(1.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Brilho intenso ao passar o mouse */
-}
-
-
-/* Cores de fundo para as redes sociais */
-.social-card.instagram {
-  background: #E4405F; /* Instagram */
-}
-
-
-.social-card.whatsapp {
-  background: #25D366; /* WhatsApp */
-}
-
-
-.social-card.gmail {
-  background: #D44638; /* Gmail */
-}
-
-
-/* ===== Responsividade ===== */
-
-/* Para telas grandes (laptops e desktops) */
-@media (max-width: 1024px) {
-  .social-card {
-    padding: 15px 25px;
-  }
-
-  .social-img {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-/* Para telas médias (tablets e dispositivos menores) */
-@media (max-width: 768px) {
-  .social-container {
-    flex-direction: column; /* Alinha os itens verticalmente */
-    gap: 20px; /* Diminui o espaço entre os ícones */
-    justify-content: center; /* Garante que os ícones fiquem centralizados */
-    align-items: center; /* Centraliza os itens no eixo transversal */
-  }
-
-  .social-card {
-    padding: 12px 22px; /* Ajusta o padding para não ficar exagerado */
-    width: 180px; /* Ajusta a largura para caber bem em telas menores */
-    height: 55px; /* Ajusta a altura */
-  }
-
-  .social-img {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-/* Para telas muito pequenas (dispositivos móveis) */
-@media (max-width: 480px) {
-  .social-container {
-    flex-direction: column; /* Alinha os itens verticalmente */
-    gap: 15px; /* Diminui o espaço entre os ícones */
-    justify-content: center; /* Centraliza os ícones */
-    align-items: center; /* Garante que fiquem alinhados */
-  }
-
-  .social-card {
-    padding: 10px 20px; /* Ajusta o padding para um botão menor */
-    width: 160px; /* Ajusta a largura para melhor caber em telas menores */
-    height: 50px; /* Ajusta a altura do botão */
-  }
-
-  .social-img {
-    width: 35px;
-    height: 35px;
-  }
-
-  .social-card span {
-    font-size: 1rem; /* Ajuste do tamanho do texto para telas pequenas */
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ========= Carrossel (Galeria de Resultados) ========= */
-.carrossel {
-  padding: 80px 20px;
-  background: linear-gradient(to right, #f0e4ca, #f7c78c);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Ajuste da largura do wrapper do carrossel */
-.carousel-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  max-width: 1000px; /* Reduzido o tamanho máximo para o carrossel */
-  margin: auto;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-/* Descrição com ajuste de largura */
-.carousel-description {
-  flex: 1;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 230px;
-  background: none;
-  color: var(--dark);
-  margin: 0;
-  max-width: 400px; /* Limitar a largura da descrição */
-  box-sizing: border-box;
-  text-align: left;
-  margin-left: -20px; /* Ajuste para mover a descrição um pouco para a esquerda */
-}
-
-/* Título da descrição */
-.carousel-description-content h3 {
-  font-family: var(--font-heading);
-  font-size: 2rem; /* Aumentei o tamanho para dar mais destaque */
-  margin-bottom: 15px; /* Menor que antes para mais leveza */
-  color: var(--primary);
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-/* Texto da descrição */
-.carousel-description-content p {
-  font-size: 1.15rem; /* Ajuste para legibilidade melhorada */
-  margin-bottom: 12px; /* Menor para manter leveza no espaçamento */
-  line-height: 1.8; /* Aumento do espaçamento entre linhas para mais clareza */
-  color: var(--dark);
-  font-weight: 500; /* Menor peso para mais suavidade */
-}
-
-/* Itens da lista na descrição */
-.carousel-description-content ul {
-  padding-left: 20px;
-  font-size: 1.1rem; /* Um pouco maior para a lista ser mais visível */
-  list-style: disc;
-  color: var(--dark);
-  margin: 0;
-}
-
-.carousel-description-content li {
-  margin-bottom: 8px; /* Menor espaçamento para otimizar a leitura */
-  line-height: 1.6;
-}
-
-
-/* Ajuste do carrossel (imagem e slider) */
-.carousel-slider {
-  flex: 1.5;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  background: var(--light);
-  width: 100%;
-  max-width: 600px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  margin-top: 20px;
-}
-
-/* Carrossel com imagem menor ao passar o mouse */
-.carousel-slider:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  transform: translateY(-5px);
-}
-
-/* Tornar as imagens quadradas */
-.slider-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slider-track img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-right: 15px;
-  transition: transform 0.3s ease;
-}
-
-.slider-track img:hover {
-  transform: scale(1.05);
-}
-
-/* Ajuste da navegação (setas) sem fundo */
-.slider-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 2rem;
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 2;
-  box-shadow: none;
-  transition: transform 0.3s ease;
-  color: var(--primary);
-}
-
-.slider-nav:hover {
-  transform: scale(1.2);
-}
-
-/* Navegação para a seta anterior */
-.slider-nav.prev {
-  left: 10px;
-}
-
-/* Navegação para a seta seguinte */
-.slider-nav.next {
-  right: 10px;
-}
-
-/* Indicadores do Carrossel */
-.slider-indicators {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%); /* Ajuste para centralizar os indicadores */
-  display: flex;
-  gap: 12px;
-  z-index: 2;
-  width: auto; /* Retirando a largura de 100% para garantir o alinhamento */
-}
-
-.slider-indicators .indicator {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.slider-indicators .indicator.active {
-  background: var(--accent);
-  transform: scale(1.2);
-}
-
-.slider-indicators .indicator:hover {
-  background: var(--accent);
-  transform: scale(1.3);
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 1024px) {
-  .carousel-wrapper {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .carousel-slider {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .slider-track {
-    width: 100%;
-    display: flex;
-  }
-
-  .slider-track img {
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    margin-right: 0;
-  }
-
-  .slider-nav {
-    font-size: 1.8rem;
-    padding: 10px;
-  }
-
-  .slider-indicators {
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%); /* Garantindo que os indicadores fiquem centralizados */
-    width: auto; /* Ajuste para a largura automática */
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 0;
-  }
-
-  .slider-indicators .indicator {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel-description {
-    padding: 20px 15px;
-    min-width: 230px;
-  }
-
-  .carousel-description-content h3 {
-    font-size: 1.6rem;
-  }
-
-  .carousel-description-content p {
-    font-size: 1rem;
-  }
-
-  .carousel-wrapper {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .carousel-slider {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .slider-track {
-    width: 100%;
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .slider-track img {
-    width: 100%;
-    height: auto;
-    margin-right: 0;
-  }
-
-  .slider-nav {
-    font-size: 1.5rem;
-    padding: 10px;
-  }
-
-  .slider-indicators {
-    bottom: 5px;
-  }
-
-  .slider-indicators .indicator {
-    width: 10px;
-    height: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-description {
-    padding: 15px 10px;
-    min-width: 200px;
-  }
-
-  .carousel-description-content h3 {
-    font-size: 1.4rem;
-  }
-
-  .carousel-description-content p {
-    font-size: 0.9rem;
-  }
-
-  .carousel-wrapper {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .carousel-slider {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .slider-track {
-    width: 100%;
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .slider-track img {
-    width: 100%;
-    height: auto;
-  }
-
-  .slider-nav {
-    font-size: 1.2rem;
-    padding: 8px;
-  }
-
-  .slider-indicators {
-    bottom: 5px;
-    gap: 6px;
-  }
-
-  .slider-indicators .indicator {
-    width: 6px;
-    height: 6px;
-  }
-}
-
-
-
-
-
-
-/* ========= Seção de Avaliações / Depoimentos (Reviews) ========= */
-.reviews-container {
-  position: relative;
-  padding: 60px 20px;
-  background: linear-gradient(to right, #f0e4ca, #f7c78c);
-
-  text-align: center;
-  overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
-  width: 100%; /* Garantir que o fundo ocupe toda a largura da tela */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Ajusta o conteúdo para ficar alinhado no topo */
-  box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
-  margin: 0; /* Remove margens extras */
-}
-
-
-/* Garante que o conteúdo interno fique acima da camada animada */
-.reviews-container > * {
-  position: relative;
-  z-index: 1;
-}
-
-
-.reviews-title {
-  font-size: 1.8rem;
-  margin-bottom: 40px;
-  color: var(--dark); /* Texto escuro */
-}
-
-
-.review-cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-
-.review-card {
-  background: var(--light); /* Fundo claro */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 20px;
-  max-width: 700px;
-  width: 100%;
-  position: relative;
-  box-sizing: border-box; /* Para garantir que o padding não cause overflow */
-}
-
-
-.review-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 16px;
-  object-fit: cover;
-}
-
-
-.review-content {
-  flex: 1;
-  text-align: left;
-}
-
-
-.review-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.95rem;
-  color: var(--dark); /* Texto escuro */
-  margin-bottom: 8px;
-}
-
-
-.review-stars {
-  color: #f8c12e; /* Amarelo para estrelas */
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-
-
-.review-text {
-  font-size: 0.95rem;
-  color: var(--dark); /* Texto escuro */
-}
-
-
-.review-google-icon {
-  width: 24px;
-  height: 24px;
-  margin-left: 12px;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-}
-
-
-/* Botões do carrossel de reviews */
-.review-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  box-shadow: var(--shadow);
-  z-index: 2;
-  transition: transform 0.2s ease;
-}
-
-
-.review-nav:hover {
-  transform: translateY(-50%) scale(1.1);
-}
-
-
-.review-nav.prev {
-  left: 10px;
-}
-
-
-.review-nav.next {
-  right: 10px;
-}
-
-
-
-
-/* ===== Responsividade para a Seção de Reviews ===== */
-@media (max-width: 768px) {
-  .reviews-title {
-    font-size: 1.5rem; /* Tamanho reduzido */
-  }
-
-
-  .review-cards-wrapper {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-
-  .review-card {
-    padding: 15px;
-    max-width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-
-  .review-avatar {
-    margin-bottom: 10px; /* Ajuste no espaçamento da imagem do avatar */
-  }
-
-
-  .review-content {
-    text-align: center;
-  }
-
-
-  .review-header {
-    font-size: 0.85rem; /* Redução do tamanho da fonte no cabeçalho */
-  }
-
-
-  .review-stars {
-    font-size: 0.9rem; /* Reduz o tamanho das estrelas */
-  }
-
-
-  .review-text {
-    font-size: 0.85rem; /* Ajuste do texto para telas menores */
-  }
-
-
-  .review-google-icon {
-    right: 10px;
-    bottom: 10px;
-    width: 20px;
-    height: 20px;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .reviews-title {
-    font-size: 1.3rem; /* Fontes menores em dispositivos pequenos */
-  }
-
-
-  .review-card {
-    padding: 10px;
-    max-width: 100%;
-  }
-
-
-  .review-avatar {
-    width: 35px;
-    height: 35px;
-  }
-
-
-  .review-content {
-    font-size: 0.8rem; /* Ajuste de fonte */
-  }
-
-
-  .review-header {
-    font-size: 0.75rem;
-  }
-
-
-  .review-stars {
-    font-size: 0.8rem;
-  }
-
-
-  .review-google-icon {
-    right: 8px;
-    bottom: 8px;
-    width: 18px;
-    height: 18px;
-  }
-}
-
-
-/* ===== Estilo do Rodapé ===== */
-.footer {
-  background: linear-gradient(to right, #e8c815, #bf962f); /* Cor de fundo do rodapé */
-  color: var(--light); /* Cor do texto claro */
-  padding: 40px 20px; /* Ajuste do padding */
-  text-align: center;
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 150px; /* Ajuste a altura mínima */
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  align-items: center;
-}
-
-.footer-logo {
-  flex: 0 1 auto; /* Alinha a logo à esquerda sem forçar o espaçamento */
-  text-align: left; /* Alinha o texto da logo à esquerda */
-  display: block; /* Garante que a logo seja um bloco */
-}
-
-.footer-logo .logo-img {
-  width: 200px; /* Ajuste o tamanho conforme necessário */
-  height: auto; /* Mantém a proporção da logo */
-  max-width: 100%; /* Garante que a logo se ajuste ao tamanho do contêiner */
-}
-
-
-.footer-info {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  text-align: left;
-}
-
-.footer-info-item {
-  max-width: 230px; /* Ajuste da largura máxima */
-  font-size: 1em;
-  text-align: left;
-}
-
-.footer-info-item strong {
-  font-weight: bold;
-  color: var(--secondary); /* Cor destacada */
-  font-size: 1.1em;
-}
-
-.footer-info-item ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.footer-info-item a {
-  color: var(--light);
-  text-decoration: none;
-  font-size: 1em; /* Ajustei o tamanho da fonte */
-}
-
-.footer-info-item a:hover {
-  color: var(--secondary);
-}
-
-.footer-social {
-  flex: 1;
-  display: flex;
-  justify-content: center; /* Centraliza os ícones de redes sociais */
-  gap: 30px; /* Ajuste o espaçamento entre os ícones */
-  align-items: center;
-}
-
-.footer-social .social-icon {
-  color: var(--light);
-  font-size: 2em; /* Aumentei o tamanho dos ícones */
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer-social .social-icon:hover {
-  color: var(--secondary);
-  transform: scale(1.1);
-}
-
-/* ===== Adicionando Informações de Contato ao Centro ===== */
-.footer-contact {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 1.1em;
-}
-
-.footer-contact p {
-  margin: 5px 0;
-}
-
-.footer-contact strong {
-  color: var(--secondary);
-}
-
-.footer-bottom {
-  margin-top: 20px; /* Ajustei para maior espaçamento */
-  font-size: 1.2em; /* Aumentei o tamanho da fonte para dar mais destaque */
-  border-top: 1px solid var(--light);
-  padding-top: 20px;
-}
-
-.footer-bottom p {
-  margin: 0;
-}
-
-.footer-bottom .back-to-top {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--light);
-  text-decoration: none;
-  font-size: 1.5em; /* Aumentei o tamanho da fonte do link */
-}
-
-.footer-bottom .back-to-top:hover {
-  color: var(--secondary);
-  transform: scale(1.1);
-}
-
-/* ===== Responsividade ===== */
-@media (max-width: 900px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-info {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .footer-logo {
-    text-align: center;
-  }
-
-  .footer-bottom {
-    text-align: center;
-  }
-
-  .footer-social {
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .footer-info-item a {
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-logo .logo-img {
-    width: 150px; /* Reduzi o tamanho do logo para telas menores */
-  }
-
-  .footer-info-item {
-    font-size: 0.9em;
-  }
-
-  .footer-social .social-icon {
-    font-size: 1.4em;
-  }
-
-  .footer-bottom .back-to-top {
-    font-size: 1.3em;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ========= Estatísticas sem fundo ========= */
-.estatisticas {
-  padding: 60px 20px;
-  background-color: none; /* Removido o fundo */
-  text-align: center;
-  animation: fadeIn 1s ease-out;
-}
-
-
-/* Estatísticas livres sem fundo */
-.estatistica {
-  display: inline-block; /* Faz com que as estatísticas fiquem ao lado umas das outras */
-  width: 33%; /* Definindo largura para as estatísticas */
-  background: none; /* Removendo o fundo */
-  border-radius: 15px;
-  padding: 80px; /* Aumentei o padding para espaçamento interno */
-  box-shadow: none; /* Removido a sombra */
-  transform: translateY(50px);
-  opacity: 0;
-  animation: slideIn 0.8s ease-out forwards;
-  margin: 20px 0; /* Adicionando margem para espaçamento */
-  transition: all 0.3s ease; /* Transição suave */
-  text-align: center;
-}
-
-
-.estatistica i {
-  font-size: 3.5em;
-  color: var(--primary); /* Cor do ícone (pode ser alterada para a cor desejada) */
-  margin-bottom: 10px;
-}
-
-
-.estatistica h3 {
-  font-size: 3.5em;
-  font-weight: bold;
-  color: var(--dark); /* Cor escura para o título */
-  margin-bottom: 10px;
-  opacity: 0;
-  animation: fadeInNumber 1.5s ease-out forwards;
-}
-
-
-.estatistica p {
-  font-size: 1.1em;
-  color: var(--dark); /* Cor do texto */
-  opacity: 0;
-  animation: fadeInText 1.5s ease-out forwards;
-}
-
-
-/* Animações */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-@keyframes fadeInNumber {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-
-@keyframes fadeInText {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-
-/* Responsividade */
-@media (max-width: 1024px) {
-  .estatistica {
-    width: 45%; /* Ajustando a largura para duas colunas em tablets */
-    margin-bottom: 30px;
-    padding: 25px; /* Ajuste no padding */
-  }
-
-
-  .estatistica i {
-    font-size: 3em; /* Ajuste no tamanho do ícone */
-  }
-
-
-  .estatistica h3 {
-    font-size: 2.8em; /* Ajuste no tamanho do título */
-  }
-
-
-  .estatistica p {
-    font-size: 1.1em; /* Ajuste no tamanho do parágrafo */
-  }
-}
-
-
-@media (max-width: 768px) {
-  .estatistica {
-    width: 80%; /* Ajuste na largura para telas menores */
-    margin-bottom: 20px;
-    padding: 20px; /* Ajuste no padding */
-  }
-
-
-  .estatistica i {
-    font-size: 2.8em; /* Ajuste no tamanho do ícone */
-  }
-
-
-  .estatistica h3 {
-    font-size: 2.3em; /* Ajuste no tamanho do título */
-  }
-
-
-  .estatistica p {
-    font-size: 1.1em; /* Ajuste no tamanho do texto */
-  }
-}
-
-
-@media (max-width: 480px) {
-  .estatistica {
-    width: 100%; /* Itens ocupando 100% da largura */
-    margin-bottom: 20px;
-    padding: 15px;
-  }
-
-
-  .estatistica i {
-    font-size: 2.5em; /* Ajuste no tamanho do ícone */
-  }
-
-
-  .estatistica h3 {
-    font-size: 2em; /* Ajuste no tamanho do título */
-  }
-
-
-  .estatistica p {
-    font-size: 1em; /* Ajuste no tamanho do texto */
-  }
-}
-
-
-
-/* ===== Seção de Localizações ===== */
-.localizacoes {
-  padding: 50px 20px;
-  background: linear-gradient(to right, #f0e4ca, #f7c78c);
-  text-align: center;
-}
-
-/* Título da seção */
-.localizacoes h2 {
-  font-family: var(--font-heading);
-  font-size: 2.5em;
-  color: var(--primary);
-  margin-bottom: 30px;
-}
-
-/* Contêiner principal para os cartões de localizações */
-.localizacoes-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Lista de Cartões de Localizações */
-.localizacoes-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* Estilo do cartão */
-.localizacao-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  text-align: left;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  width: 28%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 220px;
-}
-
-.localizacao-card h3 {
-  font-family: var(--font-heading);
-  color: var(--primary);
-  font-size: 1.8em;
-  margin-bottom: 10px;
-}
-
-.localizacao-card p {
-  color: var(--dark);
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  flex-grow: 1;
-}
-
-.localizacao-card .cta-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px;
-  font-size: 1.2em;
-  background: linear-gradient(to right, #e8c815, #bf962f);
-  color: transparent;
-  background-clip: text;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: 400;
-  text-align: center;
-  border: 1px solid #D4AF37;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.localizacao-card .cta-btn:hover {
-  background-color: var(--accent);
-}
-
-/* Modal de Detalhes */
-.detalhes-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.detalhes-modal-content {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  width: 400px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  max-height: 80vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.detalhes-modal .fechar {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 2em;
-  cursor: pointer;
-}
-
-.detalhes-modal .cta-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px;
-  font-size: 1.2em;
-  background: linear-gradient(to right, #e8c815, #bf962f);
-  color: transparent;
-  background-clip: text;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: 600;
-  text-align: center;
-  border: 1px solid #D4AF37;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.detalhes-modal .cta-btn:hover {
-  background-color: var(--accent);
-}
-
-/* ===== Melhorias na Responsividade ===== */
-@media (max-width: 1024px) {
-  .localizacao-card {
-    width: 45%;
-    height: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .localizacoes-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .localizacao-card {
-    width: 48%;
-    height: auto;
-    margin-bottom: 15px;
-  }
-
-  .detalhes-modal-content {
-    width: 80%;
-  }
-}
-
-@media (max-width: 480px) {
-  .localizacoes-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .localizacao-card {
-    width: 48%;
-  }
-
-  .localizacoes h2 {
-    font-size: 1.8em;
-  }
-
-  .localizacao-card h3 {
-    font-size: 1.5em;
-  }
-
-  .localizacao-card p {
-    font-size: 1em;
-  }
-
-  .cta-btn {
-    font-size: 1em;
-    padding: 10px 20px;
-  }
-
-  .detalhes-modal-content {
-    width: 95%;
-    padding: 20px;
-  }
-}
-
+document.addEventListener('DOMContentLoaded', function () {
+  // === Carrossel de Imagens (Resultados) ===
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const slider = carousel.querySelector('.slider-track');
+    const images = slider.querySelectorAll('img');
+    const prevBtn = carousel.querySelector('.prev');
+    const nextBtn = carousel.querySelector('.next');
+    const indicatorsContainer = carousel.querySelector('.slider-indicators');
+    const totalSlides = images.length;
+    let index = 0;
+    let slideInterval;
+    let userInteracted = false;
+    let interactionTimeout;
+
+    // Cria os indicadores
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('indicator');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        index = i;
+        updateSlider();
+        delayAutoplayAfterInteraction();
+      });
+      indicatorsContainer.appendChild(dot);
+    }
+    const indicators = indicatorsContainer.querySelectorAll('.indicator');
+
+    const updateIndicators = () => {
+      indicators.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === index);
+      });
+    };
+
+    const updateSlider = () => {
+      // Pega a margem direita definida via CSS
+      const imageStyle = getComputedStyle(images[0]);
+      const marginRight = parseFloat(imageStyle.marginRight);
+      const slideWidth = images[0].offsetWidth + marginRight;
+      slider.style.transform = `translateX(-${index * slideWidth}px)`;
+      updateIndicators();
+    };
+    
+    const showNextSlide = () => {
+      index = (index + 1) % totalSlides;
+      updateSlider();
+    };
+
+    const showPrevSlide = () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    };
+
+    const startInterval = () => {
+      slideInterval = setInterval(() => {
+        if (!userInteracted) {
+          showNextSlide();
+        }
+      }, 5000);
+    };
+
+    const delayAutoplayAfterInteraction = () => {
+      userInteracted = true;
+      clearInterval(slideInterval);
+      clearTimeout(interactionTimeout);
+      interactionTimeout = setTimeout(() => {
+        userInteracted = false;
+        startInterval();
+      }, 6000);
+    };
+
+    prevBtn.addEventListener('click', () => {
+      showPrevSlide();
+      delayAutoplayAfterInteraction();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      showNextSlide();
+      delayAutoplayAfterInteraction();
+    });
+
+    const resizeObserver = new ResizeObserver(() => updateSlider());
+    resizeObserver.observe(slider);
+
+    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    carousel.addEventListener('mouseleave', () => {
+      if (!userInteracted) startInterval();
+    });
+
+    updateSlider();
+    startInterval();
+  });
+
+  // === Carrossel de Depoimentos ===
+  document.querySelectorAll('[data-review-carousel]').forEach(carousel => {
+    const slider = carousel.querySelector('.review-track');
+    const reviewCards = slider.querySelectorAll('.review-card');
+    const prevBtn = carousel.querySelector('.review-nav.prev');
+    const nextBtn = carousel.querySelector('.review-nav.next');
+    const totalReviews = reviewCards.length;
+    let index = 0;
+    let slideInterval;
+    let userInteracted = false;
+    let interactionTimeout;
+
+    const updateReviewSlider = () => {
+      // Pega a margem direita definida via CSS para a review-card
+      const cardStyle = getComputedStyle(reviewCards[0]);
+      const marginRight = parseFloat(cardStyle.marginRight);
+      const slideWidth = reviewCards[0].offsetWidth + marginRight;
+      slider.style.transform = `translateX(-${index * slideWidth}px)`;
+    };
+
+    const showNextReview = () => {
+      index = (index + 1) % totalReviews;
+      updateReviewSlider();
+    };
+
+    const showPrevReview = () => {
+      index = (index - 1 + totalReviews) % totalReviews;
+      updateReviewSlider();
+    };
+
+    const startReviewInterval = () => {
+      slideInterval = setInterval(() => {
+        if (!userInteracted) {
+          showNextReview();
+        }
+      }, 6000);
+    };
+
+    const delayReviewAutoplay = () => {
+      userInteracted = true;
+      clearInterval(slideInterval);
+      clearTimeout(interactionTimeout);
+      interactionTimeout = setTimeout(() => {
+        userInteracted = false;
+        startReviewInterval();
+      }, 7000);
+    };
+
+    nextBtn.addEventListener('click', () => {
+      showNextReview();
+      delayReviewAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      showPrevReview();
+      delayReviewAutoplay();
+    });
+
+    window.addEventListener('resize', updateReviewSlider);
+    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    carousel.addEventListener('mouseleave', () => {
+      if (!userInteracted) startReviewInterval();
+    });
+
+    updateReviewSlider();
+    startReviewInterval();
+  });
+});
+
+// Adicionando animação ao cabeçalho fixo quando o usuário rolar a página
+document.addEventListener('scroll', function () {
+  const header = document.querySelector('.header');
+  if (window.scrollY > 50) {  // Quando o usuário rola 50px para baixo
+    header.classList.add('scrolled');  // Adiciona a classe que muda o fundo
+  } else {
+    header.classList.remove('scrolled');  // Remove a classe quando o topo da página é alcançado
+  }
+});
+
+// Adicionando animação ao botão de voltar ao topo
+const backToTopBtn = document.querySelector('.back-to-top');
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 300) {  // Quando o usuário rola 300px para baixo
+    backToTopBtn.classList.add('visible');  // Adiciona a classe que torna o botão visível
+  } else {
+    backToTopBtn.classList.remove('visible');  // Remove a classe quando o topo da página é alcançado
+  }
+});
+
+// Adicionando animação ao cabeçalho fixo
+document.addEventListener("DOMContentLoaded", () => {
+  const estatisticas = document.querySelectorAll('.estatistica');
+
+  // Opções de configuração para o IntersectionObserver
+  const options = {
+    root: null,  // viewport
+    rootMargin: '0px',
+    threshold: 0.5 // Dispara quando 50% do elemento estiver visível
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Quando o elemento entra na tela, adiciona a classe "active"
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);  // Parar de observar o item após ele ser visível
+      }
+    });
+  }, options);
+
+  // Começa a observar os itens
+  estatisticas.forEach(estatistica => {
+    observer.observe(estatistica);
+  });
+});
+
+
+
+
+
+function exibirDetalhes(local) {
+  const detalhes = {
+    labcenter: {
+      titulo: 'Labcenter',
+      endereco: 'Rua Domingos Vieira de Lima, 380 - Centro, Santana da Vargem - MG',
+      cep: '37195-000',
+      whatsapp: 'https://wa.me/5535123456789'
+    },
+    gislaine: {
+      titulo: 'Gislaine Pedroso',
+      endereco: 'Coqueiral - MG',
+      cep: '37195-000',
+      whatsapp: 'https://wa.me/5535987654321'
+    },
+    denise: {
+      titulo: 'Denise Fróes Estética',
+      endereco: 'Rua Barbosa Lima 441 B, Centro, Lavras - MG',
+      cep: '37200-090',
+      whatsapp: 'https://wa.me/553523456789'
+    },
+    bouganville: {
+      titulo: 'Núcleo de Saúde Bouganville',
+      endereco: 'Avenida Sérgio Biagi Bueno, 900 - Jardim Bouganville, Varginha - MG',
+      cep: '37031-000',
+      whatsapp: 'https://wa.me/553555667788'
+    },
+    bemestar: {
+      titulo: 'Clínica Bem Estar',
+      endereco: 'R. Barão da Boa Esperança, 511 - Catumbi, Três Pontas - MG',
+      cep: '37190-000',
+      whatsapp: 'https://wa.me/553599887766'
+    },
+    essentia: {
+      titulo: 'Essentia',
+      endereco: 'Avenida Monsenhor Luiz de Gonzaga, prédio 3 - sala 7, Nepomuceno - MG',
+      cep: '37250-000',
+      whatsapp: 'https://wa.me/553522334455'
+    }
+  };
+
+  const localDetalhes = detalhes[local];
+
+  if (localDetalhes) {
+    document.getElementById('modal-titulo').innerText = localDetalhes.titulo;
+    document.getElementById('modal-endereco').innerText = `Endereço: ${localDetalhes.endereco}`;
+    document.getElementById('modal-CEP').innerText = `CEP: ${localDetalhes.cep}`;
+    document.getElementById('whatsapp-link').href = localDetalhes.whatsapp;
+
+    // Exibe o modal definindo o display como flex
+    document.getElementById('detalhes-modal').style.display = 'flex';
+  }
+}
+
+function fecharModal() {
+  document.getElementById('detalhes-modal').style.display = 'none';
+}
+
+// Adiciona um listener para fechar o modal ao clicar fora da área de conteúdo
+document.getElementById('detalhes-modal').addEventListener('click', function(event) {
+  if (event.target === this) {
+    fecharModal();
+  }
+});
