@@ -525,7 +525,6 @@ p {
 .carrossel {
   padding: 80px 20px;
   background: linear-gradient(to right, #f0e4ca, #f7c78c);
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -535,7 +534,7 @@ p {
 .carousel-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 30px;
   max-width: 1000px; /* Reduzido o tamanho máximo para o carrossel */
   margin: auto;
@@ -546,7 +545,7 @@ p {
 /* Descrição com ajuste de largura */
 .carousel-description {
   flex: 1;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -557,40 +556,42 @@ p {
   max-width: 400px; /* Limitar a largura da descrição */
   box-sizing: border-box;
   text-align: left;
+  margin-left: -20px; /* Ajuste para mover a descrição um pouco para a esquerda */
 }
 
 /* Título da descrição */
 .carousel-description-content h3 {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 2rem; /* Aumentei o tamanho para dar mais destaque */
+  margin-bottom: 15px; /* Menor que antes para mais leveza */
   color: var(--primary);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 /* Texto da descrição */
 .carousel-description-content p {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  line-height: 1.7;
+  font-size: 1.15rem; /* Ajuste para legibilidade melhorada */
+  margin-bottom: 12px; /* Menor para manter leveza no espaçamento */
+  line-height: 1.8; /* Aumento do espaçamento entre linhas para mais clareza */
   color: var(--dark);
-  font-weight: 400;
+  font-weight: 500; /* Menor peso para mais suavidade */
 }
 
 /* Itens da lista na descrição */
 .carousel-description-content ul {
   padding-left: 20px;
-  font-size: 1rem;
+  font-size: 1.1rem; /* Um pouco maior para a lista ser mais visível */
   list-style: disc;
   color: var(--dark);
   margin: 0;
 }
 
 .carousel-description-content li {
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Menor espaçamento para otimizar a leitura */
   line-height: 1.6;
 }
+
 
 /* Ajuste do carrossel (imagem e slider) */
 .carousel-slider {
@@ -1420,3 +1421,206 @@ p {
     font-size: 1em; /* Ajuste no tamanho do texto */
   }
 }
+
+
+
+/* ===== Seção de Localizações ===== */
+.localizacoes {
+  padding: 50px 20px;
+  background: linear-gradient(to right, #f0e4ca, #f7c78c);
+  text-align: center;
+}
+
+/* Título da seção */
+.localizacoes h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5em;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+/* Contêiner principal para os cartões de localizações */
+.localizacoes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;  /* Reduzido o espaço entre os cartões */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Lista de Cartões de Localizações */
+.localizacoes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;  /* Reduzido o espaço entre os cartões */
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Estilo do cartão */
+.localizacao-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;  /* Diminuímos o padding para reduzir o espaço interno */
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 28%;  /* Cartões ocupando 28% da largura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 220px;  /* Diminuição da altura dos cartões */
+}
+
+.localizacao-card h3 {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.localizacao-card p {
+  color: var(--dark);
+  font-size: 1.1em;
+  margin-bottom: 10px;  /* Reduzimos a margem para diminuir o espaço entre o texto */
+  flex-grow: 1;  /* Garante que o texto ocupe o espaço necessário */
+}
+
+.localizacao-card .cta-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px; /* Ajuste do padding */
+  font-size: 1.2em; /* Tamanho correspondente */
+  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente igual ao primeiro */
+  color: transparent; /* Texto transparente */
+  background-clip: text; /* Aplicação do gradiente ao texto */
+  text-decoration: none;
+  border-radius: 10px; /* Mesma borda arredondada */
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid #D4AF37; /* Borda dourada */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.localizacao-card .cta-btn:hover {
+  background-color: var(--accent);
+}
+
+/* Modal de Detalhes */
+.detalhes-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.detalhes-modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-height: 80vh;  /* Para evitar que o modal ocupe toda a altura da tela */
+  overflow-y: auto;  /* Caso o conteúdo seja grande, o modal ficará rolável */
+  display: flex;
+  flex-direction: column;
+}
+
+.detalhes-modal .fechar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Garantir que o botão "Agende Sua Consulta" não sobreponha o texto */
+.detalhes-modal .cta-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px; /* Ajuste do padding */
+  font-size: 1.2em; /* Tamanho correspondente */
+  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente igual ao primeiro */
+  color: transparent; /* Texto transparente */
+  background-clip: text; /* Aplicação do gradiente ao texto */
+  text-decoration: none;
+  border-radius: 10px; /* Mesma borda arredondada */
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid #D4AF37; /* Borda dourada */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.detalhes-modal .cta-btn:hover {
+  background-color: var(--accent);
+}
+
+
+/* ===== Melhorias na Responsividade ===== */
+@media (max-width: 1024px) {
+  .localizacao-card {
+    width: 45%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .localizacoes-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .localizacao-card {
+    width: 48%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .detalhes-modal-content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .localizacoes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .localizacao-card {
+    width: 48%;
+  }
+
+  .localizacoes h2 {
+    font-size: 1.8em;
+  }
+
+  .localizacao-card h3 {
+    font-size: 1.5em;
+  }
+
+  .localizacao-card p {
+    font-size: 1em;
+  }
+
+  .cta-btn {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  .detalhes-modal-content {
+    width: 95%;
+    padding: 20px;
+  
