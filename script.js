@@ -216,43 +216,37 @@ function exibirDetalhes(local) {
     labcenter: {
       titulo: 'Labcenter',
       endereco: 'Rua Domingos Vieira de Lima, 380 - Centro, Santana da Vargem - MG',
-      telefone: '(35) 1234-5678',
-      horario: 'Seg a Sex, 08:00 - 18:00',
+      cep: '37195-000',
       whatsapp: 'https://wa.me/5535123456789'
     },
     gislaine: {
       titulo: 'Gislaine Pedroso',
       endereco: 'Coqueiral - MG',
-      telefone: '(35) 9876-5432',
-      horario: 'Seg a Sex, 09:00 - 17:00',
+      cep: '37195-000',
       whatsapp: 'https://wa.me/5535987654321'
     },
     denise: {
       titulo: 'Denise Fróes Estética',
       endereco: 'Rua Barbosa Lima 441 B, Centro, Lavras - MG',
-      telefone: '(35) 2345-6789',
-      horario: 'Seg a Sex, 09:00 - 18:00',
+      cep: '37200-090',
       whatsapp: 'https://wa.me/553523456789'
     },
     bouganville: {
       titulo: 'Núcleo de Saúde Bouganville',
       endereco: 'Avenida Sérgio Biagi Bueno, 900 - Jardim Bouganville, Varginha - MG',
-      telefone: '(35) 5566-7788',
-      horario: 'Seg a Sex, 08:00 - 17:00',
+      cep: '37031-000',
       whatsapp: 'https://wa.me/553555667788'
     },
     bemestar: {
       titulo: 'Clínica Bem Estar',
       endereco: 'R. Barão da Boa Esperança, 511 - Catumbi, Três Pontas - MG',
-      telefone: '(35) 9988-7766',
-      horario: 'Seg a Sex, 07:00 - 19:00',
+      cep: '37190-000',
       whatsapp: 'https://wa.me/553599887766'
     },
     essentia: {
       titulo: 'Essentia',
       endereco: 'Avenida Monsenhor Luiz de Gonzaga, prédio 3 - sala 7, Nepomuceno - MG',
-      telefone: '(35) 2233-4455',
-      horario: 'Seg a Sex, 08:00 - 16:00',
+      cep: '37250-000',
       whatsapp: 'https://wa.me/553522334455'
     }
   };
@@ -262,8 +256,7 @@ function exibirDetalhes(local) {
   if (localDetalhes) {
     document.getElementById('modal-titulo').innerText = localDetalhes.titulo;
     document.getElementById('modal-endereco').innerText = `Endereço: ${localDetalhes.endereco}`;
-    document.getElementById('modal-telefone').innerText = `Telefone: ${localDetalhes.telefone}`;
-    document.getElementById('modal-horario').innerText = `Horário: ${localDetalhes.horario}`;
+    document.getElementById('modal-CEP').innerText = `CEP: ${localDetalhes.cep}`;
     document.getElementById('whatsapp-link').href = localDetalhes.whatsapp;
 
     // Exibe o modal definindo o display como flex
@@ -277,8 +270,6 @@ function fecharModal() {
 
 // Adiciona um listener para fechar o modal ao clicar fora da área de conteúdo
 document.getElementById('detalhes-modal').addEventListener('click', function(event) {
-  // Se o clique for exatamente no overlay e não em algum elemento interno,
-  // o modal é fechado
   if (event.target === this) {
     fecharModal();
   }
