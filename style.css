@@ -1081,111 +1081,131 @@ p {
 
 /* ===== Estilo do Rodapé ===== */
 .footer {
-  background: linear-gradient(to right, #e8c815, #bf962f);; /* Verde escuro */
-  color: var(--light); /* Texto claro */
-  padding: 40px 20px; /* Ajustando o padding para otimizar o espaço */
+  background: linear-gradient(to right, #e8c815, #bf962f); /* Cor de fundo do rodapé */
+  color: var(--light); /* Cor do texto claro */
+  padding: 40px 20px; /* Ajuste do padding */
   text-align: center;
-  box-sizing: border-box; /* Inclui o padding no cálculo do tamanho */
-  width: 100%; /* Garantir que o rodapé ocupe 100% da largura */
- min-height: 100px; /* Ajuste a altura mínima conforme necessário */
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 150px; /* Ajuste a altura mínima */
 }
-
 
 .footer-content {
   display: flex;
-  justify-content: space-between; /* Garante que os itens fiquem igualmente distribuídos */
-  gap: 20px;
-  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
-  align-items: center; /* Alinha os itens verticalmente ao centro */
+  align-items: center;
 }
-
 
 .footer-logo {
-  flex: 1;
-  text-align: left;
+  flex: 0 1 auto; /* Alinha a logo à esquerda sem forçar o espaçamento */
+  text-align: left; /* Alinha o texto da logo à esquerda */
+  display: block; /* Garante que a logo seja um bloco */
 }
 
-
 .footer-logo .logo-img {
-  width: 230px; /* Ajuste do tamanho do logo */
-  max-width: 100%;
+  width: 200px; /* Ajuste o tamanho conforme necessário */
+  height: auto; /* Mantém a proporção da logo */
+  max-width: 100%; /* Garante que a logo se ajuste ao tamanho do contêiner */
 }
 
 
 .footer-info {
-  flex: 3; /* Garante que a área de informações ocupe mais espaço */
+  flex: 2;
   display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se não couberem */
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: left;
 }
-
 
 .footer-info-item {
-  max-width: 220px;
-  font-size: 1em; /* Fonte levemente maior */
-  text-align: left; /* Alinha o texto à esquerda */
+  max-width: 230px; /* Ajuste da largura máxima */
+  font-size: 1em;
+  text-align: left;
 }
-
 
 .footer-info-item strong {
   font-weight: bold;
-  color: var(--secondary); /* Destaca as palavras-chave */
+  color: var(--secondary); /* Cor destacada */
+  font-size: 1.1em;
 }
 
+.footer-info-item ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.footer-info-item a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 1em; /* Ajustei o tamanho da fonte */
+}
+
+.footer-info-item a:hover {
+  color: var(--secondary);
+}
 
 .footer-social {
   flex: 1;
   display: flex;
-  justify-content: center;
-  gap: 20px; /* Ajuste no gap para otimizar o espaço entre os ícones */
+  justify-content: center; /* Centraliza os ícones de redes sociais */
+  gap: 30px; /* Ajuste o espaçamento entre os ícones */
   align-items: center;
-  padding-right: 20px;
 }
 
-
 .footer-social .social-icon {
-  color: var(--light); /* Ícones brancos */
-  font-size: 1.5em; /* Ícones de tamanho maior */
+  color: var(--light);
+  font-size: 2em; /* Aumentei o tamanho dos ícones */
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-
 .footer-social .social-icon:hover {
-  color: var(--secondary); /* Dourado */
-  transform: scale(1.1); /* Efeito de aumento suave */
+  color: var(--secondary);
+  transform: scale(1.1);
 }
 
+/* ===== Adicionando Informações de Contato ao Centro ===== */
+.footer-contact {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-contact strong {
+  color: var(--secondary);
+}
 
 .footer-bottom {
-  margin-top: 10px; /* Ajuste do espaço entre a parte inferior do rodapé */
-  font-size: 1.1em; /* Aumenta um pouco o tamanho da fonte */
-  border-top: 1px solid var(--light); /* Borda clara */
+  margin-top: 20px; /* Ajustei para maior espaçamento */
+  font-size: 1.2em; /* Aumentei o tamanho da fonte para dar mais destaque */
+  border-top: 1px solid var(--light);
   padding-top: 20px;
 }
-
 
 .footer-bottom p {
   margin: 0;
 }
-
 
 .footer-bottom .back-to-top {
   display: inline-block;
   margin-top: 10px;
   color: var(--light);
   text-decoration: none;
-  font-size: 1.4em;
+  font-size: 1.5em; /* Aumentei o tamanho da fonte do link */
 }
-
 
 .footer-bottom .back-to-top:hover {
-  color: var(--secondary); /* Dourado */
+  color: var(--secondary);
   transform: scale(1.1);
 }
-
 
 /* ===== Responsividade ===== */
 @media (max-width: 900px) {
@@ -1195,51 +1215,49 @@ p {
     text-align: center;
   }
 
-
   .footer-info {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
   }
 
-
   .footer-logo {
     text-align: center;
   }
-
 
   .footer-bottom {
     text-align: center;
   }
 
-
   .footer-social {
     justify-content: center;
     margin-top: 10px;
   }
-}
 
+  .footer-info-item a {
+    font-size: 0.9em;
+  }
+}
 
 @media (max-width: 480px) {
   .footer-logo .logo-img {
-    width: 180px; /* Logo menor em telas pequenas */
+    width: 150px; /* Reduzi o tamanho do logo para telas menores */
   }
-
 
   .footer-info-item {
-    font-size: 0.9em; /* Ajuste de fonte para telas pequenas */
+    font-size: 0.9em;
   }
-
 
   .footer-social .social-icon {
-    font-size: 1.4em; /* Ícones maiores em telas pequenas */
+    font-size: 1.4em;
   }
-
 
   .footer-bottom .back-to-top {
-    font-size: 1.3em; /* Ajuste da fonte do link de voltar ao topo */
+    font-size: 1.3em;
   }
 }
+
+
 
 
 
@@ -1444,7 +1462,7 @@ p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;  /* Reduzido o espaço entre os cartões */
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1453,7 +1471,7 @@ p {
 .localizacoes-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;  /* Reduzido o espaço entre os cartões */
+  gap: 20px;
   justify-content: space-between;
   width: 100%;
 }
@@ -1463,15 +1481,15 @@ p {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px;  /* Diminuímos o padding para reduzir o espaço interno */
+  padding: 10px;
   text-align: left;
   cursor: pointer;
   transition: transform 0.3s ease;
-  width: 28%;  /* Cartões ocupando 28% da largura */
+  width: 28%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 220px;  /* Diminuição da altura dos cartões */
+  height: 220px;
 }
 
 .localizacao-card h3 {
@@ -1484,25 +1502,25 @@ p {
 .localizacao-card p {
   color: var(--dark);
   font-size: 1.1em;
-  margin-bottom: 10px;  /* Reduzimos a margem para diminuir o espaço entre o texto */
-  flex-grow: 1;  /* Garante que o texto ocupe o espaço necessário */
+  margin-bottom: 10px;
+  flex-grow: 1;
 }
 
 .localizacao-card .cta-btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 12px 30px; /* Ajuste do padding */
-  font-size: 1.2em; /* Tamanho correspondente */
-  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente igual ao primeiro */
-  color: transparent; /* Texto transparente */
-  background-clip: text; /* Aplicação do gradiente ao texto */
+  padding: 12px 30px;
+  font-size: 1.2em;
+  background: linear-gradient(to right, #e8c815, #bf962f);
+  color: transparent;
+  background-clip: text;
   text-decoration: none;
-  border-radius: 10px; /* Mesma borda arredondada */
+  border-radius: 10px;
   font-weight: 400;
   text-align: center;
-  border: 1px solid #D4AF37; /* Borda dourada */
+  border: 1px solid #D4AF37;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .localizacao-card .cta-btn:hover {
@@ -1529,8 +1547,8 @@ p {
   width: 400px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   text-align: center;
-  max-height: 80vh;  /* Para evitar que o modal ocupe toda a altura da tela */
-  overflow-y: auto;  /* Caso o conteúdo seja grande, o modal ficará rolável */
+  max-height: 80vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
@@ -1543,28 +1561,26 @@ p {
   cursor: pointer;
 }
 
-/* Garantir que o botão "Agende Sua Consulta" não sobreponha o texto */
 .detalhes-modal .cta-btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 12px 30px; /* Ajuste do padding */
-  font-size: 1.2em; /* Tamanho correspondente */
-  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente igual ao primeiro */
-  color: transparent; /* Texto transparente */
-  background-clip: text; /* Aplicação do gradiente ao texto */
+  padding: 12px 30px;
+  font-size: 1.2em;
+  background: linear-gradient(to right, #e8c815, #bf962f);
+  color: transparent;
+  background-clip: text;
   text-decoration: none;
-  border-radius: 10px; /* Mesma borda arredondada */
+  border-radius: 10px;
   font-weight: 600;
   text-align: center;
-  border: 1px solid #D4AF37; /* Borda dourada */
+  border: 1px solid #D4AF37;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .detalhes-modal .cta-btn:hover {
   background-color: var(--accent);
 }
-
 
 /* ===== Melhorias na Responsividade ===== */
 @media (max-width: 1024px) {
@@ -1623,4 +1639,6 @@ p {
   .detalhes-modal-content {
     width: 95%;
     padding: 20px;
-  
+  }
+}
+
