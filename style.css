@@ -9,7 +9,7 @@
   --primary: #bf962f; /* Verde mais escuro */
   --secondary: #e1c699; /* Dourado */
   --accent: #C6A964; /* Verde mais claro */
-  --light: #f4e1c1; /* Bege claro */
+  --light: #f0e4ca; /* Bege claro */
   --dark: #222222; /* Preto suave */
   --font-heading: 'Merriweather', serif; /* Fonte serifada elegante para títulos */
   --font-body: 'Roboto', sans-serif; /* Fonte moderna e legível para o corpo do texto */
@@ -42,7 +42,8 @@ h2, h3 {
 
 /* Ajuste no background da página */
 body {
-  background-color: var(--light); /* Bege claro */
+  background: linear-gradient(to right, #f0e4ca, #f7c78c);
+
 }
 
 /* Cor de texto */
@@ -225,7 +226,8 @@ p {
   justify-content: center;
   align-items: center;
   padding: 50px 20px;
-  background-color: var(--light); /* Bege claro */
+  background: linear-gradient(to right, #f0e4ca, #f7c78c);
+
   overflow: visible;
   flex-direction: column; /* Garante que a caixa e o container fiquem empilhados verticalmente */
 }
@@ -236,7 +238,8 @@ p {
   align-items: center;
   justify-content: center;
   padding: 50px;
-  background-color: var(--light); /* Cor de fundo clara */
+  background: linear-gradient(to right, #f0e4ca, #f7c78c);
+ /* Cor de fundo clara */
   gap: 40px;
 }
 
@@ -521,7 +524,8 @@ p {
 /* ========= Carrossel (Galeria de Resultados) ========= */
 .carrossel {
   padding: 80px 20px;
-  background: var(--light);
+  background: linear-gradient(to right, #f0e4ca, #f7c78c);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -846,7 +850,8 @@ p {
 .reviews-container {
   position: relative;
   padding: 60px 20px;
-  background-color: var(--light);
+  background: linear-gradient(to right, #f0e4ca, #f7c78c);
+
   text-align: center;
   overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
   width: 100%; /* Garantir que o fundo ocupe toda a largura da tela */
