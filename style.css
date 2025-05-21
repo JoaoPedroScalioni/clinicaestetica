@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
 }
+
 /* Variáveis de cores e fontes */
 :root {
   --primary: #bf962f; /* Verde mais escuro */
@@ -11,12 +12,9 @@
   --accent: #C6A964; /* Verde mais claro */
   --light: #f0e4ca; /* Bege claro */
   --dark: #222222; /* Preto suave */
-  --font-heading: 'Merriweather', serif; /* Fonte serifada elegante para títulos */
+  --font-heading: 'Merriweather', serif; /* Fonte serifada mais sofisticada e refinada */
   --font-body: 'Roboto', sans-serif; /* Fonte moderna e legível para o corpo do texto */
 }
-
-
-
 
 /* Ajuste nos botões */
 .cta-btn {
@@ -25,14 +23,13 @@
   border-radius: 25px;
   padding: 12px 30px;
   font-weight: 600;
+  font-family: var(--font-body); /* Font body usada para o botão */
   transition: background-color 0.3s ease;
 }
-
 
 .cta-btn:hover {
   background-color: var(--accent); /* Verde claro */
 }
-
 
 /* Ajuste nos títulos */
 h2, h3 {
@@ -40,25 +37,22 @@ h2, h3 {
   background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente nos títulos */
   -webkit-background-clip: text; /* Para garantir o efeito de gradiente no texto */
   -webkit-text-fill-color: transparent; /* Faz o preenchimento do texto transparente */
-  font-size: 2.5em;
+  font-size: 3.5em; /* Aumentando um pouco mais o tamanho da fonte para mais impacto */
   text-align: center;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2); /* Sombramento leve */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombreamento mais suave */
+  letter-spacing: 0.5px; /* Ajustando o espaçamento entre letras */
+  font-weight: 700; /* Tornando o título negrito para um estilo mais forte */
 }
-
-
-
 
 /* Ajuste no background da página */
 body {
-  background: linear-gradient(to right, #f0e4ca, #f7c78c);
-
-
+  background: linear-gradient(to right, #f0e4ca, #f7c78c); /* Mantendo o fundo suave */
 }
-
 
 /* Cor de texto */
 p {
   color: var(--dark); /* Preto suave para texto */
+  font-family: var(--font-body); /* Garantindo que o corpo do texto seja legível */
 }
 
 
