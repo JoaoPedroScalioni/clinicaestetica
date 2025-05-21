@@ -16,6 +16,8 @@
 }
 
 
+
+
 /* Ajuste nos botões */
 .cta-btn {
   background-color: var(--secondary); /* Dourado */
@@ -26,9 +28,11 @@
   transition: background-color 0.3s ease;
 }
 
+
 .cta-btn:hover {
   background-color: var(--accent); /* Verde claro */
 }
+
 
 /* Ajuste nos títulos */
 h2, h3 {
@@ -42,16 +46,21 @@ h2, h3 {
 }
 
 
+
+
 /* Ajuste no background da página */
 body {
   background: linear-gradient(to right, #f0e4ca, #f7c78c);
 
+
 }
+
 
 /* Cor de texto */
 p {
   color: var(--dark); /* Preto suave para texto */
 }
+
 
 /* ========= Banner ========= */
 .banner {
@@ -62,12 +71,14 @@ p {
   z-index: 0;
 }
 
+
 .banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transform: scale(1.05);
 }
+
 
 .banner-text {
   position: absolute;
@@ -82,12 +93,14 @@ p {
   z-index: 1;
 }
 
+
 .banner-text h2 {
   font-family: var(--font-heading);
   font-size: 2.8em;
   color: var(--primary);
   margin: 0;
 }
+
 
 /* ========= Caixa "Cuide da Sua Beleza!" ========= */
 .cta-box {
@@ -104,6 +117,7 @@ p {
   top: -140px; /* Coloca a caixa ligeiramente acima do container */
 }
 
+
 /* Ajustes no texto da caixa */
 .cta-box h3 {
   font-size: 2.8em;
@@ -113,6 +127,7 @@ p {
   letter-spacing: 2px;
 }
 
+
 .cta-box p {
   font-size: 1.4em;
   color: var(--dark);
@@ -120,6 +135,7 @@ p {
   line-height: 1.6;
   font-weight: 400;
 }
+
 
 .cta-button {
   display: inline-block;
@@ -140,6 +156,8 @@ p {
 }
 
 
+
+
 .cta-button:hover {
   background-color: #D4AF37; /* Fundo dourado ao passar o mouse */
   color: white; /* Texto branco quando o mouse passar */
@@ -147,17 +165,22 @@ p {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
+
 .cta-button span {
   display: inline-block;
   transition: transform 0.3s ease;
 }
+
 
 .cta-button:hover span {
   transform: translateY(-5px);
 }
 
 
+
+
 /* ========= Responsividade ========= */
+
 
 /* Para telas maiores que 1024px (notebooks e desktops grandes) */
 @media (min-width: 1024px) {
@@ -166,19 +189,23 @@ p {
     margin-bottom: 40px; /* Espaço abaixo da caixa */
   }
 
+
   .cta-box h3 {
     font-size: 2.8em;
   }
 
+
   .cta-box p {
     font-size: 1.4em;
   }
+
 
   .cta-button {
     font-size: 1.4em;
     padding: 15px 30px;
   }
 }
+
 
 /* Para telas entre 600px e 1024px (tablets e telas médias) */
 @media (max-width: 1024px) {
@@ -187,19 +214,23 @@ p {
     margin-bottom: 30px; /* Ajusta o espaço abaixo da caixa */
   }
 
+
   .cta-box h3 {
     font-size: 2.5em;
   }
 
+
   .cta-box p {
     font-size: 1.2em;
   }
+
 
   .cta-button {
     font-size: 1.2em;
     padding: 12px 25px;
   }
 }
+
 
 /* Para dispositivos móveis (menos de 600px) */
 @media (max-width: 600px) {
@@ -208,19 +239,23 @@ p {
     margin-bottom: 20px; /* Ajusta o espaço abaixo da caixa */
   }
 
+
   .cta-box h3 {
     font-size: 2em;
   }
 
+
   .cta-box p {
     font-size: 1em;
   }
+
 
   .cta-button {
     font-size: 1.2em;
     padding: 10px 20px;
   }
 }
+
 
 /* ========= Seção DESCRIÇÃO ========= */
 .descricao {
@@ -230,9 +265,12 @@ p {
   padding: 50px 20px;
   background: linear-gradient(to right, #f0e4ca, #f7c78c);
 
+
   overflow: visible;
   flex-direction: column; /* Garante que a caixa e o container fiquem empilhados verticalmente */
 }
+
+
 
 
 .sobre-doutor {
@@ -246,6 +284,8 @@ p {
 }
 
 
+
+
 .sobre-foto {
   flex: 1;
   position: relative;
@@ -257,6 +297,8 @@ p {
 }
 
 
+
+
 .sobre-foto img {
   width: 100%;
   height: 100%;
@@ -264,11 +306,15 @@ p {
 }
 
 
+
+
 .sobre-texto {
   flex: 2;
   display: flex;
   flex-direction: column;
 }
+
+
 
 
 .sobre-texto h2 {
@@ -279,12 +325,16 @@ p {
 }
 
 
+
+
 .sobre-info {
   display: flex;
   justify-content: space-between;
   gap: 30px;
   margin-top: 20px;
 }
+
+
 
 
 .info-item {
@@ -296,11 +346,15 @@ p {
 }
 
 
+
+
 .info-item i {
   font-size: 3em; /* Aumenta o tamanho do ícone */
   color: var(--primary); /* Cor primária para os ícones */
   margin-bottom: 10px; /* Espaço entre o ícone e o título */
 }
+
+
 
 
 .info-item h3 {
@@ -311,6 +365,8 @@ p {
 }
 
 
+
+
 .info-item p {
   font-size: 1.2em;
   color: var(--dark); /* Preto suave */
@@ -319,14 +375,20 @@ p {
 }
 
 
+
+
 .sobre-doutor img {
   transition: transform 0.3s ease;
 }
 
 
+
+
 .sobre-doutor img:hover {
   transform: scale(1.05); /* Leve zoom ao passar o mouse */
 }
+
+
 
 
 @media (max-width: 768px) {
@@ -350,6 +412,10 @@ p {
 
 
 
+
+
+
+
 /* ========= Redes Sociais ========= */
 .redes-sociais {
   position: relative;
@@ -360,6 +426,8 @@ p {
   box-shadow: none; /* Removido qualquer sombra */
   z-index: 1;
 }
+
+
 
 
 /* Título */
@@ -374,6 +442,8 @@ p {
 }
 
 
+
+
 /* Container das redes sociais */
 .social-container {
   display: flex;
@@ -384,6 +454,8 @@ p {
   z-index: 2;
   margin-top: 20px; /* Ajuste para alinhar corretamente */
 }
+
+
 
 
 /* Estilo do botão das redes sociais */
@@ -409,12 +481,16 @@ p {
 }
 
 
+
+
 /* Efeito de Glow (brilho) nos ícones das redes sociais */
 .social-card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   filter: brightness(1.3); /* Aumenta o brilho */
 }
+
+
 
 
 /* Estilo da imagem do ícone */
@@ -427,10 +503,14 @@ p {
 }
 
 
+
+
 /* Efeito de glow nos ícones */
 .social-card:hover .social-img {
   filter: brightness(1.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Brilho intenso ao passar o mouse */
 }
+
+
 
 
 /* Cores de fundo para as redes sociais */
@@ -439,9 +519,13 @@ p {
 }
 
 
+
+
 .social-card.whatsapp {
   background: #25D366; /* WhatsApp */
 }
+
+
 
 
 .social-card.gmail {
@@ -449,7 +533,10 @@ p {
 }
 
 
+
+
 /* ===== Responsividade ===== */
+
 
 /* Para telas grandes (laptops e desktops) */
 @media (max-width: 1024px) {
@@ -457,11 +544,13 @@ p {
     padding: 15px 25px;
   }
 
+
   .social-img {
     width: 35px;
     height: 35px;
   }
 }
+
 
 /* Para telas médias (tablets e dispositivos menores) */
 @media (max-width: 768px) {
@@ -472,17 +561,20 @@ p {
     align-items: center; /* Centraliza os itens no eixo transversal */
   }
 
+
   .social-card {
     padding: 12px 22px; /* Ajusta o padding para não ficar exagerado */
     width: 180px; /* Ajusta a largura para caber bem em telas menores */
     height: 55px; /* Ajusta a altura */
   }
 
+
   .social-img {
     width: 40px;
     height: 40px;
   }
 }
+
 
 /* Para telas muito pequenas (dispositivos móveis) */
 @media (max-width: 480px) {
@@ -493,21 +585,39 @@ p {
     align-items: center; /* Garante que fiquem alinhados */
   }
 
+
   .social-card {
     padding: 10px 20px; /* Ajusta o padding para um botão menor */
     width: 160px; /* Ajusta a largura para melhor caber em telas menores */
     height: 50px; /* Ajusta a altura do botão */
   }
 
+
   .social-img {
     width: 35px;
     height: 35px;
   }
 
+
   .social-card span {
     font-size: 1rem; /* Ajuste do tamanho do texto para telas pequenas */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -532,6 +642,7 @@ p {
   align-items: center;
 }
 
+
 /* Ajuste da largura do wrapper do carrossel */
 .carousel-wrapper {
   display: flex;
@@ -543,6 +654,7 @@ p {
   flex-wrap: wrap;
   padding: 20px;
 }
+
 
 /* Descrição com ajuste de largura */
 .carousel-description {
@@ -561,6 +673,7 @@ p {
   margin-left: -20px; /* Ajuste para mover a descrição um pouco para a esquerda */
 }
 
+
 /* Título da descrição */
 .carousel-description-content h3 {
   font-family: var(--font-heading);
@@ -571,6 +684,7 @@ p {
   line-height: 1.4;
 }
 
+
 /* Texto da descrição */
 .carousel-description-content p {
   font-size: 1.15rem; /* Ajuste para legibilidade melhorada */
@@ -579,6 +693,7 @@ p {
   color: var(--dark);
   font-weight: 500; /* Menor peso para mais suavidade */
 }
+
 
 /* Itens da lista na descrição */
 .carousel-description-content ul {
@@ -589,10 +704,13 @@ p {
   margin: 0;
 }
 
+
 .carousel-description-content li {
   margin-bottom: 8px; /* Menor espaçamento para otimizar a leitura */
   line-height: 1.6;
 }
+
+
 
 
 /* Ajuste do carrossel (imagem e slider) */
@@ -609,17 +727,20 @@ p {
   margin-top: 20px;
 }
 
+
 /* Carrossel com imagem menor ao passar o mouse */
 .carousel-slider:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
 }
 
+
 /* Tornar as imagens quadradas */
 .slider-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
+
 
 .slider-track img {
   width: 100%;
@@ -629,9 +750,11 @@ p {
   transition: transform 0.3s ease;
 }
 
+
 .slider-track img:hover {
   transform: scale(1.05);
 }
+
 
 /* Ajuste da navegação (setas) sem fundo */
 .slider-nav {
@@ -650,19 +773,23 @@ p {
   color: var(--primary);
 }
 
+
 .slider-nav:hover {
   transform: scale(1.2);
 }
+
 
 /* Navegação para a seta anterior */
 .slider-nav.prev {
   left: 10px;
 }
 
+
 /* Navegação para a seta seguinte */
 .slider-nav.next {
   right: 10px;
 }
+
 
 /* Indicadores do Carrossel */
 .slider-indicators {
@@ -676,6 +803,7 @@ p {
   width: auto; /* Retirando a largura de 100% para garantir o alinhamento */
 }
 
+
 .slider-indicators .indicator {
   width: 15px;
   height: 15px;
@@ -685,15 +813,18 @@ p {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
+
 .slider-indicators .indicator.active {
   background: var(--accent);
   transform: scale(1.2);
 }
 
+
 .slider-indicators .indicator:hover {
   background: var(--accent);
   transform: scale(1.3);
 }
+
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 1024px) {
@@ -702,15 +833,18 @@ p {
     gap: 20px;
   }
 
+
   .carousel-slider {
     width: 100%;
     max-width: 100%;
   }
 
+
   .slider-track {
     width: 100%;
     display: flex;
   }
+
 
   .slider-track img {
     width: 100%;
@@ -719,10 +853,12 @@ p {
     margin-right: 0;
   }
 
+
   .slider-nav {
     font-size: 1.8rem;
     padding: 10px;
   }
+
 
   .slider-indicators {
     position: absolute;
@@ -736,11 +872,13 @@ p {
     margin: 0;
   }
 
+
   .slider-indicators .indicator {
     width: 12px;
     height: 12px;
   }
 }
+
 
 @media (max-width: 768px) {
   .carousel-description {
@@ -748,29 +886,35 @@ p {
     min-width: 230px;
   }
 
+
   .carousel-description-content h3 {
     font-size: 1.6rem;
   }
 
+
   .carousel-description-content p {
     font-size: 1rem;
   }
+
 
   .carousel-wrapper {
     flex-direction: column;
     gap: 15px;
   }
 
+
   .carousel-slider {
     width: 100%;
     max-width: 100%;
   }
+
 
   .slider-track {
     width: 100%;
     display: flex;
     transition: transform 0.5s ease-in-out;
   }
+
 
   .slider-track img {
     width: 100%;
@@ -778,14 +922,17 @@ p {
     margin-right: 0;
   }
 
+
   .slider-nav {
     font-size: 1.5rem;
     padding: 10px;
   }
 
+
   .slider-indicators {
     bottom: 5px;
   }
+
 
   .slider-indicators .indicator {
     width: 10px;
@@ -793,29 +940,35 @@ p {
   }
 }
 
+
 @media (max-width: 480px) {
   .carousel-description {
     padding: 15px 10px;
     min-width: 200px;
   }
 
+
   .carousel-description-content h3 {
     font-size: 1.4rem;
   }
 
+
   .carousel-description-content p {
     font-size: 0.9rem;
   }
+
 
   .carousel-wrapper {
     flex-direction: column;
     gap: 10px;
   }
 
+
   .carousel-slider {
     width: 100%;
     max-width: 100%;
   }
+
 
   .slider-track {
     width: 100%;
@@ -823,20 +976,24 @@ p {
     transition: transform 0.5s ease-in-out;
   }
 
+
   .slider-track img {
     width: 100%;
     height: auto;
   }
+
 
   .slider-nav {
     font-size: 1.2rem;
     padding: 8px;
   }
 
+
   .slider-indicators {
     bottom: 5px;
     gap: 6px;
   }
+
 
   .slider-indicators .indicator {
     width: 6px;
@@ -849,11 +1006,18 @@ p {
 
 
 
+
+
+
+
+
+
 /* ========= Seção de Avaliações / Depoimentos (Reviews) ========= */
 .reviews-container {
   position: relative;
   padding: 60px 20px;
   background: linear-gradient(to right, #f0e4ca, #f7c78c);
+
 
   text-align: center;
   overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
@@ -866,11 +1030,15 @@ p {
 }
 
 
+
+
 /* Garante que o conteúdo interno fique acima da camada animada */
 .reviews-container > * {
   position: relative;
   z-index: 1;
 }
+
+
 
 
 .reviews-title {
@@ -880,12 +1048,16 @@ p {
 }
 
 
+
+
 .review-cards-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
 }
+
+
 
 
 .review-card {
@@ -903,6 +1075,8 @@ p {
 }
 
 
+
+
 .review-avatar {
   width: 40px;
   height: 40px;
@@ -912,10 +1086,14 @@ p {
 }
 
 
+
+
 .review-content {
   flex: 1;
   text-align: left;
 }
+
+
 
 
 .review-header {
@@ -927,6 +1105,8 @@ p {
 }
 
 
+
+
 .review-stars {
   color: #f8c12e; /* Amarelo para estrelas */
   font-size: 1rem;
@@ -934,10 +1114,14 @@ p {
 }
 
 
+
+
 .review-text {
   font-size: 0.95rem;
   color: var(--dark); /* Texto escuro */
 }
+
+
 
 
 .review-google-icon {
@@ -948,6 +1132,8 @@ p {
   right: 20px;
   bottom: 20px;
 }
+
+
 
 
 /* Botões do carrossel de reviews */
@@ -967,9 +1153,13 @@ p {
 }
 
 
+
+
 .review-nav:hover {
   transform: translateY(-50%) scale(1.1);
 }
+
+
 
 
 .review-nav.prev {
@@ -977,9 +1167,15 @@ p {
 }
 
 
+
+
 .review-nav.next {
   right: 10px;
 }
+
+
+
+
 
 
 
@@ -991,10 +1187,14 @@ p {
   }
 
 
+
+
   .review-cards-wrapper {
     flex-direction: column;
     gap: 20px;
   }
+
+
 
 
   .review-card {
@@ -1005,9 +1205,13 @@ p {
   }
 
 
+
+
   .review-avatar {
     margin-bottom: 10px; /* Ajuste no espaçamento da imagem do avatar */
   }
+
+
 
 
   .review-content {
@@ -1015,9 +1219,13 @@ p {
   }
 
 
+
+
   .review-header {
     font-size: 0.85rem; /* Redução do tamanho da fonte no cabeçalho */
   }
+
+
 
 
   .review-stars {
@@ -1025,9 +1233,13 @@ p {
   }
 
 
+
+
   .review-text {
     font-size: 0.85rem; /* Ajuste do texto para telas menores */
   }
+
+
 
 
   .review-google-icon {
@@ -1039,10 +1251,14 @@ p {
 }
 
 
+
+
 @media (max-width: 480px) {
   .reviews-title {
     font-size: 1.3rem; /* Fontes menores em dispositivos pequenos */
   }
+
+
 
 
   .review-card {
@@ -1051,10 +1267,14 @@ p {
   }
 
 
+
+
   .review-avatar {
     width: 35px;
     height: 35px;
   }
+
+
 
 
   .review-content {
@@ -1062,14 +1282,20 @@ p {
   }
 
 
+
+
   .review-header {
     font-size: 0.75rem;
   }
 
 
+
+
   .review-stars {
     font-size: 0.8rem;
   }
+
+
 
 
   .review-google-icon {
@@ -1079,6 +1305,8 @@ p {
     height: 18px;
   }
 }
+
+
 
 
 /* ===== Estilo do Rodapé ===== */
@@ -1092,6 +1320,7 @@ p {
   min-height: 150px; /* Ajuste a altura mínima */
 }
 
+
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -1101,17 +1330,21 @@ p {
   align-items: center;
 }
 
+
 .footer-logo {
   flex: 0 1 auto; /* Alinha a logo à esquerda sem forçar o espaçamento */
   text-align: left; /* Alinha o texto da logo à esquerda */
   display: block; /* Garante que a logo seja um bloco */
 }
 
+
 .footer-logo .logo-img {
   width: 200px; /* Ajuste o tamanho conforme necessário */
   height: auto; /* Mantém a proporção da logo */
   max-width: 100%; /* Garante que a logo se ajuste ao tamanho do contêiner */
 }
+
+
 
 
 .footer-info {
@@ -1123,11 +1356,13 @@ p {
   text-align: left;
 }
 
+
 .footer-info-item {
   max-width: 230px; /* Ajuste da largura máxima */
   font-size: 1em;
   text-align: left;
 }
+
 
 .footer-info-item strong {
   font-weight: bold;
@@ -1135,10 +1370,12 @@ p {
   font-size: 1.1em;
 }
 
+
 .footer-info-item ul {
   list-style-type: none;
   padding-left: 0;
 }
+
 
 .footer-info-item a {
   color: var(--light);
@@ -1146,9 +1383,11 @@ p {
   font-size: 1em; /* Ajustei o tamanho da fonte */
 }
 
+
 .footer-info-item a:hover {
   color: var(--secondary);
 }
+
 
 .footer-social {
   flex: 1;
@@ -1158,6 +1397,7 @@ p {
   align-items: center;
 }
 
+
 .footer-social .social-icon {
   color: var(--light);
   font-size: 2em; /* Aumentei o tamanho dos ícones */
@@ -1165,10 +1405,12 @@ p {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
+
 .footer-social .social-icon:hover {
   color: var(--secondary);
   transform: scale(1.1);
 }
+
 
 /* ===== Adicionando Informações de Contato ao Centro ===== */
 .footer-contact {
@@ -1177,13 +1419,16 @@ p {
   font-size: 1.1em;
 }
 
+
 .footer-contact p {
   margin: 5px 0;
 }
 
+
 .footer-contact strong {
   color: var(--secondary);
 }
+
 
 .footer-bottom {
   margin-top: 20px; /* Ajustei para maior espaçamento */
@@ -1192,9 +1437,11 @@ p {
   padding-top: 20px;
 }
 
+
 .footer-bottom p {
   margin: 0;
 }
+
 
 .footer-bottom .back-to-top {
   display: inline-block;
@@ -1204,10 +1451,25 @@ p {
   font-size: 1.5em; /* Aumentei o tamanho da fonte do link */
 }
 
+
 .footer-bottom .back-to-top:hover {
   color: var(--secondary);
   transform: scale(1.1);
 }
+/* Altera a cor dos títulos para preto */
+.footer-info-item strong {
+  color: #000000; /* Cor preta */
+}
+/* Altera a cor das escritas (não em negrito) para preto */
+.footer-info-item a {
+  color: #000000; /* Cor preta para os links */
+}
+
+/* Se houver outros textos que não sejam links e você queira alterar a cor deles */
+.footer-info-item {
+  color: #000000; /* Cor preta para os textos em geral */
+}
+
 
 /* ===== Responsividade ===== */
 @media (max-width: 900px) {
@@ -1217,47 +1479,72 @@ p {
     text-align: center;
   }
 
+
   .footer-info {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
   }
 
+
   .footer-logo {
     text-align: center;
   }
 
+
   .footer-bottom {
     text-align: center;
   }
+
 
   .footer-social {
     justify-content: center;
     margin-top: 10px;
   }
 
+
   .footer-info-item a {
     font-size: 0.9em;
   }
 }
+
 
 @media (max-width: 480px) {
   .footer-logo .logo-img {
     width: 150px; /* Reduzi o tamanho do logo para telas menores */
   }
 
+
   .footer-info-item {
     font-size: 0.9em;
   }
+
 
   .footer-social .social-icon {
     font-size: 1.4em;
   }
 
+
   .footer-bottom .back-to-top {
     font-size: 1.3em;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1283,6 +1570,8 @@ p {
 }
 
 
+
+
 /* Estatísticas livres sem fundo */
 .estatistica {
   display: inline-block; /* Faz com que as estatísticas fiquem ao lado umas das outras */
@@ -1300,11 +1589,15 @@ p {
 }
 
 
+
+
 .estatistica i {
   font-size: 3.5em;
   color: var(--primary); /* Cor do ícone (pode ser alterada para a cor desejada) */
   margin-bottom: 10px;
 }
+
+
 
 
 .estatistica h3 {
@@ -1317,12 +1610,16 @@ p {
 }
 
 
+
+
 .estatistica p {
   font-size: 1.1em;
   color: var(--dark); /* Cor do texto */
   opacity: 0;
   animation: fadeInText 1.5s ease-out forwards;
 }
+
+
 
 
 /* Animações */
@@ -1338,6 +1635,8 @@ p {
 }
 
 
+
+
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -1350,6 +1649,8 @@ p {
 }
 
 
+
+
 @keyframes fadeInNumber {
   0% {
     opacity: 0;
@@ -1358,6 +1659,8 @@ p {
     opacity: 1;
   }
 }
+
+
 
 
 @keyframes fadeInText {
@@ -1370,6 +1673,8 @@ p {
 }
 
 
+
+
 /* Responsividade */
 @media (max-width: 1024px) {
   .estatistica {
@@ -1379,9 +1684,13 @@ p {
   }
 
 
+
+
   .estatistica i {
     font-size: 3em; /* Ajuste no tamanho do ícone */
   }
+
+
 
 
   .estatistica h3 {
@@ -1389,10 +1698,14 @@ p {
   }
 
 
+
+
   .estatistica p {
     font-size: 1.1em; /* Ajuste no tamanho do parágrafo */
   }
 }
+
+
 
 
 @media (max-width: 768px) {
@@ -1403,9 +1716,13 @@ p {
   }
 
 
+
+
   .estatistica i {
     font-size: 2.8em; /* Ajuste no tamanho do ícone */
   }
+
+
 
 
   .estatistica h3 {
@@ -1413,10 +1730,14 @@ p {
   }
 
 
+
+
   .estatistica p {
     font-size: 1.1em; /* Ajuste no tamanho do texto */
   }
 }
+
+
 
 
 @media (max-width: 480px) {
@@ -1427,9 +1748,13 @@ p {
   }
 
 
+
+
   .estatistica i {
     font-size: 2.5em; /* Ajuste no tamanho do ícone */
   }
+
+
 
 
   .estatistica h3 {
@@ -1437,10 +1762,15 @@ p {
   }
 
 
+
+
   .estatistica p {
     font-size: 1em; /* Ajuste no tamanho do texto */
   }
 }
+
+
+
 
 
 
@@ -1451,6 +1781,7 @@ p {
   text-align: center;
 }
 
+
 /* Título da seção */
 .localizacoes h2 {
   font-family: var(--font-heading);
@@ -1458,6 +1789,7 @@ p {
   color: var(--primary);
   margin-bottom: 30px;
 }
+
 
 /* Contêiner principal para os cartões de localizações */
 .localizacoes-container {
@@ -1469,6 +1801,7 @@ p {
   margin: 0 auto;
 }
 
+
 /* Lista de Cartões de Localizações */
 .localizacoes-list {
   display: flex;
@@ -1477,6 +1810,7 @@ p {
   justify-content: space-between;
   width: 100%;
 }
+
 
 /* Estilo do cartão */
 .localizacao-card {
@@ -1494,6 +1828,7 @@ p {
   height: 220px;
 }
 
+
 .localizacao-card h3 {
   font-family: var(--font-heading);
   color: var(--primary);
@@ -1501,12 +1836,14 @@ p {
   margin-bottom: 10px;
 }
 
+
 .localizacao-card p {
   color: var(--dark);
   font-size: 1.1em;
   margin-bottom: 10px;
   flex-grow: 1;
 }
+
 
 .localizacao-card .cta-btn {
   display: inline-block;
@@ -1525,9 +1862,11 @@ p {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+
 .localizacao-card .cta-btn:hover {
   background-color: var(--accent);
 }
+
 
 /* Modal de Detalhes */
 .detalhes-modal {
@@ -1542,6 +1881,7 @@ p {
   align-items: center;
 }
 
+
 .detalhes-modal-content {
   background-color: #fff;
   padding: 30px;
@@ -1555,6 +1895,7 @@ p {
   flex-direction: column;
 }
 
+
 .detalhes-modal .fechar {
   position: absolute;
   top: 10px;
@@ -1562,6 +1903,7 @@ p {
   font-size: 2em;
   cursor: pointer;
 }
+
 
 .detalhes-modal .cta-btn {
   display: inline-block;
@@ -1580,9 +1922,11 @@ p {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+
 .detalhes-modal .cta-btn:hover {
   background-color: var(--accent);
 }
+
 
 /* ===== Melhorias na Responsividade ===== */
 @media (max-width: 1024px) {
@@ -1592,6 +1936,7 @@ p {
   }
 }
 
+
 @media (max-width: 768px) {
   .localizacoes-list {
     display: flex;
@@ -1599,16 +1944,19 @@ p {
     justify-content: center;
   }
 
+
   .localizacao-card {
     width: 48%;
     height: auto;
     margin-bottom: 15px;
   }
 
+
   .detalhes-modal-content {
     width: 80%;
   }
 }
+
 
 @media (max-width: 480px) {
   .localizacoes-container {
@@ -1617,30 +1965,35 @@ p {
     justify-content: center;
   }
 
+
   .localizacao-card {
     width: 48%;
   }
+
 
   .localizacoes h2 {
     font-size: 1.8em;
   }
 
+
   .localizacao-card h3 {
     font-size: 1.5em;
   }
 
+
   .localizacao-card p {
     font-size: 1em;
   }
+
 
   .cta-btn {
     font-size: 1em;
     padding: 10px 20px;
   }
 
+
   .detalhes-modal-content {
     width: 95%;
     padding: 20px;
   }
 }
-
