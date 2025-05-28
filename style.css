@@ -1539,212 +1539,143 @@ p {
 
 
 
-/* ========= Estatísticas sem fundo ========= */
+/* ========= Estatísticas ========= */
 .estatisticas {
   padding: 60px 20px;
-  background-color: none; /* Removido o fundo */
+  background-color: transparent; /* Corrigido */
   text-align: center;
-  animation: fadeIn 1s ease-out;
+  opacity: 0; /* Estado inicial para animação do container */
+  /* Removida a animação direta daqui, será acionada pela classe .stats-in-view */
 }
 
+.estatisticas.stats-in-view {
+  animation: fadeInContainer 0.5s ease-out forwards;
+}
 
+@keyframes fadeInContainer {
+  to {
+    opacity: 1;
+  }
+}
 
-
-/* Estatísticas livres sem fundo */
 .estatistica {
-  display: inline-block; /* Faz com que as estatísticas fiquem ao lado umas das outras */
-  width: 33%; /* Definindo largura para as estatísticas */
-  background: none; /* Removendo o fundo */
+  display: inline-block;
+  width: 33%;
+  background: transparent; /* Corrigido */
   border-radius: 15px;
-  padding: 80px; /* Aumentei o padding para espaçamento interno */
-  box-shadow: none; /* Removido a sombra */
-  transform: translateY(50px);
-  opacity: 0;
-  animation: slideIn 0.8s ease-out forwards;
-  margin: 20px 0; /* Adicionando margem para espaçamento */
-  transition: all 0.3s ease; /* Transição suave */
+  padding: 40px 20px; /* Padding ajustado para consistência */
+  /* box-shadow: none; -- Pode remover se não há sombra a ser sobrescrita */
+  margin: 20px 0;
   text-align: center;
+  
+  /* Estado inicial para animação dos itens */
+  opacity: 0;
+  transform: translateY(30px); /* Ponto de partida da animação */
+  /* Removida a animação e transição diretas daqui */
 }
 
+/* Aciona a animação dos itens quando o container estiver visível */
+.estatisticas.stats-in-view .estatistica {
+  animation: slideInItem 0.7s ease-out forwards;
+}
 
+/* Atrasos para efeito cascata (staggering) */
+.estatisticas.stats-in-view .estatistica:nth-child(1) { animation-delay: 0.2s; }
+.estatisticas.stats-in-view .estatistica:nth-child(2) { animation-delay: 0.4s; }
+.estatisticas.stats-in-view .estatistica:nth-child(3) { animation-delay: 0.6s; }
+/* Adicione mais .estatistica:nth-child(n) se tiver mais de 3 itens */
 
+.estatistica i,
+.estatistica h3,
+.estatistica p {
+  opacity: 0; /* Estado inicial dos elementos internos */
+  /* Removida a animação direta daqui */
+}
 
-.estatistica i {
+/* Animação para os elementos internos, acionada quando o card pai está visível e animando */
+/* Os atrasos aqui são relativos ao início da animação do card pai (após o delay do nth-child) */
+.estatisticas.stats-in-view .estatistica i {
+  animation: fadeInContent 0.5s ease-out 0.3s forwards; /* Ex: Ícone aparece 0.3s após o card começar a animar */
   font-size: 3.5em;
-  color: var(--primary); /* Cor do ícone (pode ser alterada para a cor desejada) */
+  color: var(--primary);
   margin-bottom: 10px;
 }
 
-
-
-
-.estatistica h3 {
+.estatisticas.stats-in-view .estatistica h3 {
+  animation: fadeInContent 0.6s ease-out 0.5s forwards; /* Ex: Número aparece 0.5s após o card */
   font-size: 3.5em;
   font-weight: bold;
-  color: var(--dark); /* Cor escura para o título */
+  color: var(--dark);
   margin-bottom: 10px;
-  opacity: 0;
-  animation: fadeInNumber 1.5s ease-out forwards;
 }
 
-
-
-
-.estatistica p {
+.estatisticas.stats-in-view .estatistica p {
+  animation: fadeInContent 0.6s ease-out 0.7s forwards; /* Ex: Texto aparece 0.7s após o card */
   font-size: 1.1em;
-  color: var(--dark); /* Cor do texto */
-  opacity: 0;
-  animation: fadeInText 1.5s ease-out forwards;
+  color: var(--dark);
 }
 
-
-
-
-/* Animações */
-@keyframes fadeIn {
-  0% {
+/* Seus Keyframes (podemos reutilizar e simplificar) */
+@keyframes slideInItem { /* Usado pelos cards .estatistica */
+  from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-
-
-
-@keyframes slideIn {
-  0% {
+@keyframes fadeInContent { /* Usado por i, h3, p dentro dos cards */
+  from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(10px); /* Opcional: leve slide para conteúdo também */
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+/* Seus keyframes fadeInNumber e fadeInText podem ser substituídos por fadeInContent,
+   ou mantidos se quiser durações/estilos diferentes para número e texto.
+   O keyframe fadeIn é agora fadeInContainer.
+   O keyframe slideIn é agora slideInItem.
+*/
 
 
-
-
-@keyframes fadeInNumber {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-
-
-
-@keyframes fadeInText {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-
-
-
-/* Responsividade */
+/* ========= Responsividade (mantida como no seu original, mas com padding ajustado para exemplo) ========= */
 @media (max-width: 1024px) {
   .estatistica {
-    width: 45%; /* Ajustando a largura para duas colunas em tablets */
+    width: 45%;
     margin-bottom: 30px;
     padding: 25px; /* Ajuste no padding */
   }
-
-
-
-
-  .estatistica i {
-    font-size: 3em; /* Ajuste no tamanho do ícone */
-  }
-
-
-
-
-  .estatistica h3 {
-    font-size: 2.8em; /* Ajuste no tamanho do título */
-  }
-
-
-
-
-  .estatistica p {
-    font-size: 1.1em; /* Ajuste no tamanho do parágrafo */
-  }
+  .estatistica i { font-size: 3em; }
+  .estatistica h3 { font-size: 2.8em; }
+  .estatistica p { font-size: 1.1em; }
 }
-
-
-
 
 @media (max-width: 768px) {
   .estatistica {
-    width: 80%; /* Ajuste na largura para telas menores */
+    width: 80%;
     margin-bottom: 20px;
     padding: 20px; /* Ajuste no padding */
   }
-
-
-
-
-  .estatistica i {
-    font-size: 2.8em; /* Ajuste no tamanho do ícone */
-  }
-
-
-
-
-  .estatistica h3 {
-    font-size: 2.3em; /* Ajuste no tamanho do título */
-  }
-
-
-
-
-  .estatistica p {
-    font-size: 1.1em; /* Ajuste no tamanho do texto */
-  }
+  .estatistica i { font-size: 2.8em; }
+  .estatistica h3 { font-size: 2.3em; }
+  .estatistica p { font-size: 1.1em; }
 }
-
-
-
 
 @media (max-width: 480px) {
   .estatistica {
-    width: 100%; /* Itens ocupando 100% da largura */
+    width: 100%;
     margin-bottom: 20px;
     padding: 15px;
   }
-
-
-
-
-  .estatistica i {
-    font-size: 2.5em; /* Ajuste no tamanho do ícone */
-  }
-
-
-
-
-  .estatistica h3 {
-    font-size: 2em; /* Ajuste no tamanho do título */
-  }
-
-
-
-
-  .estatistica p {
-    font-size: 1em; /* Ajuste no tamanho do texto */
-  }
+  .estatistica i { font-size: 2.5em; }
+  .estatistica h3 { font-size: 2em; }
+  .estatistica p { font-size: 1em; }
 }
 
 
