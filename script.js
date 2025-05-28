@@ -249,19 +249,19 @@ function exibirDetalhes(local) {
       titulo: 'Labcenter',
       endereco: 'Rua Domingos Vieira de Lima, 380 - Centro, Santana da Vargem - MG',
       cep: '37195-000',
-      whatsapp: 'https://wa.me/553598038161'
+      whatsapp: 'https://wa.me/553598038161' // Certifique-se que o número está correto
     },
     gislaine: {
       titulo: 'Gislaine Pedroso',
       endereco: 'Coqueiral - MG',
-      cep: '37195-000',
+      cep: 'N/A', // Exemplo se não houver CEP
       whatsapp: 'https://wa.me/553598038161'
     },
     denise: {
       titulo: 'Denise Fróes Estética',
       endereco: 'Rua Barbosa Lima 441 B, Centro, Lavras - MG',
       cep: '37200-090',
-      whatsapp: 'hhttps://wa.me/553598038161'
+      whatsapp: 'https://wa.me/553598038161' // Removido 'h' extra do https
     },
     bouganville: {
       titulo: 'Núcleo de Saúde Bouganville',
@@ -281,33 +281,73 @@ function exibirDetalhes(local) {
       cep: '37250-000',
       whatsapp: 'https://wa.me/553598038161'
     }
+    // Adicione mais locais aqui conforme necessário
   };
 
-
   const localDetalhes = detalhes[local];
+  const modalElement = document.getElementById('detalhes-modal');
 
-
-  if (localDetalhes) {
+  if (localDetalhes && modalElement) {
+    // Preenche os detalhes no modal
+    // Certifique-se que os IDs no HTML do modal correspondem exatamente
     document.getElementById('modal-titulo').innerText = localDetalhes.titulo;
     document.getElementById('modal-endereco').innerText = `Endereço: ${localDetalhes.endereco}`;
     document.getElementById('modal-CEP').innerText = `CEP: ${localDetalhes.cep}`;
-    document.getElementById('whatsapp-link').href = localDetalhes.whatsapp;
+    
+    const whatsappLink = document.getElementById('whatsapp-link');
+    if (whatsappLink) {
+      whatsappLink.href = localDetalhes.whatsapp;
+    }
 
-
-    // Exibe o modal definindo o display como flex
-    document.getElementById('detalhes-modal').style.display = 'flex';
+    // Exibe o modal
+    modalElement.style.display = 'flex';
+    document.body.classList.add('modal-aberto'); // Adiciona classe para travar o scroll do body
+  } else {
+    console.error("Detalhes do local não encontrados ou elemento modal não existe.");
   }
 }
-
 
 function fecharModal() {
-  document.getElementById('detalhes-modal').style.display = 'none';
+  const modalElement = document.getElementById('detalhes-modal');
+  if (modalElement) {
+    modalElement.style.display = 'none';
+    document.body.classList.remove('modal-aberto'); // Remove classe para liberar o scroll do body
+  }
 }
 
-
-// Adiciona um listener para fechar o modal ao clicar fora da área de conteúdo
-document.getElementById('detalhes-modal').addEventListener('click', function(event) {
-  if (event.target === this) {
-    fecharModal();
+// Adiciona listeners após o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', () => {
+  const modalElement = document.getElementById('detalhes-modal');
+  
+  // Event listener para fechar o modal ao clicar fora da área de conteúdo (no overlay)
+  if (modalElement) {
+    modalElement.addEventListener('click', function(event) {
+      // Verifica se o clique foi no próprio modal (fundo) e não em um filho dele
+      if (event.target === this) {
+        fecharModal();
+      }
+    });
   }
+
+  // Adicionar listeners para os botões "Veja Mais" dos cards, se eles não forem links diretos
+  // Exemplo: se os cards tiverem um atributo data-local="nomedolocal"
+  // document.querySelectorAll('.localizacao-card[data-local]').forEach(card => {
+  //   card.addEventListener('click', function() {
+  //     exibirDetalhes(this.dataset.local);
+  //   });
+  // });
+
+  // Se o botão de fechar dentro do modal tem uma classe ou ID específico:
+  // const closeButton = document.querySelector('.detalhes-modal .fechar'); // ou por ID
+  // if (closeButton) {
+  //   closeButton.addEventListener('click', fecharModal);
+  // }
+  // Assumindo que o botão fechar é um elemento com onclick="fecharModal()" no HTML
+  // ou você pode adicionar um seletor e um event listener aqui se ele tiver uma classe/id.
+  // Por exemplo, se o span do fechar tiver a classe 'fechar-modal-btn':
+  const fecharBtn = document.querySelector('.detalhes-modal .fechar'); // usando a classe que já existe
+  if (fecharBtn) {
+    fecharBtn.addEventListener('click', fecharModal);
+  }
+
 });
