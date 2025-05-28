@@ -12,8 +12,10 @@
   --accent: #C6A964; /* Verde mais claro */
   --light: #f0e4ca; /* Bege claro */
   --dark: #222222; /* Preto suave */
-  --font-heading: 'Merriweather', serif; /* Fonte serifada mais sofisticada e refinada */
-  --font-body: 'Roboto', sans-serif; /* Fonte moderna e legível para o corpo do texto */
+  
+  /* Combinação profissional e popular: Merriweather para títulos, Roboto para corpo */
+  --font-heading: 'Merriweather', serif;   /* Fonte serifada sofisticada para títulos */
+  --font-body: 'Roboto', sans-serif;      /* Fonte sans-serif moderna e legível para corpo */
 }
 
 /* Ajuste nos botões */
@@ -22,8 +24,8 @@
   color: var(--dark);
   border-radius: 25px;
   padding: 12px 30px;
-  font-weight: 600;
-  font-family: var(--font-body); /* Font body usada para o botão */
+  font-weight: 600; /* Roboto Medium/SemiBold */
+  font-family: var(--font-body); /* Roboto */
   transition: background-color 0.3s ease;
 }
 
@@ -33,28 +35,28 @@
 
 /* Ajuste nos títulos */
 h2, h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading); /* Merriweather */
   background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente nos títulos */
   -webkit-background-clip: text; /* Para garantir o efeito de gradiente no texto */
   -webkit-text-fill-color: transparent; /* Faz o preenchimento do texto transparente */
-  font-size: 3.5em; /* Aumentando um pouco mais o tamanho da fonte para mais impacto */
+  font-size: 3.5em; 
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombreamento mais suave */
-  letter-spacing: 0.5px; /* Ajustando o espaçamento entre letras */
-  font-weight: 700; /* Tornando o título negrito para um estilo mais forte */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+  letter-spacing: 0.5px; 
+  font-weight: 700; /* Merriweather Bold */
 }
 
 /* Ajuste no background da página */
 body {
-  background: linear-gradient(to right, #f0e4ca, #f7c78c); /* Mantendo o fundo suave */
+  background: linear-gradient(to right, #f0e4ca, #f7c78c); 
 }
 
 /* Cor de texto */
 p {
-  color: var(--dark); /* Preto suave para texto */
-  font-family: var(--font-body); /* Garantindo que o corpo do texto seja legível */
+  color: var(--dark); 
+  font-family: var(--font-body); /* Roboto (peso normal 400 por padrão) */
+  line-height: 1.6; /* Adicionando um espaçamento entre linhas para melhor legibilidade */
 }
-
 
 /* ========= Banner ========= */
 .banner {
@@ -99,7 +101,7 @@ p {
 /* ========= Caixa "Cuide da Sua Beleza!" ========= */
 .cta-box {
   position: relative;
-  background-color: #fff;
+  background-color: #fff; /* Fundo da caixa onde o botão está */
   padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
@@ -111,7 +113,6 @@ p {
   top: -140px; /* Coloca a caixa ligeiramente acima do container */
 }
 
-
 /* Ajustes no texto da caixa */
 .cta-box h3 {
   font-size: 2.8em;
@@ -121,7 +122,6 @@ p {
   letter-spacing: 2px;
 }
 
-
 .cta-box p {
   font-size: 1.4em;
   color: var(--dark);
@@ -130,122 +130,106 @@ p {
   font-weight: 400;
 }
 
-
 .cta-button {
   display: inline-block;
   margin-top: 25px;
-  padding: 12px 30px; /* Menor para um visual mais leve */
-  font-size: 1.2em; /* Tamanho mais próximo ao da foto */
-  background-color: #f9f7ee; /* Cor de fundo mais suave */
-  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente no fundo */
-  color: transparent; /* Torna o texto transparente para aplicar o gradiente */
-  background-clip: text; /* Aplica o gradiente ao texto */
+  padding: 12px 30px;
+  font-size: 1.2em;
+  
+  /* Estilo inicial: Texto com gradiente, fundo do botão transparente */
+  background: linear-gradient(to right, #e8c815, #bf962f); /* Gradiente para o TEXTO */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Texto transparente para o gradiente aparecer */
+  /* Garante que o fundo do botão em si seja transparente para o efeito acima */
+  /* Se o .cta-box tem background #fff, o botão parecerá ter fundo branco com texto gradiente */
+  
   text-decoration: none;
-  border-radius: 10px; /* Arredondado, mas não exagerado */
+  border-radius: 10px;
   font-weight: 600;
   text-align: center;
   border: 1px solid #D4AF37; /* Borda dourada fina */
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative; /* Para garantir bom comportamento de stacking e transform */
+  cursor: pointer; /* Melhora a indicação de clicabilidade */
 }
 
-
-
-
-.cta-button:hover {
-  background-color: #D4AF37; /* Fundo dourado ao passar o mouse */
-  color: white; /* Texto branco quando o mouse passar */
+.cta-button:hover,
+.cta-button:focus { /* Adicionado :focus para acessibilidade */
+  /* Efeito de hover MELHORADO: Gradiente preenche o fundo do botão, texto fica sólido */
+  background: linear-gradient(to right, #e8c815, #bf962f); /* Mesmo gradiente, agora no FUNDO do botão */
+  -webkit-background-clip: initial; /* Reseta o clip para que o gradiente afete o fundo */
+  background-clip: initial;
+  color: white; /* Texto fica branco e sólido */
+  border-color: #bf962f; /* Ajusta a cor da borda para complementar (tom mais escuro do gradiente) */
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
-
 
 .cta-button span {
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-
-.cta-button:hover span {
+.cta-button:hover span,
+.cta-button:focus span { /* Adicionado :focus para acessibilidade */
   transform: translateY(-5px);
 }
 
-
-
-
 /* ========= Responsividade ========= */
-
+/* Suas media queries existentes permanecem aqui... */
 
 /* Para telas maiores que 1024px (notebooks e desktops grandes) */
 @media (min-width: 1024px) {
   .cta-box {
-    width: 50%; /* Deixa a caixa com 50% de largura */
-    margin-bottom: 40px; /* Espaço abaixo da caixa */
+    width: 50%;
+    margin-bottom: 40px;
   }
-
-
   .cta-box h3 {
     font-size: 2.8em;
   }
-
-
   .cta-box p {
     font-size: 1.4em;
   }
-
-
   .cta-button {
     font-size: 1.4em;
     padding: 15px 30px;
   }
 }
 
-
 /* Para telas entre 600px e 1024px (tablets e telas médias) */
 @media (max-width: 1024px) {
   .cta-box {
-    width: 80%; /* Deixa a caixa com 80% de largura */
-    margin-bottom: 30px; /* Ajusta o espaço abaixo da caixa */
+    width: 80%;
+    margin-bottom: 30px;
   }
-
-
   .cta-box h3 {
     font-size: 2.5em;
   }
-
-
   .cta-box p {
     font-size: 1.2em;
   }
-
-
   .cta-button {
     font-size: 1.2em;
     padding: 12px 25px;
   }
 }
 
-
 /* Para dispositivos móveis (menos de 600px) */
 @media (max-width: 600px) {
   .cta-box {
-    width: 90%; /* Deixa a caixa com 90% de largura */
-    margin-bottom: 20px; /* Ajusta o espaço abaixo da caixa */
+    width: 90%;
+    margin-bottom: 20px;
   }
-
-
   .cta-box h3 {
     font-size: 2em;
   }
-
-
   .cta-box p {
     font-size: 1em;
   }
-
-
   .cta-button {
-    font-size: 1.2em;
+    font-size: 1.2em; /* Mantido 1.2em conforme original para mobile, ou pode ser 1em */
     padding: 10px 20px;
   }
 }
@@ -1768,6 +1752,11 @@ p {
 
 
 
+/* Adicione esta regra ao seu CSS global ou no início do arquivo CSS da seção */
+body.modal-aberto {
+  overflow: hidden; /* Impede o scroll do corpo da página quando o modal está aberto */
+}
+
 /* ===== Seção de Localizações ===== */
 .localizacoes {
   padding: 50px 20px;
@@ -1775,15 +1764,13 @@ p {
   text-align: center;
 }
 
-
 /* Título da seção */
 .localizacoes h2 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading); /* Certifique-se que --font-heading está definido no :root */
   font-size: 2.5em;
-  color: var(--primary);
+  color: var(--primary); /* Certifique-se que --primary está definido no :root */
   margin-bottom: 30px;
 }
-
 
 /* Contêiner principal para os cartões de localizações */
 .localizacoes-container {
@@ -1795,33 +1782,36 @@ p {
   margin: 0 auto;
 }
 
-
 /* Lista de Cartões de Localizações */
 .localizacoes-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between;
+  justify-content: space-between; /* Ou 'center' se preferir centralizar os cards quando não preenchem a linha */
   width: 100%;
 }
-
 
 /* Estilo do cartão */
 .localizacao-card {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 20px; /* Aumentado um pouco o padding para melhor espaçamento interno */
   text-align: left;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionado box-shadow na transição */
   width: 28%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 220px;
+  height: auto; /* Alterado para auto para acomodar conteúdo variável, ou defina um min-height */
+  min-height: 220px; /* Adicionado min-height para consistência inicial */
 }
 
+.localizacao-card:hover {
+  transform: translateY(-5px); /* Efeito de levantar no hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
 
 .localizacao-card h3 {
   font-family: var(--font-heading);
@@ -1830,37 +1820,40 @@ p {
   margin-bottom: 10px;
 }
 
-
 .localizacao-card p {
-  color: var(--dark);
+  color: var(--dark); /* Certifique-se que --dark está definido no :root */
   font-size: 1.1em;
-  margin-bottom: 10px;
+  line-height: 1.5; /* Melhorando a legibilidade */
+  margin-bottom: 15px; /* Aumentado um pouco */
   flex-grow: 1;
 }
 
-
 .localizacao-card .cta-btn {
   display: inline-block;
-  margin-top: 25px;
+  margin-top: auto; /* Alinha o botão na parte inferior se o card for flex column */
   padding: 12px 30px;
-  font-size: 1.2em;
+  font-size: 1.1em; /* Ajustado para consistência */
   background: linear-gradient(to right, #e8c815, #bf962f);
   color: transparent;
+  -webkit-background-clip: text;
   background-clip: text;
   text-decoration: none;
   border-radius: 10px;
-  font-weight: 400;
+  font-weight: 600; /* Aumentado para destaque */
   text-align: center;
   border: 1px solid #D4AF37;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-
 .localizacao-card .cta-btn:hover {
-  background-color: var(--accent);
+  background: var(--accent); /* Certifique-se que --accent está definido no :root */
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: var(--dark);
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
-
 
 /* Modal de Detalhes */
 .detalhes-modal {
@@ -1869,43 +1862,67 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6); /* Escurecido um pouco o fundo */
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 1000; /* Garante que o modal fique sobre outros elementos */
+  padding: 20px; /* Adiciona padding para o modal não colar nas bordas em telas menores */
+  box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
 }
-
 
 .detalhes-modal-content {
   background-color: #fff;
   padding: 30px;
   border-radius: 10px;
-  width: 400px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Para ocupar o espaço do padding do pai */
+  max-width: 450px; /* Aumentado um pouco o max-width */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   text-align: center;
-  max-height: 80vh;
+  max-height: calc(100vh - 40px); /* Considera o padding do .detalhes-modal */
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
-
 
 .detalhes-modal .fechar {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 2em;
+  top: 15px;
+  right: 15px;
+  font-size: 1.8em; /* Aumentado um pouco */
+  line-height: 1;
   cursor: pointer;
+  color: #555; /* Cor mais suave */
+  transition: color 0.2s ease;
 }
 
+.detalhes-modal .fechar:hover {
+  color: #000;
+}
+
+.detalhes-modal #modal-titulo { /* Estilizando o título do modal */
+  font-family: var(--font-heading);
+  color: var(--primary);
+  font-size: 1.8em; /* Ajustado */
+  margin-bottom: 15px;
+}
+
+.detalhes-modal p { /* Estilizando parágrafos dentro do modal */
+  color: var(--dark);
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
 
 .detalhes-modal .cta-btn {
   display: inline-block;
   margin-top: 25px;
   padding: 12px 30px;
-  font-size: 1.2em;
+  font-size: 1.1em; /* Ajustado para consistência */
   background: linear-gradient(to right, #e8c815, #bf962f);
   color: transparent;
+  -webkit-background-clip: text;
   background-clip: text;
   text-decoration: none;
   border-radius: 10px;
@@ -1916,78 +1933,90 @@ p {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-
 .detalhes-modal .cta-btn:hover {
-  background-color: var(--accent);
+  background: var(--accent);
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: var(--dark);
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
-
 
 /* ===== Melhorias na Responsividade ===== */
 @media (max-width: 1024px) {
   .localizacao-card {
-    width: 45%;
-    height: auto;
+    width: calc(50% - 10px); /* Ajuste para 2 colunas com gap */
+    /* height: auto;  Já é auto, mantido */
   }
 }
-
 
 @media (max-width: 768px) {
   .localizacoes-list {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
   }
 
-
   .localizacao-card {
-    width: 48%;
-    height: auto;
-    margin-bottom: 15px;
+    width: calc(50% - 10px); /* Mantém 2 colunas se possível */
+    margin-bottom: 20px; /* Aumentado gap vertical */
+  }
+  
+  .localizacoes h2 {
+    font-size: 2.2em;
   }
 
+  .localizacao-card h3 {
+    font-size: 1.6em;
+  }
 
   .detalhes-modal-content {
-    width: 80%;
+    max-width: 90%; /* Ajusta para ocupar mais da tela */
+    padding: 25px;
+  }
+
+  .detalhes-modal #modal-titulo {
+    font-size: 1.6em;
   }
 }
 
+@media (max-width: 600px) { /* Ponto de quebra adicional para cards em uma coluna */
+  .localizacao-card {
+    width: calc(100% - 20px); /* Uma coluna com margem */
+    max-width: 400px; /* Limita a largura máxima em telas maiores de celular */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 @media (max-width: 480px) {
-  .localizacoes-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-
-  .localizacao-card {
-    width: 48%;
-  }
-
-
   .localizacoes h2 {
     font-size: 1.8em;
   }
-
 
   .localizacao-card h3 {
     font-size: 1.5em;
   }
 
-
   .localizacao-card p {
     font-size: 1em;
   }
 
-
-  .cta-btn {
+  /* Ajuste no botão CTA especificamente dentro de .localizacoes para este breakpoint */
+  .localizacoes .localizacao-card .cta-btn, 
+  .localizacoes .detalhes-modal .cta-btn {
     font-size: 1em;
     padding: 10px 20px;
   }
 
-
   .detalhes-modal-content {
-    width: 95%;
+    max-width: 95%;
     padding: 20px;
+  }
+
+  .detalhes-modal #modal-titulo {
+    font-size: 1.5em;
+  }
+
+  .detalhes-modal p {
+    font-size: 1em;
   }
 }
