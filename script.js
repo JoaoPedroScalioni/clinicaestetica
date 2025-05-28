@@ -351,3 +351,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const statsSection = document.querySelector('.estatisticas');
+
+  if (statsSection) {
+    const observer = new IntersectionObserver((entries, observerInstance) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          statsSection.classList.add('stats-in-view');
+          observerInstance.unobserve(entry.target); // Para animar apenas uma vez
+        }
+      });
+    }, { threshold: 0.1 }); // Aciona quando 10% da seção estiver visível
+
+    observer.observe(statsSection);
+  }
+});
